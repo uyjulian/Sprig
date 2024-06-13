@@ -24,7 +24,7 @@ namespace sprig {
 		//
 		// types
 		//
-		//	COMMENT: Šî–{Œ^’è‹`
+		//	COMMENT: åŸºæœ¬å‹å®šç¾©
 		//
 		struct types {
 		public:
@@ -37,7 +37,7 @@ namespace sprig {
 		//
 		// type_base
 		//
-		//	COMMENT: Œ^’è‹`‚ÌƒX[ƒp[ƒNƒ‰ƒX
+		//	COMMENT: å‹å®šç¾©ã®ã‚¹ãƒ¼ãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹
 		//
 		template<typename Types = use_default>
 		struct type_base {
@@ -50,7 +50,7 @@ namespace sprig {
 		};
 
 		//
-		//	COMMENT: ƒCƒ“ƒ^ƒtƒF[ƒX‚Ì‘O•ûéŒ¾
+		//	COMMENT: ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹ã®å‰æ–¹å®£è¨€
 		//
 		template<typename Types> class position_interface;
 		template<typename Types> class buffer_interface;
@@ -62,7 +62,7 @@ namespace sprig {
 		//
 		// memory_interface
 		//
-		//	COMMENT: ƒƒ‚ƒŠƒNƒ‰ƒX‚ÌƒCƒ“ƒ^ƒtƒF[ƒX
+		//	COMMENT: ãƒ¡ãƒ¢ãƒªã‚¯ãƒ©ã‚¹ã®ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹
 		//
 		template<
 			typename Types = use_default
@@ -86,7 +86,7 @@ namespace sprig {
 		//
 		// position_interface
 		//
-		//	COMMENT: ˆÊ’uƒNƒ‰ƒX‚ÌƒCƒ“ƒ^ƒtƒF[ƒX
+		//	COMMENT: ä½ç½®ã‚¯ãƒ©ã‚¹ã®ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹
 		//
 		template<
 			typename Types = use_default
@@ -115,7 +115,7 @@ namespace sprig {
 		//
 		// buffer_interface
 		//
-		//	COMMENT: ƒoƒbƒtƒ@ƒNƒ‰ƒX‚ÌƒCƒ“ƒ^ƒtƒF[ƒX
+		//	COMMENT: ãƒãƒƒãƒ•ã‚¡ã‚¯ãƒ©ã‚¹ã®ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹
 		//
 		template<
 			typename Types = use_default
@@ -140,7 +140,7 @@ namespace sprig {
 		//
 		// io_interface
 		//
-		//	COMMENT: “üo—ÍƒNƒ‰ƒX‚ÌƒCƒ“ƒ^ƒtƒF[ƒX
+		//	COMMENT: å…¥å‡ºåŠ›ã‚¯ãƒ©ã‚¹ã®ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹
 		//
 		template<
 			typename Types = use_default
@@ -165,7 +165,7 @@ namespace sprig {
 		//
 		// iteration_interface
 		//
-		//	COMMENT: ‘–¸ƒNƒ‰ƒX‚ÌƒCƒ“ƒ^ƒtƒF[ƒX
+		//	COMMENT: èµ°æŸ»ã‚¯ãƒ©ã‚¹ã®ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹
 		//
 		template<
 			typename Types = use_default
@@ -193,7 +193,7 @@ namespace sprig {
 		//
 		// executor_interface
 		//
-		//	COMMENT: ƒRƒ}ƒ“ƒhÀsƒNƒ‰ƒX‚ÌƒCƒ“ƒ^ƒtƒF[ƒX
+		//	COMMENT: ã‚³ãƒãƒ³ãƒ‰å®Ÿè¡Œã‚¯ãƒ©ã‚¹ã®ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹
 		//
 		template<
 			typename Types = use_default
@@ -217,7 +217,7 @@ namespace sprig {
 		//
 		// engine_interface
 		//
-		//	COMMENT: ƒGƒ“ƒWƒ“ƒNƒ‰ƒX‚ÌƒCƒ“ƒ^ƒtƒF[ƒX
+		//	COMMENT: ã‚¨ãƒ³ã‚¸ãƒ³ã‚¯ãƒ©ã‚¹ã®ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹
 		//
 		template<
 			typename Types = use_default
@@ -247,7 +247,7 @@ namespace sprig {
 		//
 		// commands
 		//
-		//	COMMENT: Šî–{ƒRƒ}ƒ“ƒh’è‹`
+		//	COMMENT: åŸºæœ¬ã‚³ãƒãƒ³ãƒ‰å®šç¾©
 		//
 		struct commands {
 			enum tag {
@@ -267,7 +267,7 @@ namespace sprig {
 		//
 		// position_tags
 		//
-		//	COMMENT: ˆÊ’uƒ^ƒO’è‹`
+		//	COMMENT: ä½ç½®ã‚¿ã‚°å®šç¾©
 		//
 		struct position_tags {
 			enum tag {
@@ -279,7 +279,7 @@ namespace sprig {
 		//
 		// command_base
 		//
-		//	COMMENT: ƒRƒ}ƒ“ƒh’è‹`‚ÌƒX[ƒp[ƒNƒ‰ƒX
+		//	COMMENT: ã‚³ãƒãƒ³ãƒ‰å®šç¾©ã®ã‚¹ãƒ¼ãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹
 		//
 		template<typename Commands = use_default>
 		struct command_base {
@@ -290,14 +290,14 @@ namespace sprig {
 		//
 		// brain_exception
 		//
-		//	COMMENT: —áŠO‚Ìƒx[ƒXƒNƒ‰ƒX
+		//	COMMENT: ä¾‹å¤–ã®ãƒ™ãƒ¼ã‚¹ã‚¯ãƒ©ã‚¹
 		//
 		SPRIG_EXCEPTION_DECL(brain_exception);
 
 		//
 		// engine_exit
 		//
-		//	COMMENT: ƒGƒ“ƒWƒ“Às‚Ì³íI—¹‚ğ’Ê’m‚·‚é—áŠO
+		//	COMMENT: ã‚¨ãƒ³ã‚¸ãƒ³å®Ÿè¡Œæ™‚ã®æ­£å¸¸çµ‚äº†ã‚’é€šçŸ¥ã™ã‚‹ä¾‹å¤–
 		//
 		SPRIG_EXCEPTION_INHERIT_DECL(engine_exit, brain_exception);
 

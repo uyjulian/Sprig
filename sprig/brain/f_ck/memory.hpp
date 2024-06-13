@@ -24,8 +24,8 @@ namespace sprig {
 			//
 			// bf_memory
 			//
-			//	COMMENT: •„†•t‚«‚Ì“Y‚¦Žš‚É‘Î‰ž‚µ‚½ƒƒ‚ƒŠƒNƒ‰ƒX
-			//	COMMENT: ƒƒ‚ƒŠ‚ÍƒAƒNƒZƒX‚ªs‚í‚ê‚½‚Æ‚«Ž©“®Šg’£‚³‚ê‚é
+			//	COMMENT: ç¬¦å·ä»˜ãã®æ·»ãˆå­—ã«å¯¾å¿œã—ãŸãƒ¡ãƒ¢ãƒªã‚¯ãƒ©ã‚¹
+			//	COMMENT: ãƒ¡ãƒ¢ãƒªã¯ã‚¢ã‚¯ã‚»ã‚¹ãŒè¡Œã‚ã‚ŒãŸã¨ãè‡ªå‹•æ‹¡å¼µã•ã‚Œã‚‹
 			//
 			template<
 				typename Types = use_default

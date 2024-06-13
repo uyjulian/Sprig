@@ -124,21 +124,21 @@ namespace sprig {
 
 				init_params_ = params;
 
-				// ƒNƒ‰ƒX–¼‚ÆƒEƒBƒ“ƒhƒE–¼‚Ìİ’è
+				// ã‚¯ãƒ©ã‚¹åã¨ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦åã®è¨­å®š
 				device_manager_init_params_.class_name = init_params_.name;
 				device_manager_init_params_.window_name = init_params_.name;
 
-				// ƒfƒoƒCƒXƒ}ƒl[ƒWƒƒ‚Ì‰Šú‰»
+				// ãƒ‡ãƒã‚¤ã‚¹ãƒãƒãƒ¼ã‚¸ãƒ£ã®åˆæœŸåŒ–
 				if (FAILED(result = device_manager_.initialize(device_manager_init_params_))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒfƒoƒCƒXƒ}ƒl[ƒWƒƒ‚Ì‰Šú‰»‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("ãƒ‡ãƒã‚¤ã‚¹ãƒãƒãƒ¼ã‚¸ãƒ£ã®åˆæœŸåŒ–ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return result;
 				}
 
-				// ƒXƒvƒ‰ƒCƒgƒgƒ‰ƒ“ƒXƒtƒ@ƒ‰‚Ì‰Šú‰»
+				// ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆãƒˆãƒ©ãƒ³ã‚¹ãƒ•ã‚¡ãƒ©ã®åˆæœŸåŒ–
 				if (FAILED(result = sprite_transferer_.initialize(device_manager_.get_device(), init_params_.tmip))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒXƒvƒ‰ƒCƒgƒgƒ‰ƒ“ƒXƒtƒ@ƒ‰‚Ì‰Šú‰»‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆãƒˆãƒ©ãƒ³ã‚¹ãƒ•ã‚¡ãƒ©ã®åˆæœŸåŒ–ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return result;
 				}
 
@@ -148,17 +148,17 @@ namespace sprig {
 				SPRIG_DG_SECTION(TEXT("sprite_buffer::reinitialize"));
 				HRESULT result = D3D_OK;
 
-				// ƒfƒoƒCƒXƒ}ƒl[ƒWƒƒ‚Ì‰Šú‰»
+				// ãƒ‡ãƒã‚¤ã‚¹ãƒãƒãƒ¼ã‚¸ãƒ£ã®åˆæœŸåŒ–
 				if (FAILED(result = device_manager_.reinitialize())) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒfƒoƒCƒXƒ}ƒl[ƒWƒƒ‚Ì‰Šú‰»‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("ãƒ‡ãƒã‚¤ã‚¹ãƒãƒãƒ¼ã‚¸ãƒ£ã®åˆæœŸåŒ–ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return result;
 				}
 
-				// ƒXƒvƒ‰ƒCƒgƒgƒ‰ƒ“ƒXƒtƒ@ƒ‰‚Ì‰Šú‰»
+				// ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆãƒˆãƒ©ãƒ³ã‚¹ãƒ•ã‚¡ãƒ©ã®åˆæœŸåŒ–
 				if (FAILED(result = sprite_transferer_.reinitialize(device_manager_.get_device()))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒXƒvƒ‰ƒCƒgƒgƒ‰ƒ“ƒXƒtƒ@ƒ‰‚Ì‰Šú‰»‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆãƒˆãƒ©ãƒ³ã‚¹ãƒ•ã‚¡ãƒ©ã®åˆæœŸåŒ–ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return result;
 				}
 

@@ -161,14 +161,14 @@ namespace sprig {
 				>::type bj_directive_literals;
 			private:
 				enum omode {
-					default_omode,	// ’Êío—Íƒ‚[ƒh
-					dfn_omode,		// ŠÖ”’è‹`ƒ‚[ƒh
-					arg_omode,		// ˆø”İ’èƒ‚[ƒh
-					a_out_omode		// ˆø”o—Íƒ‚[ƒh
+					default_omode,	// é€šå¸¸å‡ºåŠ›ãƒ¢ãƒ¼ãƒ‰
+					dfn_omode,		// é–¢æ•°å®šç¾©ãƒ¢ãƒ¼ãƒ‰
+					arg_omode,		// å¼•æ•°è¨­å®šãƒ¢ãƒ¼ãƒ‰
+					a_out_omode		// å¼•æ•°å‡ºåŠ›ãƒ¢ãƒ¼ãƒ‰
 				};
 				enum imode {
-					default_imode,	// ’Êí“ü—Íƒ‚[ƒh
-					a_in_imode		// ˆø”“ü—Íƒ‚[ƒh
+					default_imode,	// é€šå¸¸å…¥åŠ›ãƒ¢ãƒ¼ãƒ‰
+					a_in_imode		// å¼•æ•°å…¥åŠ›ãƒ¢ãƒ¼ãƒ‰
 				};
 			private:
 				template<typename T>
@@ -186,9 +186,9 @@ namespace sprig {
 				typedef std::vector<byte_type> buffer_type;
 				typedef boost::shared_ptr<position_interface<types> > position_instance_type;
 				typedef boost::tuple<
-					position_instance_type,			// ƒXƒ^ƒbƒNã‚ÌŒÄoŒ³ƒvƒƒOƒ‰ƒ€ˆÊ’u
-					position_instance_type,			// ƒXƒ^ƒbƒNã‚ÌŒÄoŒ³ƒƒ‚ƒŠˆÊ’u
-					position_instance_type			// ƒXƒ^ƒbƒNã‚Ìˆø”
+					position_instance_type,			// ã‚¹ã‚¿ãƒƒã‚¯ä¸Šã®å‘¼å‡ºå…ƒãƒ—ãƒ­ã‚°ãƒ©ãƒ ä½ç½®
+					position_instance_type,			// ã‚¹ã‚¿ãƒƒã‚¯ä¸Šã®å‘¼å‡ºå…ƒãƒ¡ãƒ¢ãƒªä½ç½®
+					position_instance_type			// ã‚¹ã‚¿ãƒƒã‚¯ä¸Šã®å¼•æ•°
 				> stack_element_type;
 				typedef std::vector<stack_element_type> stack_type;
 				typedef std::map<
@@ -197,16 +197,16 @@ namespace sprig {
 					buffer_comparator<buffer_type>
 				> function_map_type;
 			private:
-				engine_interface<types>* engine_;	// ƒGƒ“ƒWƒ“
-				omode omode_;						// o—Íƒ‚[ƒh
-				imode imode_;						// “ü—Íƒ‚[ƒh
-				buffer_type output_buffer_;			// o—Íƒoƒbƒtƒ@
-				buffer_type dfn_buffer_;			// ŠÖ”’è‹`ƒoƒbƒtƒ@
-				stack_type stack_;					// ƒXƒ^ƒbƒN
-				position_instance_type arg_;		// “o˜^ˆø”
-				function_map_type function_map_;	// ŠÖ”ƒ}ƒbƒv
+				engine_interface<types>* engine_;	// ã‚¨ãƒ³ã‚¸ãƒ³
+				omode omode_;						// å‡ºåŠ›ãƒ¢ãƒ¼ãƒ‰
+				imode imode_;						// å…¥åŠ›ãƒ¢ãƒ¼ãƒ‰
+				buffer_type output_buffer_;			// å‡ºåŠ›ãƒãƒƒãƒ•ã‚¡
+				buffer_type dfn_buffer_;			// é–¢æ•°å®šç¾©ãƒãƒƒãƒ•ã‚¡
+				stack_type stack_;					// ã‚¹ã‚¿ãƒƒã‚¯
+				position_instance_type arg_;		// ç™»éŒ²å¼•æ•°
+				function_map_type function_map_;	// é–¢æ•°ãƒãƒƒãƒ—
 			private:
-				//	COMMENT: o—Íƒoƒbƒtƒ@‚Ì––”ö‚ªƒfƒBƒŒƒNƒeƒBƒu‚É“™‚µ‚¢‚©
+				//	COMMENT: å‡ºåŠ›ãƒãƒƒãƒ•ã‚¡ã®æœ«å°¾ãŒãƒ‡ã‚£ãƒ¬ã‚¯ãƒ†ã‚£ãƒ–ã«ç­‰ã—ã„ã‹
 				bool equal_dir(typename bj_directive_literals::type const& dir) {
 					return boost::size(output_buffer_) >= boost::size(dir)
 						&& std::equal(
@@ -216,7 +216,7 @@ namespace sprig {
 							)
 						;
 				}
-				//	COMMENT: o—Íƒoƒbƒtƒ@‚Ì‘S‚Ä‚ªŠÖ”¯•Êq‚É“™‚µ‚¢‚©
+				//	COMMENT: å‡ºåŠ›ãƒãƒƒãƒ•ã‚¡ã®å…¨ã¦ãŒé–¢æ•°è­˜åˆ¥å­ã«ç­‰ã—ã„ã‹
 				bool equal_fun(buffer_type const& fun) {
 					return boost::size(output_buffer_) == boost::size(fun)
 						&& std::equal(
@@ -226,31 +226,31 @@ namespace sprig {
 							)
 						;
 				}
-				//	COMMENT: o—Íƒoƒbƒtƒ@‚©‚çƒfƒBƒŒƒNƒeƒBƒu‚ğƒ|ƒbƒv‚·‚é
-				//	COMMENT: o—Íƒoƒbƒtƒ@‚Ì––”ö‚ªƒfƒBƒŒƒNƒeƒBƒu‚É“™‚µ‚­‚È‚¯‚ê‚Î‚È‚ç‚È‚¢
+				//	COMMENT: å‡ºåŠ›ãƒãƒƒãƒ•ã‚¡ã‹ã‚‰ãƒ‡ã‚£ãƒ¬ã‚¯ãƒ†ã‚£ãƒ–ã‚’ãƒãƒƒãƒ—ã™ã‚‹
+				//	COMMENT: å‡ºåŠ›ãƒãƒƒãƒ•ã‚¡ã®æœ«å°¾ãŒãƒ‡ã‚£ãƒ¬ã‚¯ãƒ†ã‚£ãƒ–ã«ç­‰ã—ããªã‘ã‚Œã°ãªã‚‰ãªã„
 				void pop_dir(typename bj_directive_literals::type const& dir) {
 					output_buffer_.resize(
 						boost::size(output_buffer_)
 							- boost::size(bj_directive_literals::template get<bj_directives::dir_end>())
 						);
 				}
-				//	COMMENT: ƒXƒ^ƒbƒNã‚ÌƒvƒƒOƒ‰ƒ€ˆÊ’u‚ğ•Ô‚·
-				//	COMMENT: ƒXƒ^ƒbƒN‚Ì—v‘f‚ª‹ó‚Å‚ ‚Á‚Ä‚Í‚È‚ç‚È‚¢
+				//	COMMENT: ã‚¹ã‚¿ãƒƒã‚¯ä¸Šã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ ä½ç½®ã‚’è¿”ã™
+				//	COMMENT: ã‚¹ã‚¿ãƒƒã‚¯ã®è¦ç´ ãŒç©ºã§ã‚ã£ã¦ã¯ãªã‚‰ãªã„
 				position_instance_type& get_stack_ppos() {
 					return stack_.back().template get<0>();
 				}
-				//	COMMENT: ƒXƒ^ƒbƒNã‚ÌŒÄoŒ³ƒƒ‚ƒŠˆÊ’u‚ğ•Ô‚·
-				//	COMMENT: ƒXƒ^ƒbƒN‚Ì—v‘f‚ª‹ó‚Å‚ ‚Á‚Ä‚Í‚È‚ç‚È‚¢
+				//	COMMENT: ã‚¹ã‚¿ãƒƒã‚¯ä¸Šã®å‘¼å‡ºå…ƒãƒ¡ãƒ¢ãƒªä½ç½®ã‚’è¿”ã™
+				//	COMMENT: ã‚¹ã‚¿ãƒƒã‚¯ã®è¦ç´ ãŒç©ºã§ã‚ã£ã¦ã¯ãªã‚‰ãªã„
 				position_instance_type& get_stack_mpos() {
 					return stack_.back().template get<1>();
 				}
-				//	COMMENT: ƒXƒ^ƒbƒNã‚Ìˆø”‚ğ•Ô‚·
-				//	COMMENT: ƒXƒ^ƒbƒN‚Ì—v‘f‚ª‹ó‚Å‚ ‚Á‚Ä‚Í‚È‚ç‚È‚¢
+				//	COMMENT: ã‚¹ã‚¿ãƒƒã‚¯ä¸Šã®å¼•æ•°ã‚’è¿”ã™
+				//	COMMENT: ã‚¹ã‚¿ãƒƒã‚¯ã®è¦ç´ ãŒç©ºã§ã‚ã£ã¦ã¯ãªã‚‰ãªã„
 				position_instance_type& get_stack_arg() {
 					return stack_.back().template get<2>();
 				}
-				//	COMMENT: ƒGƒ“ƒWƒ“‚Ìƒƒ‚ƒŠˆÊ’u‚ğƒXƒ^ƒbƒNã‚Ìˆø”‚É·‚µ‘Ö‚¦‚ÄƒRƒ}ƒ“ƒhÀs‚³‚¹‚é
-				//	COMMENT: ÀsŒãAƒƒ‚ƒŠˆÊ’u‚Í•œ‹A‚³‚ê‚é
+				//	COMMENT: ã‚¨ãƒ³ã‚¸ãƒ³ã®ãƒ¡ãƒ¢ãƒªä½ç½®ã‚’ã‚¹ã‚¿ãƒƒã‚¯ä¸Šã®å¼•æ•°ã«å·®ã—æ›¿ãˆã¦ã‚³ãƒãƒ³ãƒ‰å®Ÿè¡Œã•ã›ã‚‹
+				//	COMMENT: å®Ÿè¡Œå¾Œã€ãƒ¡ãƒ¢ãƒªä½ç½®ã¯å¾©å¸°ã•ã‚Œã‚‹
 				void exec_at_arg(tag_type com) {
 					std::auto_ptr<position_interface<types> > mpos = engine_->buffer()->mpos()->clone();
 					engine_->buffer()->mpos()->assign(*get_stack_arg());
@@ -304,18 +304,18 @@ namespace sprig {
 
 					switch (omode_) {
 					case default_omode:
-						//	COMMENT: ’Êío—Íƒ‚[ƒh
+						//	COMMENT: é€šå¸¸å‡ºåŠ›ãƒ¢ãƒ¼ãƒ‰
 						output_buffer_.push_back(b);
 						if (equal_dir(dir_end)) {
-							//	COMMENT: ƒfƒBƒŒƒNƒeƒBƒuI’[‚Éˆê’v‚µ‚½ê‡
-							//	COMMENT: I’[‚ğƒ|ƒbƒv
+							//	COMMENT: ãƒ‡ã‚£ãƒ¬ã‚¯ãƒ†ã‚£ãƒ–çµ‚ç«¯ã«ä¸€è‡´ã—ãŸå ´åˆ
+							//	COMMENT: çµ‚ç«¯ã‚’ãƒãƒƒãƒ—
 							pop_dir(dir_end);
 							if (equal_dir(dfn)) {
-								//	COMMENT: ŠÖ”’è‹`ƒfƒBƒŒƒNƒeƒBƒu
+								//	COMMENT: é–¢æ•°å®šç¾©ãƒ‡ã‚£ãƒ¬ã‚¯ãƒ†ã‚£ãƒ–
 								omode_ = dfn_omode;
 							} else if (equal_dir(ret)) {
-								//	COMMENT: •Ô‹pƒfƒBƒŒƒNƒeƒBƒu
-								//	COMMENT: ƒXƒ^ƒbƒN‚ª‚±‚êˆÈã‚È‚¢‚Æ‚«‚ÍAI—¹’Ê’m—áŠO‚ğ“Š‚°‚é
+								//	COMMENT: è¿”å´ãƒ‡ã‚£ãƒ¬ã‚¯ãƒ†ã‚£ãƒ–
+								//	COMMENT: ã‚¹ã‚¿ãƒƒã‚¯ãŒã“ã‚Œä»¥ä¸Šãªã„ã¨ãã¯ã€çµ‚äº†é€šçŸ¥ä¾‹å¤–ã‚’æŠ•ã’ã‚‹
 								if (boost::size(stack_) == 1) {
 									throw bj_system_exit("Brainjack system exit. (Returned from the primary stack)");
 								}
@@ -324,37 +324,37 @@ namespace sprig {
 								arg_->assign(*get_stack_arg());
 								stack_.pop_back();
 							} else if (equal_dir(arg)) {
-								//	COMMENT: ˆø”İ’èƒfƒBƒŒƒNƒeƒBƒu
+								//	COMMENT: å¼•æ•°è¨­å®šãƒ‡ã‚£ãƒ¬ã‚¯ãƒ†ã‚£ãƒ–
 								omode_ = arg_omode;
 							} else if (equal_dir(a_out)) {
-								//	COMMENT: ˆø”o—Íİ’èƒfƒBƒŒƒNƒeƒBƒu
+								//	COMMENT: å¼•æ•°å‡ºåŠ›è¨­å®šãƒ‡ã‚£ãƒ¬ã‚¯ãƒ†ã‚£ãƒ–
 								omode_ = a_out_omode;
 							} else if (equal_dir(a_in)) {
-								//	COMMENT: ˆø”“ü—Íİ’èƒfƒBƒŒƒNƒeƒBƒu
+								//	COMMENT: å¼•æ•°å…¥åŠ›è¨­å®šãƒ‡ã‚£ãƒ¬ã‚¯ãƒ†ã‚£ãƒ–
 								imode_ = a_in_imode;
 							} else if (equal_dir(a_next)) {
-								//	COMMENT: ˆø”‘OiƒfƒBƒŒƒNƒeƒBƒu
+								//	COMMENT: å¼•æ•°å‰é€²ãƒ‡ã‚£ãƒ¬ã‚¯ãƒ†ã‚£ãƒ–
 								exec_at_arg(commands::next);
 							} else if (equal_dir(a_prior)) {
-								//	COMMENT: ˆø”Œã‘ŞƒfƒBƒŒƒNƒeƒBƒu
+								//	COMMENT: å¼•æ•°å¾Œé€€ãƒ‡ã‚£ãƒ¬ã‚¯ãƒ†ã‚£ãƒ–
 								exec_at_arg(commands::prior);
 							} else if (equal_dir(a_inc)) {
-								//	COMMENT: ˆø”ƒCƒ“ƒNƒŠƒƒ“ƒgƒfƒBƒŒƒNƒeƒBƒu
+								//	COMMENT: å¼•æ•°ã‚¤ãƒ³ã‚¯ãƒªãƒ¡ãƒ³ãƒˆãƒ‡ã‚£ãƒ¬ã‚¯ãƒ†ã‚£ãƒ–
 								exec_at_arg(commands::inc);
 							} else if (equal_dir(a_dec)) {
-								//	COMMENT: ˆø”ƒfƒNƒŠƒƒ“ƒgƒfƒBƒŒƒNƒeƒBƒu
+								//	COMMENT: å¼•æ•°ãƒ‡ã‚¯ãƒªãƒ¡ãƒ³ãƒˆãƒ‡ã‚£ãƒ¬ã‚¯ãƒ†ã‚£ãƒ–
 								exec_at_arg(commands::dec);
 							}
 							output_buffer_.clear();
 						} else if (equal_dir(fun_call)) {
-							//	COMMENT: ŠÖ”ŒÄo‚Éˆê’v‚µ‚½ê‡
-							//	COMMENT: I’[‚ğƒ|ƒbƒv
+							//	COMMENT: é–¢æ•°å‘¼å‡ºã«ä¸€è‡´ã—ãŸå ´åˆ
+							//	COMMENT: çµ‚ç«¯ã‚’ãƒãƒƒãƒ—
 							pop_dir(fun_call);
 							BOOST_FOREACH(typename function_map_type::value_type const& e, function_map_) {
-								//	COMMENT: ŠÖ”ƒ}ƒbƒv‚ğ‘–¸
+								//	COMMENT: é–¢æ•°ãƒãƒƒãƒ—ã‚’èµ°æŸ»
 								if (equal_fun(e.first)) {
-									//	COMMENT: ŠÖ”¯•Êq‚Éˆê’v‚µ‚½ê‡
-									//	COMMENT: ƒXƒ^ƒbƒN‚ğƒvƒbƒVƒ…
+									//	COMMENT: é–¢æ•°è­˜åˆ¥å­ã«ä¸€è‡´ã—ãŸå ´åˆ
+									//	COMMENT: ã‚¹ã‚¿ãƒƒã‚¯ã‚’ãƒ—ãƒƒã‚·ãƒ¥
 									stack_.push_back(
 										stack_element_type(
 											engine_->buffer()->ppos()->clone(),
@@ -362,26 +362,26 @@ namespace sprig {
 											arg_->clone()
 											)
 										);
-									//	COMMENT: ƒvƒƒOƒ‰ƒ€ˆÊ’u‚ğŠÖ”ƒGƒ“ƒgƒŠƒ|ƒCƒ“ƒg‚ÉˆÚ“®
+									//	COMMENT: ãƒ—ãƒ­ã‚°ãƒ©ãƒ ä½ç½®ã‚’é–¢æ•°ã‚¨ãƒ³ãƒˆãƒªãƒã‚¤ãƒ³ãƒˆã«ç§»å‹•
 									engine_->buffer()->ppos()->assign(*e.second);
 									engine_->buffer()->mpos()->assign(*e.second);
 									break;
 								}
 							}
-							//	COMMENT: ƒoƒbƒtƒ@‚ÍƒNƒŠƒA‚·‚é
+							//	COMMENT: ãƒãƒƒãƒ•ã‚¡ã¯ã‚¯ãƒªã‚¢ã™ã‚‹
 							output_buffer_.clear();
 						}
 						break;
 					case dfn_omode:
-						//	COMMENT: ŠÖ”’è‹`ƒ‚[ƒh
+						//	COMMENT: é–¢æ•°å®šç¾©ãƒ¢ãƒ¼ãƒ‰
 						if (b != byte_type()) {
-							//	COMMENT: ’l‚ªNULL‚Å‚È‚¢ê‡AŠÖ”’è‹`ƒoƒbƒtƒ@‚ÉƒvƒbƒVƒ…
+							//	COMMENT: å€¤ãŒNULLã§ãªã„å ´åˆã€é–¢æ•°å®šç¾©ãƒãƒƒãƒ•ã‚¡ã«ãƒ—ãƒƒã‚·ãƒ¥
 							dfn_buffer_.push_back(b);
 						} else {
-							//	COMMENT: ’l‚ªNULL‚Å‚ ‚éê‡
+							//	COMMENT: å€¤ãŒNULLã§ã‚ã‚‹å ´åˆ
 							omode_ = default_omode;
 							if (!boost::empty(dfn_buffer_)) {
-								//	ŠÖ”’è‹`ƒoƒbƒtƒ@‚ª‹ó‚Å‚È‚¢ê‡AŠÖ”’è‹`‚ğ’Ç‰Á
+								//	é–¢æ•°å®šç¾©ãƒãƒƒãƒ•ã‚¡ãŒç©ºã§ãªã„å ´åˆã€é–¢æ•°å®šç¾©ã‚’è¿½åŠ 
 								function_map_.insert(
 									typename function_map_type::value_type(
 										dfn_buffer_,
@@ -389,17 +389,17 @@ namespace sprig {
 										)
 									);
 							}
-							//	COMMENT: ƒoƒbƒtƒ@‚ÍƒNƒŠƒA‚·‚é
+							//	COMMENT: ãƒãƒƒãƒ•ã‚¡ã¯ã‚¯ãƒªã‚¢ã™ã‚‹
 							dfn_buffer_.clear();
 						}
 						break;
 					case arg_omode:
-						//	COMMENT: ˆø”İ’èƒ‚[ƒh
+						//	COMMENT: å¼•æ•°è¨­å®šãƒ¢ãƒ¼ãƒ‰
 						omode_ = default_omode;
 						arg_ = pos.clone();
 						break;
 					case a_out_omode:
-						//	COMMENT: ˆø”o—Íƒ‚[ƒh
+						//	COMMENT: å¼•æ•°å‡ºåŠ›ãƒ¢ãƒ¼ãƒ‰
 						omode_ = default_omode;
 						get_stack_arg()->set(pos.get());
 						break;
@@ -408,11 +408,11 @@ namespace sprig {
 				virtual void in(position_interface<types>& pos) {
 					switch (imode_) {
 					case default_imode:
-						//	COMMENT: ’Êí“ü—Íƒ‚[ƒh
+						//	COMMENT: é€šå¸¸å…¥åŠ›ãƒ¢ãƒ¼ãƒ‰
 						pos.set(byte_type());
 						break;
 					case a_in_imode:
-						//	COMMENT: ˆø”“ü—Íƒ‚[ƒh
+						//	COMMENT: å¼•æ•°å…¥åŠ›ãƒ¢ãƒ¼ãƒ‰
 						imode_ = default_imode;
 						pos.set(get_stack_arg()->get());
 						break;

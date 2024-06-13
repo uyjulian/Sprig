@@ -32,7 +32,7 @@ namespace sprig {
 			//
 			// rethrow_exception_to_tjs_exception
 			//
-			// COMMENT: ƒLƒƒƒbƒ`‚µ‚½—áŠO‚ðTJS‚Ì—áŠOƒƒbƒZ[ƒW‚É•ÏŠ·‚·‚éB
+			// COMMENT: ã‚­ãƒ£ãƒƒãƒã—ãŸä¾‹å¤–ã‚’TJSã®ä¾‹å¤–ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã«å¤‰æ›ã™ã‚‹ã€‚
 			//
 			template<typename Exception>
 			SPRIG_INLINE void rethrow_exception_to_tjs_exception(Exception const& e) {

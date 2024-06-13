@@ -198,28 +198,28 @@ namespace sprig {
 				texture_parameters_.height = texture_manager_init_params_.height;
 				texture_parameters_.format = texture_manager_init_params_.format;
 				if (FAILED(result = device_->CreateTexture(
-					texture_parameters_.width,	// ƒeƒNƒXƒ`ƒƒƒTƒCƒY
-					texture_parameters_.height,	// ƒeƒNƒXƒ`ƒƒƒTƒCƒY
-					texture_parameters_.levels,	// ƒ~ƒbƒvƒŒƒxƒ‹”
-					texture_parameters_.usage,	// ƒeƒNƒXƒ`ƒƒ‚Ì—p“r
-					texture_parameters_.format,	// ƒeƒNƒXƒ`ƒƒŒ`®
-					texture_parameters_.pool,	// ƒƒ‚ƒŠƒNƒ‰ƒX
+					texture_parameters_.width,	// ãƒ†ã‚¯ã‚¹ãƒãƒ£ã‚µã‚¤ã‚º
+					texture_parameters_.height,	// ãƒ†ã‚¯ã‚¹ãƒãƒ£ã‚µã‚¤ã‚º
+					texture_parameters_.levels,	// ãƒŸãƒƒãƒ—ãƒ¬ãƒ™ãƒ«æ•°
+					texture_parameters_.usage,	// ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ç”¨é€”
+					texture_parameters_.format,	// ãƒ†ã‚¯ã‚¹ãƒãƒ£å½¢å¼
+					texture_parameters_.pool,	// ãƒ¡ãƒ¢ãƒªã‚¯ãƒ©ã‚¹
 					sprig::accept(texture_),
-					NULL	// —\–ñ
+					NULL	// äºˆç´„
 					)))
 				{
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒeƒNƒXƒ`ƒƒ¶¬‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("ãƒ†ã‚¯ã‚¹ãƒãƒ£ç”Ÿæˆã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return result;
 				}
 				if (FAILED(result = texture_->GetSurfaceLevel(0, sprig::accept(surface_)))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒeƒNƒXƒ`ƒƒ‚©‚çƒT[ƒtƒFƒCƒXæ“¾‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("ãƒ†ã‚¯ã‚¹ãƒãƒ£ã‹ã‚‰ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return result;
 				}
 				if (FAILED(result = surface_->GetDesc(&surface_desc_))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒT[ƒtƒFƒCƒXî•ñ‚Ìæ“¾‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹æƒ…å ±ã®å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return result;
 				}
 				return result;
@@ -233,28 +233,28 @@ namespace sprig {
 				texture_parameters_.height = texture_manager_init_params_.height;
 				texture_parameters_.format = texture_manager_init_params_.format;
 				if (FAILED(result = device_->CreateTexture(
-					texture_parameters_.width,	// ƒeƒNƒXƒ`ƒƒƒTƒCƒY
-					texture_parameters_.height,	// ƒeƒNƒXƒ`ƒƒƒTƒCƒY
-					texture_parameters_.levels,	// ƒ~ƒbƒvƒŒƒxƒ‹”
-					texture_parameters_.usage,	// ƒeƒNƒXƒ`ƒƒ‚Ì—p“r
-					texture_parameters_.format,	// ƒeƒNƒXƒ`ƒƒŒ`®
-					texture_parameters_.pool,	// ƒƒ‚ƒŠƒNƒ‰ƒX
+					texture_parameters_.width,	// ãƒ†ã‚¯ã‚¹ãƒãƒ£ã‚µã‚¤ã‚º
+					texture_parameters_.height,	// ãƒ†ã‚¯ã‚¹ãƒãƒ£ã‚µã‚¤ã‚º
+					texture_parameters_.levels,	// ãƒŸãƒƒãƒ—ãƒ¬ãƒ™ãƒ«æ•°
+					texture_parameters_.usage,	// ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ç”¨é€”
+					texture_parameters_.format,	// ãƒ†ã‚¯ã‚¹ãƒãƒ£å½¢å¼
+					texture_parameters_.pool,	// ãƒ¡ãƒ¢ãƒªã‚¯ãƒ©ã‚¹
 					sprig::accept(texture_),
-					NULL	// —\–ñ
+					NULL	// äºˆç´„
 					)))
 				{
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒeƒNƒXƒ`ƒƒ¶¬‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("ãƒ†ã‚¯ã‚¹ãƒãƒ£ç”Ÿæˆã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return result;
 				}
 				if (FAILED(result = texture_->GetSurfaceLevel(0, sprig::accept(surface_)))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒeƒNƒXƒ`ƒƒ‚©‚çƒT[ƒtƒFƒCƒXæ“¾‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("ãƒ†ã‚¯ã‚¹ãƒãƒ£ã‹ã‚‰ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return result;
 				}
 				if (FAILED(result = surface_->GetDesc(&surface_desc_))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒT[ƒtƒFƒCƒXî•ñ‚Ìæ“¾‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹æƒ…å ±ã®å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return result;
 				}
 				return result;
@@ -387,7 +387,7 @@ namespace sprig {
 	}	// namespace dg
 }	// namespace sprig
 
-//	COMMENT: ’ŠÛƒNƒ‰ƒX‚Æ‚µ‚Ä“o˜^
+//	COMMENT: æŠ½è±¡ã‚¯ãƒ©ã‚¹ã¨ã—ã¦ç™»éŒ²
 BOOST_SERIALIZATION_ASSUME_ABSTRACT(sprig::dg::texture_manager_base);
 
 #endif	// #ifndef SPRIG_DG_TEXTURE_MANAGER_HPP

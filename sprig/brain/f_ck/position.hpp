@@ -26,14 +26,14 @@ namespace sprig {
 			//
 			// position_out_of_range
 			//
-			//	COMMENT: �ʒu���o�b�t�@�͈̔͊O���w�����Ƃ��ɓ��������O
+			//	COMMENT: 位置がバッファの範囲外を指したときに投げられる例外
 			//
 			SPRIG_EXCEPTION_INHERIT_DECL(position_out_of_range, brain_exception);
 
 			//
 			// position_out_of_range_forward, position_out_of_range_backward
 			//
-			//	COMMENT: �ʒu���o�b�t�@�͈̔͊O�i�O���܂��͌���j���w�����Ƃ��ɓ��������O
+			//	COMMENT: 位置がバッファの範囲外（前方または後方）を指したときに投げられる例外
 			//
 			SPRIG_EXCEPTION_INHERIT_DECL(position_out_of_range_forward, position_out_of_range);
 			SPRIG_EXCEPTION_INHERIT_DECL(position_out_of_range_backward, position_out_of_range);
@@ -41,24 +41,24 @@ namespace sprig {
 			//
 			// position_bad_assign
 			//
-			//	COMMENT: �ʒu����Ŏ��s�����Ƃ��ɓ��������O
+			//	COMMENT: 位置代入で失敗したときに投げられる例外
 			//
 			SPRIG_EXCEPTION_INHERIT_DECL(position_bad_assign, brain_exception);
 
 			//
 			// position_expired
 			//
-			//	COMMENT: �ʒu���w���o�b�t�@�����łɖ���������Ă���Ƃ��ɓ��������O
+			//	COMMENT: 位置が指すバッファがすでに無効化されているときに投げられる例外
 			//
 			SPRIG_EXCEPTION_INHERIT_DECL(position_expired, brain_exception);
 
 			//
 			// bf_position
 			//
-			//	COMMENT: ���������Q�Ƃ���ʒu�N���X
-			//	COMMENT: �R���X�g���N�^�Ń������N���X����шʒu�^�O���󂯂Ƃ�
-			//	COMMENT: �v���O�����ʒu���w���ꍇ�A�ʒu���͈͊O���w�����Ƃ���O�𓊂���
-			//	COMMENT: �R�s�[���ꂽ�ʒu�N���X�́A�������ʒu���w�����̂Ɠ��l�ł���
+			//	COMMENT: メモリを参照する位置クラス
+			//	COMMENT: コンストラクタでメモリクラスおよび位置タグを受けとる
+			//	COMMENT: プログラム位置を指す場合、位置が範囲外を指したとき例外を投げる
+			//	COMMENT: コピーされた位置クラスは、メモリ位置を指すものと同様である
 			//
 			template<
 				typename Types = use_default

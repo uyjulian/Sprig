@@ -27,8 +27,8 @@ namespace sprig {
 			//
 			// bf_shared_buffer
 			//
-			//	COMMENT: ƒƒ‚ƒŠ‚ðŠ—L‚·‚éƒoƒbƒtƒ@ƒNƒ‰ƒX
-			//	COMMENT: ƒvƒƒOƒ‰ƒ€ƒoƒbƒtƒ@‚Æƒƒ‚ƒŠƒoƒbƒtƒ@‚Í‹¤—L‚³‚ê‚Ä‚¢‚é
+			//	COMMENT: ãƒ¡ãƒ¢ãƒªã‚’æ‰€æœ‰ã™ã‚‹ãƒãƒƒãƒ•ã‚¡ã‚¯ãƒ©ã‚¹
+			//	COMMENT: ãƒ—ãƒ­ã‚°ãƒ©ãƒ ãƒãƒƒãƒ•ã‚¡ã¨ãƒ¡ãƒ¢ãƒªãƒãƒƒãƒ•ã‚¡ã¯å…±æœ‰ã•ã‚Œã¦ã„ã‚‹
 			//
 			template<
 				typename Types = use_default,

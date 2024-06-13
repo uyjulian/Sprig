@@ -44,7 +44,7 @@ namespace sprig {
 	}	// namespace dg
 }	// namespace sprig
 
-//	COMMENT: ’ŠÛƒNƒ‰ƒX‚Æ‚µ‚Ä“o˜^
+//	COMMENT: æŠ½è±¡ã‚¯ãƒ©ã‚¹ã¨ã—ã¦ç™»éŒ²
 BOOST_SERIALIZATION_ASSUME_ABSTRACT(sprig::dg::sprite_drawer_filter);
 
 #endif	// #ifndef SPRIG_DG_SPRITE_DRAWER_FILTER_HPP

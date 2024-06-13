@@ -83,11 +83,11 @@ namespace sprig {
 			typedef boost::optional<sprig::call_traits<color_value_type>::param_type> color_param_type;
 			typedef D3DCOLOR hit_threshold_type;
 		public:
-			// •`‰æ‚Ì‚½‚ß‚Ìƒ[ƒN
+			// æç”»ã®ãŸã‚ã®ãƒ¯ãƒ¼ã‚¯
 			typedef typename sprite_drawer_filter_type::result_type filtered_value_type;
 			typedef boost::optional<filtered_value_type> filtered_type;
 		public:
-			// ƒqƒbƒgƒeƒXƒg‚Ì‚½‚ß‚Ìƒ[ƒN
+			// ãƒ’ãƒƒãƒˆãƒ†ã‚¹ãƒˆã®ãŸã‚ã®ãƒ¯ãƒ¼ã‚¯
 			typedef RECT surface_rect_value_type;
 			typedef D3DXMATRIX matrix_value_type;
 			typedef D3DLOCKED_RECT locked_rect_value_type;
@@ -95,7 +95,7 @@ namespace sprig {
 			typedef boost::optional<matrix_value_type> matrix_type;
 			typedef boost::optional<locked_rect_value_type> locked_rect_type;
 		public:
-			// ƒuƒŒƒ“ƒhƒ‚[ƒh
+			// ãƒ–ãƒ¬ãƒ³ãƒ‰ãƒ¢ãƒ¼ãƒ‰
 			enum BLEND_MODE {
 				BLEND_MODE_DEFAULT = 1,
 				BLEND_MODE_ALPHA = 2,
@@ -107,7 +107,7 @@ namespace sprig {
 				BLEND_MODE_DARKEN = 8,
 				BLEND_MODE_SCREEN = 9
 			};
-			// ƒqƒbƒgƒeƒXƒgƒ‚[ƒh
+			// ãƒ’ãƒƒãƒˆãƒ†ã‚¹ãƒˆãƒ¢ãƒ¼ãƒ‰
 			enum HIT_TEST_MODE {
 				HIT_TEST_MODE_NONE = 1,
 				HIT_TEST_MODE_RECT = 2,
@@ -125,7 +125,7 @@ namespace sprig {
 					return HIT_TEST_MODE_COLOR;
 				default:
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("value"), value);
-					SPRIG_DG_ERROR("’l‚©‚çƒqƒbƒgƒeƒXƒgƒ‚[ƒh‚Ö‚Ì•ÏŠ·‚É¸”s‚µ‚Ü‚µ‚½", bad_operation);
+					SPRIG_DG_ERROR("å€¤ã‹ã‚‰ãƒ’ãƒƒãƒˆãƒ†ã‚¹ãƒˆãƒ¢ãƒ¼ãƒ‰ã¸ã®å¤‰æ›ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_operation);
 					return HIT_TEST_MODE();
 				}
 			}
@@ -152,7 +152,7 @@ namespace sprig {
 					return BLEND_MODE_SCREEN;
 				default:
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("value"), value);
-					SPRIG_DG_ERROR("’l‚©‚çƒuƒŒƒ“ƒhƒ‚[ƒh‚Ö‚Ì•ÏŠ·‚É¸”s‚µ‚Ü‚µ‚½", bad_operation);
+					SPRIG_DG_ERROR("å€¤ã‹ã‚‰ãƒ–ãƒ¬ãƒ³ãƒ‰ãƒ¢ãƒ¼ãƒ‰ã¸ã®å¤‰æ›ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_operation);
 					return BLEND_MODE();
 				}
 			}
@@ -171,10 +171,10 @@ namespace sprig {
 			HIT_TEST_MODE hit_test_mode_;
 			hit_threshold_type hit_threshold_;
 		private:
-			// •`‰æ‚Ì‚½‚ß‚Ìƒ[ƒN
+			// æç”»ã®ãŸã‚ã®ãƒ¯ãƒ¼ã‚¯
 			filtered_type filtered_;
 		private:
-			// ƒqƒbƒgƒeƒXƒg‚Ì‚½‚ß‚Ìƒ[ƒN
+			// ãƒ’ãƒƒãƒˆãƒ†ã‚¹ãƒˆã®ãŸã‚ã®ãƒ¯ãƒ¼ã‚¯
 			surface_rect_type surface_rect_;
 			matrix_type matrix_;
 			locked_rect_type locked_rect_;
@@ -195,9 +195,9 @@ namespace sprig {
 				value_info_section_line(TEXT("blend_mode_"), blend_mode_, logger);
 				value_info_section_line(TEXT("hit_test_mode_"), hit_test_mode_, logger);
 				value_info_section_line(TEXT("hit_threshold_"), hit_threshold_, logger);
-				// •`‰æ‚Ì‚½‚ß‚Ìƒ[ƒN
+				// æç”»ã®ãŸã‚ã®ãƒ¯ãƒ¼ã‚¯
 				value_info_section_line(TEXT("filtered_"), filtered_, logger);
-				// ƒqƒbƒgƒeƒXƒg‚Ì‚½‚ß‚Ìƒ[ƒN
+				// ãƒ’ãƒƒãƒˆãƒ†ã‚¹ãƒˆã®ãŸã‚ã®ãƒ¯ãƒ¼ã‚¯
 				value_info_section_line(TEXT("surface_rect_"), surface_rect_, logger);
 				value_info_section_line(TEXT("matrix_"), matrix_, logger);
 				value_info_section_line(TEXT("locked_rect_"), locked_rect_, logger);
@@ -219,7 +219,7 @@ namespace sprig {
 
 				if (FAILED(result = texture_manager_.initialize(device, params))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒeƒNƒXƒ`ƒƒƒ}ƒl[ƒWƒƒ‚Ì‰Šú‰»‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("ãƒ†ã‚¯ã‚¹ãƒãƒ£ãƒãƒãƒ¼ã‚¸ãƒ£ã®åˆæœŸåŒ–ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return result;
 				}
 				return result;
@@ -230,12 +230,12 @@ namespace sprig {
 
 				if (FAILED(result = texture_manager_.reinitialize(device))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒeƒNƒXƒ`ƒƒƒ}ƒl[ƒWƒƒ‚Ì‰Šú‰»‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("ãƒ†ã‚¯ã‚¹ãƒãƒ£ãƒãƒãƒ¼ã‚¸ãƒ£ã®åˆæœŸåŒ–ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return result;
 				}
 				if (FAILED(result = sprite_drawer_filter_.reinitialize(device))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒtƒBƒ‹ƒ^‚Ì‰Šú‰»‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("ãƒ•ã‚£ãƒ«ã‚¿ã®åˆæœŸåŒ–ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return result;
 				}
 				return result;
@@ -248,11 +248,11 @@ namespace sprig {
 					return result;
 				}
 
-				// ƒtƒBƒ‹ƒ^‚Ì“K—p
+				// ãƒ•ã‚£ãƒ«ã‚¿ã®é©ç”¨
 				filtered_value_type filtered(sprite_drawer_filter_.apply(texture_manager_));
 				if (FAILED(result = filtered.first)) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒtƒBƒ‹ƒ^‚Ì“K—p‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+					SPRIG_DG_ERROR("ãƒ•ã‚£ãƒ«ã‚¿ã®é©ç”¨ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 					return result;
 				}
 
@@ -280,12 +280,12 @@ namespace sprig {
 					return result;
 				}
 
-				// ƒtƒBƒ‹ƒ^Œ‹‰Ê‚ª—LŒø‚©ƒ`ƒFƒbƒN
+				// ãƒ•ã‚£ãƒ«ã‚¿çµæœãŒæœ‰åŠ¹ã‹ãƒã‚§ãƒƒã‚¯
 				if (!filtered_->second) {
 					return result;
 				}
 
-				// À•W•ÏŠ·s—ñ‚Ìİ’è
+				// åº§æ¨™å¤‰æ›è¡Œåˆ—ã®è¨­å®š
 				if (FAILED(result = set_sprite_transform(
 					sprite,
 					scaling_param_type(scaling_),
@@ -294,15 +294,15 @@ namespace sprig {
 					)))
 				{
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("À•W•ÏŠ·s—ñ‚Ìİ’è‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+					SPRIG_DG_ERROR("åº§æ¨™å¤‰æ›è¡Œåˆ—ã®è¨­å®šã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 					return result;
 				}
 
 				if (blend_mode_ != BLEND_MODE_DEFAULT) {
-					// ƒXƒvƒ‰ƒCƒgƒtƒ‰ƒbƒVƒ…
+					// ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆãƒ•ãƒ©ãƒƒã‚·ãƒ¥
 					if (FAILED(result = sprite->Flush())) {
 						SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-						SPRIG_DG_ERROR("ƒXƒvƒ‰ƒCƒgƒtƒ‰ƒbƒVƒ…‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+						SPRIG_DG_ERROR("ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆãƒ•ãƒ©ãƒƒã‚·ãƒ¥ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 						return result;
 					}
 				}
@@ -313,56 +313,56 @@ namespace sprig {
 
 				switch (blend_mode_) {
 				case BLEND_MODE_ALPHA:
-					// ƒuƒŒƒ“ƒfƒBƒ“ƒO‚Ìİ’è
+					// ãƒ–ãƒ¬ãƒ³ãƒ‡ã‚£ãƒ³ã‚°ã®è¨­å®š
 					saver.modify(D3DRS_BLENDOP, D3DBLENDOP_ADD);
 					saver.modify(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
 					saver.modify(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
 					break;
 				case BLEND_MODE_ADD_ALPHA:
-					// ƒuƒŒƒ“ƒfƒBƒ“ƒO‚Ìİ’è
+					// ãƒ–ãƒ¬ãƒ³ãƒ‡ã‚£ãƒ³ã‚°ã®è¨­å®š
 					saver.modify(D3DRS_BLENDOP, D3DBLENDOP_ADD);
 					saver.modify(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
 					saver.modify(D3DRS_DESTBLEND, D3DBLEND_ONE);
 					break;
 				case BLEND_MODE_ADDITIVE:
-					// ƒuƒŒƒ“ƒfƒBƒ“ƒO‚Ìİ’è
+					// ãƒ–ãƒ¬ãƒ³ãƒ‡ã‚£ãƒ³ã‚°ã®è¨­å®š
 					saver.modify(D3DRS_BLENDOP, D3DBLENDOP_ADD);
 					saver.modify(D3DRS_SRCBLEND, D3DBLEND_ONE);
 					saver.modify(D3DRS_DESTBLEND, D3DBLEND_ONE);
 					break;
 				case BLEND_MODE_SUBTRACTIVE:
-					// ƒuƒŒƒ“ƒfƒBƒ“ƒO‚Ìİ’è
+					// ãƒ–ãƒ¬ãƒ³ãƒ‡ã‚£ãƒ³ã‚°ã®è¨­å®š
 					saver.modify(D3DRS_BLENDOP, D3DBLENDOP_REVSUBTRACT);
 					saver.modify(D3DRS_SRCBLEND, D3DBLEND_ZERO);
 					saver.modify(D3DRS_DESTBLEND, D3DBLEND_INVSRCCOLOR);
 					break;
 				case BLEND_MODE_MULTIPLICATIVE:
-					// ƒuƒŒƒ“ƒfƒBƒ“ƒO‚Ìİ’è
+					// ãƒ–ãƒ¬ãƒ³ãƒ‡ã‚£ãƒ³ã‚°ã®è¨­å®š
 					saver.modify(D3DRS_BLENDOP, D3DBLENDOP_ADD);
 					saver.modify(D3DRS_SRCBLEND, D3DBLEND_ZERO);
 					saver.modify(D3DRS_DESTBLEND, D3DBLEND_SRCCOLOR);
 					break;
 				case BLEND_MODE_LIGHTEN:
-					// ƒuƒŒƒ“ƒfƒBƒ“ƒO‚Ìİ’è
+					// ãƒ–ãƒ¬ãƒ³ãƒ‡ã‚£ãƒ³ã‚°ã®è¨­å®š
 					saver.modify(D3DRS_BLENDOP, D3DBLENDOP_MAX);
 					saver.modify(D3DRS_SRCBLEND, D3DBLEND_ONE);
 					saver.modify(D3DRS_DESTBLEND, D3DBLEND_ONE);
 					break;
 				case BLEND_MODE_DARKEN:
-					// ƒuƒŒƒ“ƒfƒBƒ“ƒO‚Ìİ’è
+					// ãƒ–ãƒ¬ãƒ³ãƒ‡ã‚£ãƒ³ã‚°ã®è¨­å®š
 					saver.modify(D3DRS_BLENDOP, D3DBLENDOP_MIN);
 					saver.modify(D3DRS_SRCBLEND, D3DBLEND_ONE);
 					saver.modify(D3DRS_DESTBLEND, D3DBLEND_ONE);
 					break;
 				case BLEND_MODE_SCREEN:
-					// ƒuƒŒƒ“ƒfƒBƒ“ƒO‚Ìİ’è
+					// ãƒ–ãƒ¬ãƒ³ãƒ‡ã‚£ãƒ³ã‚°ã®è¨­å®š
 					saver.modify(D3DRS_BLENDOP, D3DBLENDOP_ADD);
 					saver.modify(D3DRS_SRCBLEND, D3DBLEND_INVDESTCOLOR);
 					saver.modify(D3DRS_DESTBLEND, D3DBLEND_ONE);
 					break;
 				}
 
-				// ƒXƒvƒ‰ƒCƒg•`‰æ
+				// ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆæç”»
 				if (FAILED(result = draw_sprite(
 					sprite,
 					filtered_->second->get_texture(),
@@ -373,15 +373,15 @@ namespace sprig {
 					)))
 				{
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒXƒvƒ‰ƒCƒg•`‰æ‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+					SPRIG_DG_ERROR("ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆæç”»ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 					return result;
 				}
 
 				if (blend_mode_ != BLEND_MODE_DEFAULT) {
-					// ƒXƒvƒ‰ƒCƒgƒtƒ‰ƒbƒVƒ…
+					// ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆãƒ•ãƒ©ãƒƒã‚·ãƒ¥
 					if (FAILED(result = sprite->Flush())) {
 						SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-						SPRIG_DG_ERROR("ƒXƒvƒ‰ƒCƒgƒtƒ‰ƒbƒVƒ…‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+						SPRIG_DG_ERROR("ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆãƒ•ãƒ©ãƒƒã‚·ãƒ¥ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 						return result;
 					}
 				}
@@ -401,7 +401,7 @@ namespace sprig {
 				case HIT_TEST_MODE_RECT:
 				case HIT_TEST_MODE_COLOR:
 					{
-						// ƒT[ƒtƒFƒCƒX‚Ì—LŒø—Ìˆæ‚Éû‚Ü‚é‚æ‚¤•â³‚µ‚½‹éŒ`
+						// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®æœ‰åŠ¹é ˜åŸŸã«åã¾ã‚‹ã‚ˆã†è£œæ­£ã—ãŸçŸ©å½¢
 						if (rect_) {
 							if (FAILED(result = normalize_surface_rect(
 								surface_rect,
@@ -411,7 +411,7 @@ namespace sprig {
 								)))
 							{
 								SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-								SPRIG_DG_ERROR("ƒT[ƒtƒFƒCƒX‚Ì—LŒø—Ìˆæ‹éŒ`‚ÌŒvZ‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+								SPRIG_DG_ERROR("ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®æœ‰åŠ¹é ˜åŸŸçŸ©å½¢ã®è¨ˆç®—ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 								return result;
 							}
 						} else {
@@ -431,7 +431,7 @@ namespace sprig {
 				case HIT_TEST_MODE_RECT:
 				case HIT_TEST_MODE_COLOR:
 					{
-						// À•W‹t•ÏŠ·s—ñ‚Ìì¬
+						// åº§æ¨™é€†å¤‰æ›è¡Œåˆ—ã®ä½œæˆ
 						matrix_inverse_transformation_2d(
 							matrix,
 							scaling_param_type(scaling_),
@@ -446,7 +446,7 @@ namespace sprig {
 				switch (hit_test_mode_) {
 				case HIT_TEST_MODE_COLOR:
 					{
-						// ƒT[ƒtƒFƒCƒX‚ÌƒƒbƒN
+						// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®ãƒ­ãƒƒã‚¯
 						if (FAILED(result = lock_rect(
 							locked_rect,
 							texture_manager_.get_surface(),
@@ -456,7 +456,7 @@ namespace sprig {
 							)))
 						{
 							SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-							SPRIG_DG_ERROR("ƒT[ƒtƒFƒCƒX‚ÌƒƒbƒN‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+							SPRIG_DG_ERROR("ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®ãƒ­ãƒƒã‚¯ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 							return result;
 						}
 					}
@@ -484,13 +484,13 @@ namespace sprig {
 				switch (hit_test_mode_) {
 				case HIT_TEST_MODE_COLOR:
 					{
-						// ƒT[ƒtƒFƒCƒX‚ÌƒAƒ“ƒƒbƒN
+						// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®ã‚¢ãƒ³ãƒ­ãƒƒã‚¯
 						if (FAILED(result = unlock_rect(
 							texture_manager_.get_surface()
 							)))
 						{
 							SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-							SPRIG_DG_ERROR("ƒT[ƒtƒFƒCƒX‚ÌƒAƒ“ƒƒbƒN‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+							SPRIG_DG_ERROR("ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®ã‚¢ãƒ³ãƒ­ãƒƒã‚¯ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 							return result;
 						}
 					}
@@ -512,20 +512,20 @@ namespace sprig {
 				switch (hit_test_mode_) {
 				case HIT_TEST_MODE_RECT:
 					{
-						// ƒT[ƒtƒFƒCƒXÀ•W‚É‚¨‚¯‚éƒqƒbƒgƒeƒXƒg“_
+						// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹åº§æ¨™ã«ãŠã‘ã‚‹ãƒ’ãƒƒãƒˆãƒ†ã‚¹ãƒˆç‚¹
 						coord_type hit_test_point;
 						vec3_transformation_coord(hit_test_point, point, *matrix_);
 						if (center_) {
 							hit_test_point += *center_;
 						}
 
-						// ƒqƒbƒgƒeƒXƒg“_
+						// ãƒ’ãƒƒãƒˆãƒ†ã‚¹ãƒˆç‚¹
 						POINT const surface_point = make_point(
 							static_cast<LONG>(hit_test_point.x),
 							static_cast<LONG>(hit_test_point.y)
 							);
 
-						// ƒqƒbƒgƒeƒXƒg“_‚ª‹éŒ`“à‚É‚ ‚é‚©ƒ`ƒFƒbƒN
+						// ãƒ’ãƒƒãƒˆãƒ†ã‚¹ãƒˆç‚¹ãŒçŸ©å½¢å†…ã«ã‚ã‚‹ã‹ãƒã‚§ãƒƒã‚¯
 						if (surface_point.x < surface_rect_->left
 							|| surface_point.x > surface_rect_->right
 							|| surface_point.y < surface_rect_->top
@@ -539,20 +539,20 @@ namespace sprig {
 					break;
 				case HIT_TEST_MODE_COLOR:
 					{
-						// ƒT[ƒtƒFƒCƒXÀ•W‚É‚¨‚¯‚éƒqƒbƒgƒeƒXƒg“_
+						// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹åº§æ¨™ã«ãŠã‘ã‚‹ãƒ’ãƒƒãƒˆãƒ†ã‚¹ãƒˆç‚¹
 						coord_type hit_test_point;
 						vec3_transformation_coord(hit_test_point, point, *matrix_);
 						if (center_) {
 							hit_test_point += *center_;
 						}
 
-						// ƒqƒbƒgƒeƒXƒg“_
+						// ãƒ’ãƒƒãƒˆãƒ†ã‚¹ãƒˆç‚¹
 						POINT const surface_point = make_point(
 							static_cast<LONG>(hit_test_point.x),
 							static_cast<LONG>(hit_test_point.y)
 							);
 
-						// ƒqƒbƒgƒeƒXƒg“_‚ª‹éŒ`“à‚É‚ ‚é‚©ƒ`ƒFƒbƒN
+						// ãƒ’ãƒƒãƒˆãƒ†ã‚¹ãƒˆç‚¹ãŒçŸ©å½¢å†…ã«ã‚ã‚‹ã‹ãƒã‚§ãƒƒã‚¯
 						if (surface_point.x < surface_rect_->left
 							|| surface_point.x > surface_rect_->right
 							|| surface_point.y < surface_rect_->top
@@ -563,7 +563,7 @@ namespace sprig {
 							return result;
 						}
 
-						// ƒqƒbƒgƒeƒXƒg“_‚ÌƒJƒ‰[’l‚ªè‡’lˆÈã‚©ƒ`ƒFƒbƒN
+						// ãƒ’ãƒƒãƒˆãƒ†ã‚¹ãƒˆç‚¹ã®ã‚«ãƒ©ãƒ¼å€¤ãŒé–¾å€¤ä»¥ä¸Šã‹ãƒã‚§ãƒƒã‚¯
 						D3DCOLOR const color = get_pixel(*locked_rect_, surface_point);
 						if ((color >> 24 & 0xff) < (hit_threshold_ >> 24 & 0xff)
 							|| (color >> 16 & 0xff) < (hit_threshold_ >> 16 & 0xff)
@@ -588,7 +588,7 @@ namespace sprig {
 				return result;
 			}
 			coord_type to_local_coord(typename sprig::call_traits<coord_type>::param_type global) const {
-				// À•W•ÏŠ·s—ñ‚Ìì¬
+				// åº§æ¨™å¤‰æ›è¡Œåˆ—ã®ä½œæˆ
 				matrix_value_type matrix;
 				matrix_transformation_2d(
 					matrix,
@@ -597,14 +597,14 @@ namespace sprig {
 					translation_param_type(translation_)
 					);
 
-				// ƒ[ƒJƒ‹À•W‚Ö•ÏŠ·
+				// ãƒ­ãƒ¼ã‚«ãƒ«åº§æ¨™ã¸å¤‰æ›
 				coord_type local;
 				vec3_transformation_coord(local, global, matrix);
 
 				return local;
 			}
 			coord_type to_global_coord(typename sprig::call_traits<coord_type>::param_type local) const {
-				// À•W‹t•ÏŠ·s—ñ‚Ìì¬
+				// åº§æ¨™é€†å¤‰æ›è¡Œåˆ—ã®ä½œæˆ
 				matrix_value_type matrix;
 				matrix_inverse_transformation_2d(
 					matrix,
@@ -613,7 +613,7 @@ namespace sprig {
 					translation_param_type(translation_)
 					);
 
-				// ƒOƒ[ƒoƒ‹À•W‚Ö•ÏŠ·
+				// ã‚°ãƒ­ãƒ¼ãƒãƒ«åº§æ¨™ã¸å¤‰æ›
 				coord_type global;
 				vec3_transformation_coord(global, local, matrix);
 

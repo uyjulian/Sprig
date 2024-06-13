@@ -122,33 +122,33 @@ namespace sprig {
 			device_manager()
 				: window_handle_(NULL)
 			{
-				// ƒEƒBƒ“ƒhƒEƒNƒ‰ƒX‚Ìİ’è
-				window_class_.style = CS_BYTEALIGNCLIENT | CS_VREDRAW | CS_HREDRAW;	// ƒNƒ‰ƒXƒXƒ^ƒCƒ‹
-				window_class_.lpfnWndProc = NULL;	// ƒEƒBƒ“ƒhƒEƒvƒƒV[ƒWƒƒ
-				window_class_.cbClsExtra = 0;	// •â‘«ƒƒ‚ƒŠƒuƒƒbƒN‚ÌƒTƒCƒY
-				window_class_.cbWndExtra = 0;	// •â‘«ƒƒ‚ƒŠƒuƒƒbƒN‚ÌƒTƒCƒY
-				window_class_.hInstance = ::GetModuleHandle(NULL);	// ƒCƒ“ƒXƒ^ƒ“ƒX
-				window_class_.hIcon = ::LoadIcon(NULL, IDI_APPLICATION);	// ƒAƒCƒRƒ“
-				window_class_.hCursor = ::LoadCursor(NULL, IDC_ARROW);	// ƒJ[ƒ\ƒ‹
-				window_class_.hbrBackground = (HBRUSH)COLOR_WINDOW + 1;	// ”wŒiF
-				window_class_.lpszMenuName = NULL;	// ƒƒjƒ…[–¼
-				window_class_.lpszClassName = NULL;	// ƒNƒ‰ƒX–¼
+				// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚¯ãƒ©ã‚¹ã®è¨­å®š
+				window_class_.style = CS_BYTEALIGNCLIENT | CS_VREDRAW | CS_HREDRAW;	// ã‚¯ãƒ©ã‚¹ã‚¹ã‚¿ã‚¤ãƒ«
+				window_class_.lpfnWndProc = NULL;	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒ—ãƒ­ã‚·ãƒ¼ã‚¸ãƒ£
+				window_class_.cbClsExtra = 0;	// è£œè¶³ãƒ¡ãƒ¢ãƒªãƒ–ãƒ­ãƒƒã‚¯ã®ã‚µã‚¤ã‚º
+				window_class_.cbWndExtra = 0;	// è£œè¶³ãƒ¡ãƒ¢ãƒªãƒ–ãƒ­ãƒƒã‚¯ã®ã‚µã‚¤ã‚º
+				window_class_.hInstance = ::GetModuleHandle(NULL);	// ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
+				window_class_.hIcon = ::LoadIcon(NULL, IDI_APPLICATION);	// ã‚¢ã‚¤ã‚³ãƒ³
+				window_class_.hCursor = ::LoadCursor(NULL, IDC_ARROW);	// ã‚«ãƒ¼ã‚½ãƒ«
+				window_class_.hbrBackground = (HBRUSH)COLOR_WINDOW + 1;	// èƒŒæ™¯è‰²
+				window_class_.lpszMenuName = NULL;	// ãƒ¡ãƒ‹ãƒ¥ãƒ¼å
+				window_class_.lpszClassName = NULL;	// ã‚¯ãƒ©ã‚¹å
 
-				// ƒvƒŒƒ[ƒ“ƒgƒpƒ‰ƒ[ƒ^‚Ìİ’è
-				present_parameters_.BackBufferWidth = 0;	// ƒoƒbƒNƒoƒbƒtƒ@ƒTƒCƒY
-				present_parameters_.BackBufferHeight = 0;	// ƒoƒbƒNƒoƒbƒtƒ@ƒTƒCƒY
-				present_parameters_.BackBufferFormat = D3DFMT_UNKNOWN;	// ƒoƒbƒNƒoƒbƒtƒ@Œ`®
-				present_parameters_.BackBufferCount = 1;	// ƒoƒbƒNƒoƒbƒtƒ@”
-				present_parameters_.MultiSampleType = D3DMULTISAMPLE_NONE;	// ƒ}ƒ‹ƒ`ƒTƒ“ƒvƒŠƒ“ƒO‚ÌƒŒƒxƒ‹
-				present_parameters_.MultiSampleQuality = 0;	// ƒ}ƒ‹ƒ`ƒTƒ“ƒvƒŠƒ“ƒO‚Ì•i¿ƒŒƒxƒ‹
-				present_parameters_.SwapEffect = D3DSWAPEFFECT_DISCARD;	// ƒXƒƒbƒvƒGƒtƒFƒNƒg
-				present_parameters_.hDeviceWindow = NULL;	// ƒfƒoƒCƒXƒEƒBƒ“ƒhƒE
-				present_parameters_.Windowed = TRUE;	// ƒEƒBƒ“ƒhƒEƒ‚[ƒh‚©
-				present_parameters_.EnableAutoDepthStencil = FALSE;	// [“xƒoƒbƒtƒ@‚ğ©“]‘—‚ÉŠÇ—‚³‚¹‚é‚©
-				present_parameters_.AutoDepthStencilFormat = D3DFMT_UNKNOWN;	// [“xƒoƒbƒtƒ@Œ`®
-				present_parameters_.Flags = 0;	// ƒIƒvƒVƒ‡ƒ“‚Ìƒtƒ‰ƒO
-				present_parameters_.FullScreen_RefreshRateInHz = D3DPRESENT_RATE_DEFAULT;	// ƒŠƒtƒŒƒbƒVƒ…ƒŒ[ƒg
-				present_parameters_.PresentationInterval = D3DPRESENT_INTERVAL_DEFAULT;	// ƒvƒŒƒ[ƒ“ƒe[ƒVƒ‡ƒ“ŠÔŠu
+				// ãƒ—ãƒ¬ã‚¼ãƒ³ãƒˆãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®è¨­å®š
+				present_parameters_.BackBufferWidth = 0;	// ãƒãƒƒã‚¯ãƒãƒƒãƒ•ã‚¡ã‚µã‚¤ã‚º
+				present_parameters_.BackBufferHeight = 0;	// ãƒãƒƒã‚¯ãƒãƒƒãƒ•ã‚¡ã‚µã‚¤ã‚º
+				present_parameters_.BackBufferFormat = D3DFMT_UNKNOWN;	// ãƒãƒƒã‚¯ãƒãƒƒãƒ•ã‚¡å½¢å¼
+				present_parameters_.BackBufferCount = 1;	// ãƒãƒƒã‚¯ãƒãƒƒãƒ•ã‚¡æ•°
+				present_parameters_.MultiSampleType = D3DMULTISAMPLE_NONE;	// ãƒãƒ«ãƒã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ã®ãƒ¬ãƒ™ãƒ«
+				present_parameters_.MultiSampleQuality = 0;	// ãƒãƒ«ãƒã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ã®å“è³ªãƒ¬ãƒ™ãƒ«
+				present_parameters_.SwapEffect = D3DSWAPEFFECT_DISCARD;	// ã‚¹ãƒ¯ãƒƒãƒ—ã‚¨ãƒ•ã‚§ã‚¯ãƒˆ
+				present_parameters_.hDeviceWindow = NULL;	// ãƒ‡ãƒã‚¤ã‚¹ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦
+				present_parameters_.Windowed = TRUE;	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒ¢ãƒ¼ãƒ‰ã‹
+				present_parameters_.EnableAutoDepthStencil = FALSE;	// æ·±åº¦ãƒãƒƒãƒ•ã‚¡ã‚’è‡ªè»¢é€ã«ç®¡ç†ã•ã›ã‚‹ã‹
+				present_parameters_.AutoDepthStencilFormat = D3DFMT_UNKNOWN;	// æ·±åº¦ãƒãƒƒãƒ•ã‚¡å½¢å¼
+				present_parameters_.Flags = 0;	// ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã®ãƒ•ãƒ©ã‚°
+				present_parameters_.FullScreen_RefreshRateInHz = D3DPRESENT_RATE_DEFAULT;	// ãƒªãƒ•ãƒ¬ãƒƒã‚·ãƒ¥ãƒ¬ãƒ¼ãƒˆ
+				present_parameters_.PresentationInterval = D3DPRESENT_INTERVAL_DEFAULT;	// ãƒ—ãƒ¬ã‚¼ãƒ³ãƒ†ãƒ¼ã‚·ãƒ§ãƒ³é–“éš”
 			}
 			~device_manager() throw() {
 				switch (init_params_.mode) {
@@ -158,11 +158,11 @@ namespace sprig {
 					if (window_handle_) {
 						if (!::DestroyWindow(window_handle_)) {
 							SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-							SPRIG_DG_OUTPUT("ƒEƒCƒ“ƒhƒE‚Ì”jŠü‚É¸”s‚µ‚Ü‚µ‚½");
+							SPRIG_DG_OUTPUT("ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã®ç ´æ£„ã«å¤±æ•—ã—ã¾ã—ãŸ");
 						}
 						if (!::UnregisterClass(window_class_.lpszClassName, NULL)) {
 							SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-							SPRIG_DG_OUTPUT("ƒEƒCƒ“ƒhƒEƒNƒ‰ƒX‚Ì“o˜^‰ğœ‚É¸”s‚µ‚Ü‚µ‚½");
+							SPRIG_DG_OUTPUT("ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã‚¯ãƒ©ã‚¹ã®ç™»éŒ²è§£é™¤ã«å¤±æ•—ã—ã¾ã—ãŸ");
 						}
 					}
 					break;
@@ -175,10 +175,10 @@ namespace sprig {
 
 				init_params_ = params;
 
-				// ƒNƒ‰ƒX–¼‚Ìİ’è
+				// ã‚¯ãƒ©ã‚¹åã®è¨­å®š
 				window_class_.lpszClassName = init_params_.class_name.c_str();
 
-				// ƒEƒBƒ“ƒhƒEƒvƒƒV[ƒWƒƒ‚Ìİ’è
+				// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒ—ãƒ­ã‚·ãƒ¼ã‚¸ãƒ£ã®è¨­å®š
 				switch (init_params_.mode) {
 				case SPRIG_DG_DEVICE_MODE_WINDOW:
 					window_class_.lpfnWndProc = static_cast<WNDPROC>(window_procedure);
@@ -188,138 +188,138 @@ namespace sprig {
 					break;
 				}
 
-				// ƒEƒBƒ“ƒhƒEƒNƒ‰ƒX‚Ì“o˜^
+				// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚¯ãƒ©ã‚¹ã®ç™»éŒ²
 				if (!::RegisterClass(&window_class_)) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒEƒCƒ“ƒhƒEƒNƒ‰ƒX‚Ì“o˜^‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã‚¯ãƒ©ã‚¹ã®ç™»éŒ²ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return E_FAIL;
 				}
 
-				// ƒƒCƒ“ƒEƒCƒ“ƒhƒE‚Ìì¬
+				// ãƒ¡ã‚¤ãƒ³ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã®ä½œæˆ
 				switch (init_params_.mode) {
 				case SPRIG_DG_DEVICE_MODE_WINDOW:
 					window_handle_ = ::CreateWindow(
-						init_params_.class_name.c_str(),	// ƒNƒ‰ƒX–¼
-						init_params_.window_name.c_str(),	// ƒEƒBƒ“ƒhƒEƒ^ƒCƒgƒ‹
-						WS_OVERLAPPED | WS_SYSMENU | WS_CAPTION | WS_MINIMIZEBOX | WS_VISIBLE,	// ƒEƒBƒ“ƒhƒEƒXƒ^ƒCƒ‹
-						CW_USEDEFAULT,	// ƒEƒBƒ“ƒhƒEˆÊ’u
-						CW_USEDEFAULT,	// ƒEƒBƒ“ƒhƒEˆÊ’u
-						static_cast<int>(init_params_.width + GetSystemMetrics(SM_CXDLGFRAME) * 2),	// ƒEƒBƒ“ƒhƒEƒTƒCƒY
-						static_cast<int>(init_params_.height + GetSystemMetrics(SM_CYDLGFRAME) * 2 + GetSystemMetrics(SM_CYCAPTION)),	// ƒEƒBƒ“ƒhƒEƒTƒCƒY
-						NULL,	// eƒEƒBƒ“ƒhƒE
-						NULL,	// ƒƒjƒ…[
-						window_class_.hInstance,	// ƒCƒ“ƒXƒ^ƒ“ƒX
-						NULL	// ƒEƒBƒ“ƒhƒEì¬ƒf[ƒ^‚ÌƒAƒhƒŒƒX
+						init_params_.class_name.c_str(),	// ã‚¯ãƒ©ã‚¹å
+						init_params_.window_name.c_str(),	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚¿ã‚¤ãƒˆãƒ«
+						WS_OVERLAPPED | WS_SYSMENU | WS_CAPTION | WS_MINIMIZEBOX | WS_VISIBLE,	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚¹ã‚¿ã‚¤ãƒ«
+						CW_USEDEFAULT,	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ä½ç½®
+						CW_USEDEFAULT,	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ä½ç½®
+						static_cast<int>(init_params_.width + GetSystemMetrics(SM_CXDLGFRAME) * 2),	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚µã‚¤ã‚º
+						static_cast<int>(init_params_.height + GetSystemMetrics(SM_CYDLGFRAME) * 2 + GetSystemMetrics(SM_CYCAPTION)),	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚µã‚¤ã‚º
+						NULL,	// è¦ªã‚¦ã‚£ãƒ³ãƒ‰ã‚¦
+						NULL,	// ãƒ¡ãƒ‹ãƒ¥ãƒ¼
+						window_class_.hInstance,	// ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
+						NULL	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ä½œæˆãƒ‡ãƒ¼ã‚¿ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
 						);
 					break;
 				case SPRIG_DG_DEVICE_MODE_BUFFER:
 					window_handle_ = ::CreateWindow(
-						init_params_.class_name.c_str(),	// ƒNƒ‰ƒX–¼
-						init_params_.window_name.c_str(),	// ƒEƒBƒ“ƒhƒEƒ^ƒCƒgƒ‹
-						WS_POPUP,	// ƒEƒBƒ“ƒhƒEƒXƒ^ƒCƒ‹
-						0,	// ƒEƒBƒ“ƒhƒEˆÊ’u
-						0,	// ƒEƒBƒ“ƒhƒEˆÊ’u
-						static_cast<int>(init_params_.width),	// ƒEƒBƒ“ƒhƒEƒTƒCƒY
-						static_cast<int>(init_params_.height),	// ƒEƒBƒ“ƒhƒEƒTƒCƒY
-						NULL,	// eƒEƒBƒ“ƒhƒE
-						NULL,	// ƒƒjƒ…[
-						window_class_.hInstance,	// ƒCƒ“ƒXƒ^ƒ“ƒX
-						NULL	// ƒEƒBƒ“ƒhƒEì¬ƒf[ƒ^‚ÌƒAƒhƒŒƒX
+						init_params_.class_name.c_str(),	// ã‚¯ãƒ©ã‚¹å
+						init_params_.window_name.c_str(),	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚¿ã‚¤ãƒˆãƒ«
+						WS_POPUP,	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚¹ã‚¿ã‚¤ãƒ«
+						0,	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ä½ç½®
+						0,	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ä½ç½®
+						static_cast<int>(init_params_.width),	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚µã‚¤ã‚º
+						static_cast<int>(init_params_.height),	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚µã‚¤ã‚º
+						NULL,	// è¦ªã‚¦ã‚£ãƒ³ãƒ‰ã‚¦
+						NULL,	// ãƒ¡ãƒ‹ãƒ¥ãƒ¼
+						window_class_.hInstance,	// ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
+						NULL	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ä½œæˆãƒ‡ãƒ¼ã‚¿ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
 						);
 					break;
 				}
 				if (window_handle_ == NULL) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒƒCƒ“ƒEƒCƒ“ƒhƒEì¬‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("ãƒ¡ã‚¤ãƒ³ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ä½œæˆã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return E_FAIL;
 				}
 
-				// Direct3DƒIƒuƒWƒFƒNƒg‚Ìì¬
+				// Direct3Dã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ä½œæˆ
 				object_ = Direct3DCreate9(D3D_SDK_VERSION);
 				if (object_ == NULL) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("Direct3DƒIƒuƒWƒFƒNƒg‚Ìì¬‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("Direct3Dã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ä½œæˆã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return E_FAIL;
 				}
 
-				// ƒoƒbƒNƒoƒbƒtƒ@ƒTƒCƒY‚Ìİ’è
+				// ãƒãƒƒã‚¯ãƒãƒƒãƒ•ã‚¡ã‚µã‚¤ã‚ºã®è¨­å®š
 				present_parameters_.BackBufferWidth = static_cast<UINT>(init_params_.width);
 				present_parameters_.BackBufferHeight = static_cast<UINT>(init_params_.height);
 
-				// ƒfƒoƒCƒX‚Ìì¬
-				SPRIG_DG_OUTPUT("ƒfƒoƒCƒXì¬‚ğs (ˆ—:ƒn[ƒhƒEƒFƒA ’¸“_ˆ—:ƒn[ƒhƒEƒFƒA)");
+				// ãƒ‡ãƒã‚¤ã‚¹ã®ä½œæˆ
+				SPRIG_DG_OUTPUT("ãƒ‡ãƒã‚¤ã‚¹ä½œæˆã‚’è©¦è¡Œ (å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢ é ‚ç‚¹å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢)");
 				if (FAILED(result = object_->CreateDevice(
-					D3DADAPTER_DEFAULT,	// ƒfƒBƒXƒvƒŒƒCƒAƒ_ƒvƒ^
-					D3DDEVTYPE_HAL,	// ˆ—:ƒn[ƒhƒEƒFƒA
-					window_handle_,	// ƒfƒoƒCƒXƒEƒBƒ“ƒhƒE
-					D3DCREATE_HARDWARE_VERTEXPROCESSING,	// ’¸“_ˆ—:ƒn[ƒhƒEƒFƒA
-					&present_parameters_,	// ƒpƒ‰ƒ[ƒ^
+					D3DADAPTER_DEFAULT,	// ãƒ‡ã‚£ã‚¹ãƒ—ãƒ¬ã‚¤ã‚¢ãƒ€ãƒ—ã‚¿
+					D3DDEVTYPE_HAL,	// å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢
+					window_handle_,	// ãƒ‡ãƒã‚¤ã‚¹ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦
+					D3DCREATE_HARDWARE_VERTEXPROCESSING,	// é ‚ç‚¹å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢
+					&present_parameters_,	// ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
 					sprig::accept(device_)
 					)))
 				{
-					SPRIG_DG_OUTPUT("ƒfƒoƒCƒXì¬‚É¸”s (ˆ—:ƒn[ƒhƒEƒFƒA ’¸“_ˆ—:ƒn[ƒhƒEƒFƒA)");
-					SPRIG_DG_OUTPUT("ƒfƒoƒCƒXì¬‚ğs (ˆ—:ƒn[ƒhƒEƒFƒA ’¸“_ˆ—:ƒ\ƒtƒgƒEƒFƒA)");
+					SPRIG_DG_OUTPUT("ãƒ‡ãƒã‚¤ã‚¹ä½œæˆã«å¤±æ•— (å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢ é ‚ç‚¹å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢)");
+					SPRIG_DG_OUTPUT("ãƒ‡ãƒã‚¤ã‚¹ä½œæˆã‚’è©¦è¡Œ (å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢ é ‚ç‚¹å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢)");
 					if (FAILED(result = object_->CreateDevice(
 						D3DADAPTER_DEFAULT,
-						D3DDEVTYPE_HAL,	// ˆ—:ƒn[ƒhƒEƒFƒA
+						D3DDEVTYPE_HAL,	// å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢
 						window_handle_,
-						D3DCREATE_SOFTWARE_VERTEXPROCESSING,	// ’¸“_ˆ—:ƒ\ƒtƒgƒEƒFƒA
+						D3DCREATE_SOFTWARE_VERTEXPROCESSING,	// é ‚ç‚¹å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢
 						&present_parameters_,
 						sprig::accept(device_)
 						)))
 					{
-						SPRIG_DG_OUTPUT("ƒfƒoƒCƒXì¬‚É¸”s (ˆ—:ƒn[ƒhƒEƒFƒA ’¸“_ˆ—:ƒ\ƒtƒgƒEƒFƒA)");
-						SPRIG_DG_OUTPUT("ƒfƒoƒCƒXì¬‚ğs (ˆ—:ƒ\ƒtƒgƒEƒFƒA ’¸“_ˆ—:ƒn[ƒhƒEƒFƒA)");
+						SPRIG_DG_OUTPUT("ãƒ‡ãƒã‚¤ã‚¹ä½œæˆã«å¤±æ•— (å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢ é ‚ç‚¹å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢)");
+						SPRIG_DG_OUTPUT("ãƒ‡ãƒã‚¤ã‚¹ä½œæˆã‚’è©¦è¡Œ (å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ é ‚ç‚¹å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢)");
 						if (FAILED(result = object_->CreateDevice(
 							D3DADAPTER_DEFAULT,
-							D3DDEVTYPE_REF,	// ˆ—:ƒ\ƒtƒgƒEƒFƒA
+							D3DDEVTYPE_REF,	// å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢
 							window_handle_,
-							D3DCREATE_HARDWARE_VERTEXPROCESSING,	// ’¸“_ˆ—:ƒn[ƒhƒEƒFƒA
+							D3DCREATE_HARDWARE_VERTEXPROCESSING,	// é ‚ç‚¹å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢
 							&present_parameters_,
 							sprig::accept(device_)
 							)))
 						{
-							SPRIG_DG_OUTPUT("ƒfƒoƒCƒXì¬‚É¸”s (ˆ—:ƒ\ƒtƒgƒEƒFƒA ’¸“_ˆ—:ƒn[ƒhƒEƒFƒA)");
-							SPRIG_DG_OUTPUT("ƒfƒoƒCƒXì¬‚ğs (ˆ—:ƒ\ƒtƒgƒEƒFƒA ’¸“_ˆ—:ƒ\ƒtƒgƒEƒFƒA)");
+							SPRIG_DG_OUTPUT("ãƒ‡ãƒã‚¤ã‚¹ä½œæˆã«å¤±æ•— (å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ é ‚ç‚¹å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢)");
+							SPRIG_DG_OUTPUT("ãƒ‡ãƒã‚¤ã‚¹ä½œæˆã‚’è©¦è¡Œ (å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ é ‚ç‚¹å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢)");
 							if (FAILED(result = object_->CreateDevice(
 								D3DADAPTER_DEFAULT,
-								D3DDEVTYPE_REF,	// ˆ—:ƒ\ƒtƒgƒEƒFƒA
+								D3DDEVTYPE_REF,	// å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢
 								window_handle_,
-								D3DCREATE_SOFTWARE_VERTEXPROCESSING,	// ’¸“_ˆ—:ƒ\ƒtƒgƒEƒFƒA
+								D3DCREATE_SOFTWARE_VERTEXPROCESSING,	// é ‚ç‚¹å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢
 								&present_parameters_,
 								sprig::accept(device_)
 								)))
 							{
-								SPRIG_DG_OUTPUT("ƒfƒoƒCƒXì¬‚É¸”s (ˆ—:ƒ\ƒtƒgƒEƒFƒA ’¸“_ˆ—:ƒ\ƒtƒgƒEƒFƒA)");
+								SPRIG_DG_OUTPUT("ãƒ‡ãƒã‚¤ã‚¹ä½œæˆã«å¤±æ•— (å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ é ‚ç‚¹å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢)");
 								SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-								SPRIG_DG_ERROR("ƒfƒoƒCƒXì¬‚É‚·‚×‚Ä¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+								SPRIG_DG_ERROR("ãƒ‡ãƒã‚¤ã‚¹ä½œæˆã«ã™ã¹ã¦å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 								return result;
 							} else {
-								SPRIG_DG_OUTPUT("ƒfƒoƒCƒXì¬‚É¬Œ÷ (ˆ—:ƒ\ƒtƒgƒEƒFƒA ’¸“_ˆ—:ƒ\ƒtƒgƒEƒFƒA)");
+								SPRIG_DG_OUTPUT("ãƒ‡ãƒã‚¤ã‚¹ä½œæˆã«æˆåŠŸ (å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ é ‚ç‚¹å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢)");
 							}
 						} else {
-							SPRIG_DG_OUTPUT("ƒfƒoƒCƒXì¬‚É¬Œ÷ (ˆ—:ƒ\ƒtƒgƒEƒFƒA ’¸“_ˆ—:ƒn[ƒhƒEƒFƒA)");
+							SPRIG_DG_OUTPUT("ãƒ‡ãƒã‚¤ã‚¹ä½œæˆã«æˆåŠŸ (å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ é ‚ç‚¹å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢)");
 						}
 					} else {
-						SPRIG_DG_OUTPUT("ƒfƒoƒCƒXì¬‚É¬Œ÷ (ˆ—:ƒn[ƒhƒEƒFƒA ’¸“_ˆ—:ƒ\ƒtƒgƒEƒFƒA)");
+						SPRIG_DG_OUTPUT("ãƒ‡ãƒã‚¤ã‚¹ä½œæˆã«æˆåŠŸ (å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢ é ‚ç‚¹å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢)");
 					}
 				} else {
-					SPRIG_DG_OUTPUT("ƒfƒoƒCƒXì¬‚É¬Œ÷ (ˆ—:ƒn[ƒhƒEƒFƒA ’¸“_ˆ—:ƒn[ƒhƒEƒFƒA)");
+					SPRIG_DG_OUTPUT("ãƒ‡ãƒã‚¤ã‚¹ä½œæˆã«æˆåŠŸ (å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢ é ‚ç‚¹å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢)");
 				}
 
 #ifdef SPRIG_DG_CONFIG_DEVICE_MANAGER_ENABLE_OUTPUT_DEVICE_CAPS
-				// ƒŒƒ“ƒ_ƒŠƒ“ƒOƒfƒoƒCƒX‚Ì”\—Ío—Í
+				// ãƒ¬ãƒ³ãƒ€ãƒªãƒ³ã‚°ãƒ‡ãƒã‚¤ã‚¹ã®èƒ½åŠ›å‡ºåŠ›
 				if (FAILED(result = output_device_caps_once(device_))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒŒƒ“ƒ_ƒŠƒ“ƒOƒfƒoƒCƒX‚Ì”\—Ío—Í‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("ãƒ¬ãƒ³ãƒ€ãƒªãƒ³ã‚°ãƒ‡ãƒã‚¤ã‚¹ã®èƒ½åŠ›å‡ºåŠ›ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return result;
 				}
 #endif	// #ifdef SPRIG_DG_CONFIG_DEVICE_MANAGER_ENABLE_OUTPUT_DEVICE_CAPS
 
-				// ƒoƒbƒNƒoƒbƒtƒ@‚ÌƒT[ƒtƒFƒCƒXæ“¾
+				// ãƒãƒƒã‚¯ãƒãƒƒãƒ•ã‚¡ã®ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹å–å¾—
 				if (FAILED(result = device_->GetRenderTarget(0, sprig::accept(back_buffer_surface_)))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒoƒbƒNƒoƒbƒtƒ@‚ÌƒT[ƒtƒFƒCƒXæ“¾‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("ãƒãƒƒã‚¯ãƒãƒƒãƒ•ã‚¡ã®ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return result;
 				}
 
@@ -329,16 +329,16 @@ namespace sprig {
 				SPRIG_DG_SECTION(TEXT("device_manager::reinitialize"));
 				HRESULT result = D3D_OK;
 
-				// Ä\’z‚ğ‹­§‚µ‚È‚¢A‚©‚Â‰Šú‰»Ï‚İ‚È‚ç‚Î‰½‚à‚µ‚È‚¢
+				// å†æ§‹ç¯‰ã‚’å¼·åˆ¶ã—ãªã„ã€ã‹ã¤åˆæœŸåŒ–æ¸ˆã¿ãªã‚‰ã°ä½•ã‚‚ã—ãªã„
 				if (!force && is_initialized()) {
 					result = S_FALSE;
 					return result;
 				}
 
-				// ƒNƒ‰ƒX–¼‚Ìİ’è
+				// ã‚¯ãƒ©ã‚¹åã®è¨­å®š
 				window_class_.lpszClassName = init_params_.class_name.c_str();
 
-				// ƒEƒBƒ“ƒhƒEƒvƒƒV[ƒWƒƒ‚Ìİ’è
+				// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒ—ãƒ­ã‚·ãƒ¼ã‚¸ãƒ£ã®è¨­å®š
 				switch (init_params_.mode) {
 				case SPRIG_DG_DEVICE_MODE_WINDOW:
 					window_class_.lpfnWndProc = static_cast<WNDPROC>(window_procedure);
@@ -348,129 +348,129 @@ namespace sprig {
 					break;
 				}
 
-				// ƒEƒBƒ“ƒhƒEƒNƒ‰ƒX‚Ì“o˜^
+				// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚¯ãƒ©ã‚¹ã®ç™»éŒ²
 				if (!::RegisterClass(&window_class_)) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒEƒCƒ“ƒhƒEƒNƒ‰ƒX‚Ì“o˜^‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã‚¯ãƒ©ã‚¹ã®ç™»éŒ²ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return E_FAIL;
 				}
 
-				// ƒƒCƒ“ƒEƒCƒ“ƒhƒE‚Ìì¬
+				// ãƒ¡ã‚¤ãƒ³ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã®ä½œæˆ
 				switch (init_params_.mode) {
 				case SPRIG_DG_DEVICE_MODE_WINDOW:
 					window_handle_ = ::CreateWindow(
-						init_params_.class_name.c_str(),	// ƒNƒ‰ƒX–¼
-						init_params_.window_name.c_str(),	// ƒEƒBƒ“ƒhƒEƒ^ƒCƒgƒ‹
-						WS_OVERLAPPED | WS_SYSMENU | WS_CAPTION | WS_MINIMIZEBOX | WS_VISIBLE,	// ƒEƒBƒ“ƒhƒEƒXƒ^ƒCƒ‹
-						CW_USEDEFAULT,	// ƒEƒBƒ“ƒhƒEˆÊ’u
-						CW_USEDEFAULT,	// ƒEƒBƒ“ƒhƒEˆÊ’u
-						static_cast<int>(init_params_.width + GetSystemMetrics(SM_CXDLGFRAME) * 2),	// ƒEƒBƒ“ƒhƒEƒTƒCƒY
-						static_cast<int>(init_params_.height + GetSystemMetrics(SM_CYDLGFRAME) * 2 + GetSystemMetrics(SM_CYCAPTION)),	// ƒEƒBƒ“ƒhƒEƒTƒCƒY
-						NULL,	// eƒEƒBƒ“ƒhƒE
-						NULL,	// ƒƒjƒ…[
-						window_class_.hInstance,	// ƒCƒ“ƒXƒ^ƒ“ƒX
-						NULL	// ƒEƒBƒ“ƒhƒEì¬ƒf[ƒ^‚ÌƒAƒhƒŒƒX
+						init_params_.class_name.c_str(),	// ã‚¯ãƒ©ã‚¹å
+						init_params_.window_name.c_str(),	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚¿ã‚¤ãƒˆãƒ«
+						WS_OVERLAPPED | WS_SYSMENU | WS_CAPTION | WS_MINIMIZEBOX | WS_VISIBLE,	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚¹ã‚¿ã‚¤ãƒ«
+						CW_USEDEFAULT,	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ä½ç½®
+						CW_USEDEFAULT,	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ä½ç½®
+						static_cast<int>(init_params_.width + GetSystemMetrics(SM_CXDLGFRAME) * 2),	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚µã‚¤ã‚º
+						static_cast<int>(init_params_.height + GetSystemMetrics(SM_CYDLGFRAME) * 2 + GetSystemMetrics(SM_CYCAPTION)),	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚µã‚¤ã‚º
+						NULL,	// è¦ªã‚¦ã‚£ãƒ³ãƒ‰ã‚¦
+						NULL,	// ãƒ¡ãƒ‹ãƒ¥ãƒ¼
+						window_class_.hInstance,	// ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
+						NULL	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ä½œæˆãƒ‡ãƒ¼ã‚¿ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
 						);
 					break;
 				case SPRIG_DG_DEVICE_MODE_BUFFER:
 					window_handle_ = ::CreateWindow(
-						init_params_.class_name.c_str(),	// ƒNƒ‰ƒX–¼
-						init_params_.window_name.c_str(),	// ƒEƒBƒ“ƒhƒEƒ^ƒCƒgƒ‹
-						WS_POPUP,	// ƒEƒBƒ“ƒhƒEƒXƒ^ƒCƒ‹
-						0,	// ƒEƒBƒ“ƒhƒEˆÊ’u
-						0,	// ƒEƒBƒ“ƒhƒEˆÊ’u
-						static_cast<int>(init_params_.width),	// ƒEƒBƒ“ƒhƒEƒTƒCƒY
-						static_cast<int>(init_params_.height),	// ƒEƒBƒ“ƒhƒEƒTƒCƒY
-						NULL,	// eƒEƒBƒ“ƒhƒE
-						NULL,	// ƒƒjƒ…[
-						window_class_.hInstance,	// ƒCƒ“ƒXƒ^ƒ“ƒX
-						NULL	// ƒEƒBƒ“ƒhƒEì¬ƒf[ƒ^‚ÌƒAƒhƒŒƒX
+						init_params_.class_name.c_str(),	// ã‚¯ãƒ©ã‚¹å
+						init_params_.window_name.c_str(),	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚¿ã‚¤ãƒˆãƒ«
+						WS_POPUP,	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚¹ã‚¿ã‚¤ãƒ«
+						0,	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ä½ç½®
+						0,	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ä½ç½®
+						static_cast<int>(init_params_.width),	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚µã‚¤ã‚º
+						static_cast<int>(init_params_.height),	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚µã‚¤ã‚º
+						NULL,	// è¦ªã‚¦ã‚£ãƒ³ãƒ‰ã‚¦
+						NULL,	// ãƒ¡ãƒ‹ãƒ¥ãƒ¼
+						window_class_.hInstance,	// ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
+						NULL	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ä½œæˆãƒ‡ãƒ¼ã‚¿ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
 						);
 					break;
 				}
 				if (window_handle_ == NULL) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒƒCƒ“ƒEƒCƒ“ƒhƒEì¬‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("ãƒ¡ã‚¤ãƒ³ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ä½œæˆã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return E_FAIL;
 				}
 
-				// Direct3DƒIƒuƒWƒFƒNƒg‚Ìì¬
+				// Direct3Dã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ä½œæˆ
 				object_ = Direct3DCreate9(D3D_SDK_VERSION);
 				if (object_ == NULL) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("Direct3DƒIƒuƒWƒFƒNƒg‚Ìì¬‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("Direct3Dã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ä½œæˆã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return E_FAIL;
 				}
 
-				// ƒoƒbƒNƒoƒbƒtƒ@ƒTƒCƒY‚Ìİ’è
+				// ãƒãƒƒã‚¯ãƒãƒƒãƒ•ã‚¡ã‚µã‚¤ã‚ºã®è¨­å®š
 				present_parameters_.BackBufferWidth = static_cast<UINT>(init_params_.width);
 				present_parameters_.BackBufferHeight = static_cast<UINT>(init_params_.height);
 
-				// ƒfƒoƒCƒX‚Ìì¬
-				SPRIG_DG_OUTPUT("ƒfƒoƒCƒXì¬‚ğs (ˆ—:ƒn[ƒhƒEƒFƒA ’¸“_ˆ—:ƒn[ƒhƒEƒFƒA)");
+				// ãƒ‡ãƒã‚¤ã‚¹ã®ä½œæˆ
+				SPRIG_DG_OUTPUT("ãƒ‡ãƒã‚¤ã‚¹ä½œæˆã‚’è©¦è¡Œ (å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢ é ‚ç‚¹å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢)");
 				if (FAILED(result = object_->CreateDevice(
-					D3DADAPTER_DEFAULT,	// ƒfƒBƒXƒvƒŒƒCƒAƒ_ƒvƒ^
-					D3DDEVTYPE_HAL,	// ˆ—:ƒn[ƒhƒEƒFƒA
-					window_handle_,	// ƒfƒoƒCƒXƒEƒBƒ“ƒhƒE
-					D3DCREATE_HARDWARE_VERTEXPROCESSING,	// ’¸“_ˆ—:ƒn[ƒhƒEƒFƒA
-					&present_parameters_,	// ƒpƒ‰ƒ[ƒ^
+					D3DADAPTER_DEFAULT,	// ãƒ‡ã‚£ã‚¹ãƒ—ãƒ¬ã‚¤ã‚¢ãƒ€ãƒ—ã‚¿
+					D3DDEVTYPE_HAL,	// å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢
+					window_handle_,	// ãƒ‡ãƒã‚¤ã‚¹ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦
+					D3DCREATE_HARDWARE_VERTEXPROCESSING,	// é ‚ç‚¹å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢
+					&present_parameters_,	// ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
 					sprig::accept(device_)
 					)))
 				{
-					SPRIG_DG_OUTPUT("ƒfƒoƒCƒXì¬‚É¸”s (ˆ—:ƒn[ƒhƒEƒFƒA ’¸“_ˆ—:ƒn[ƒhƒEƒFƒA)");
-					SPRIG_DG_OUTPUT("ƒfƒoƒCƒXì¬‚ğs (ˆ—:ƒn[ƒhƒEƒFƒA ’¸“_ˆ—:ƒ\ƒtƒgƒEƒFƒA)");
+					SPRIG_DG_OUTPUT("ãƒ‡ãƒã‚¤ã‚¹ä½œæˆã«å¤±æ•— (å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢ é ‚ç‚¹å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢)");
+					SPRIG_DG_OUTPUT("ãƒ‡ãƒã‚¤ã‚¹ä½œæˆã‚’è©¦è¡Œ (å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢ é ‚ç‚¹å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢)");
 					if (FAILED(result = object_->CreateDevice(
 						D3DADAPTER_DEFAULT,
-						D3DDEVTYPE_HAL,	// ˆ—:ƒn[ƒhƒEƒFƒA
+						D3DDEVTYPE_HAL,	// å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢
 						window_handle_,
-						D3DCREATE_SOFTWARE_VERTEXPROCESSING,	// ’¸“_ˆ—:ƒ\ƒtƒgƒEƒFƒA
+						D3DCREATE_SOFTWARE_VERTEXPROCESSING,	// é ‚ç‚¹å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢
 						&present_parameters_,
 						sprig::accept(device_)
 						)))
 					{
-						SPRIG_DG_OUTPUT("ƒfƒoƒCƒXì¬‚É¸”s (ˆ—:ƒn[ƒhƒEƒFƒA ’¸“_ˆ—:ƒ\ƒtƒgƒEƒFƒA)");
-						SPRIG_DG_OUTPUT("ƒfƒoƒCƒXì¬‚ğs (ˆ—:ƒ\ƒtƒgƒEƒFƒA ’¸“_ˆ—:ƒn[ƒhƒEƒFƒA)");
+						SPRIG_DG_OUTPUT("ãƒ‡ãƒã‚¤ã‚¹ä½œæˆã«å¤±æ•— (å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢ é ‚ç‚¹å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢)");
+						SPRIG_DG_OUTPUT("ãƒ‡ãƒã‚¤ã‚¹ä½œæˆã‚’è©¦è¡Œ (å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ é ‚ç‚¹å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢)");
 						if (FAILED(result = object_->CreateDevice(
 							D3DADAPTER_DEFAULT,
-							D3DDEVTYPE_REF,	// ˆ—:ƒ\ƒtƒgƒEƒFƒA
+							D3DDEVTYPE_REF,	// å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢
 							window_handle_,
-							D3DCREATE_HARDWARE_VERTEXPROCESSING,	// ’¸“_ˆ—:ƒn[ƒhƒEƒFƒA
+							D3DCREATE_HARDWARE_VERTEXPROCESSING,	// é ‚ç‚¹å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢
 							&present_parameters_,
 							sprig::accept(device_)
 							)))
 						{
-							SPRIG_DG_OUTPUT("ƒfƒoƒCƒXì¬‚É¸”s (ˆ—:ƒ\ƒtƒgƒEƒFƒA ’¸“_ˆ—:ƒn[ƒhƒEƒFƒA)");
-							SPRIG_DG_OUTPUT("ƒfƒoƒCƒXì¬‚ğs (ˆ—:ƒ\ƒtƒgƒEƒFƒA ’¸“_ˆ—:ƒ\ƒtƒgƒEƒFƒA)");
+							SPRIG_DG_OUTPUT("ãƒ‡ãƒã‚¤ã‚¹ä½œæˆã«å¤±æ•— (å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ é ‚ç‚¹å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢)");
+							SPRIG_DG_OUTPUT("ãƒ‡ãƒã‚¤ã‚¹ä½œæˆã‚’è©¦è¡Œ (å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ é ‚ç‚¹å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢)");
 							if (FAILED(result = object_->CreateDevice(
 								D3DADAPTER_DEFAULT,
-								D3DDEVTYPE_REF,	// ˆ—:ƒ\ƒtƒgƒEƒFƒA
+								D3DDEVTYPE_REF,	// å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢
 								window_handle_,
-								D3DCREATE_SOFTWARE_VERTEXPROCESSING,	// ’¸“_ˆ—:ƒ\ƒtƒgƒEƒFƒA
+								D3DCREATE_SOFTWARE_VERTEXPROCESSING,	// é ‚ç‚¹å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢
 								&present_parameters_,
 								sprig::accept(device_)
 								)))
 							{
-								SPRIG_DG_OUTPUT("ƒfƒoƒCƒXì¬‚É¸”s (ˆ—:ƒ\ƒtƒgƒEƒFƒA ’¸“_ˆ—:ƒ\ƒtƒgƒEƒFƒA)");
+								SPRIG_DG_OUTPUT("ãƒ‡ãƒã‚¤ã‚¹ä½œæˆã«å¤±æ•— (å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ é ‚ç‚¹å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢)");
 								SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-								SPRIG_DG_ERROR("ƒfƒoƒCƒXì¬‚É‚·‚×‚Ä¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+								SPRIG_DG_ERROR("ãƒ‡ãƒã‚¤ã‚¹ä½œæˆã«ã™ã¹ã¦å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 								return result;
 							} else {
-								SPRIG_DG_OUTPUT("ƒfƒoƒCƒXì¬‚É¬Œ÷ (ˆ—:ƒ\ƒtƒgƒEƒFƒA ’¸“_ˆ—:ƒ\ƒtƒgƒEƒFƒA)");
+								SPRIG_DG_OUTPUT("ãƒ‡ãƒã‚¤ã‚¹ä½œæˆã«æˆåŠŸ (å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ é ‚ç‚¹å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢)");
 							}
 						} else {
-							SPRIG_DG_OUTPUT("ƒfƒoƒCƒXì¬‚É¬Œ÷ (ˆ—:ƒ\ƒtƒgƒEƒFƒA ’¸“_ˆ—:ƒn[ƒhƒEƒFƒA)");
+							SPRIG_DG_OUTPUT("ãƒ‡ãƒã‚¤ã‚¹ä½œæˆã«æˆåŠŸ (å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ é ‚ç‚¹å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢)");
 						}
 					} else {
-						SPRIG_DG_OUTPUT("ƒfƒoƒCƒXì¬‚É¬Œ÷ (ˆ—:ƒn[ƒhƒEƒFƒA ’¸“_ˆ—:ƒ\ƒtƒgƒEƒFƒA)");
+						SPRIG_DG_OUTPUT("ãƒ‡ãƒã‚¤ã‚¹ä½œæˆã«æˆåŠŸ (å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢ é ‚ç‚¹å‡¦ç†:ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢)");
 					}
 				} else {
-					SPRIG_DG_OUTPUT("ƒfƒoƒCƒXì¬‚É¬Œ÷ (ˆ—:ƒn[ƒhƒEƒFƒA ’¸“_ˆ—:ƒn[ƒhƒEƒFƒA)");
+					SPRIG_DG_OUTPUT("ãƒ‡ãƒã‚¤ã‚¹ä½œæˆã«æˆåŠŸ (å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢ é ‚ç‚¹å‡¦ç†:ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢)");
 				}
 
-				// ƒoƒbƒNƒoƒbƒtƒ@‚ÌƒT[ƒtƒFƒCƒXæ“¾
+				// ãƒãƒƒã‚¯ãƒãƒƒãƒ•ã‚¡ã®ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹å–å¾—
 				if (FAILED(result = device_->GetRenderTarget(0, sprig::accept(back_buffer_surface_)))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒoƒbƒNƒoƒbƒtƒ@‚ÌƒT[ƒtƒFƒCƒXæ“¾‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("ãƒãƒƒã‚¯ãƒãƒƒãƒ•ã‚¡ã®ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return result;
 				}
 
@@ -483,14 +483,14 @@ namespace sprig {
 				using sprig::get_pointer;
 
 				HRESULT result = D3D_OK;
-				// ƒŒƒ“ƒ_ƒŠƒ“ƒOƒ^[ƒQƒbƒg‚ÌÄİ’è
+				// ãƒ¬ãƒ³ãƒ€ãƒªãƒ³ã‚°ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã®å†è¨­å®š
 				if (FAILED(result = device_->SetRenderTarget(render_target_index, get_pointer(back_buffer_surface_)))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
 					{
 						SPRIG_DG_SECTION(TEXT("arguments"));
 						SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("render_target_index"), render_target_index);
 					}
-					SPRIG_DG_ERROR("ƒŒƒ“ƒ_ƒŠƒ“ƒOƒ^[ƒQƒbƒg‚ÌÄİ’è‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+					SPRIG_DG_ERROR("ãƒ¬ãƒ³ãƒ€ãƒªãƒ³ã‚°ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã®å†è¨­å®šã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 					return result;
 				}
 				return result;
@@ -499,7 +499,7 @@ namespace sprig {
 				HRESULT result = D3D_OK;
 				if (FAILED(result = device_->BeginScene())) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("•`‰æŠJn‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+					SPRIG_DG_ERROR("æç”»é–‹å§‹ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 					return result;
 				}
 				return result;
@@ -508,7 +508,7 @@ namespace sprig {
 				HRESULT result = D3D_OK;
 				if (FAILED(result = device_->EndScene())) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("•`‰æI—¹‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+					SPRIG_DG_ERROR("æç”»çµ‚äº†ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 					return result;
 				}
 				return result;
@@ -517,7 +517,7 @@ namespace sprig {
 				HRESULT result = D3D_OK;
 				if (FAILED(device_->Clear(0, NULL, D3DCLEAR_TARGET, color, 1.0f, 0))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒfƒoƒCƒX‚ÌƒNƒŠƒA‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+					SPRIG_DG_ERROR("ãƒ‡ãƒã‚¤ã‚¹ã®ã‚¯ãƒªã‚¢ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 					return result;
 				}
 				return result;
@@ -526,7 +526,7 @@ namespace sprig {
 				HRESULT result = D3D_OK;
 				if (FAILED(result = device_->GetDeviceCaps(&caps))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒŒƒ“ƒ_ƒŠƒ“ƒOƒfƒoƒCƒX‚Ì”\—Íæ“¾‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+					SPRIG_DG_ERROR("ãƒ¬ãƒ³ãƒ€ãƒªãƒ³ã‚°ãƒ‡ãƒã‚¤ã‚¹ã®èƒ½åŠ›å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 					return result;
 				}
 				return result;

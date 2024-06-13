@@ -25,22 +25,22 @@ namespace sprig {
 			//
 			// neko_mimi_literals
 			//
-			//	COMMENT: neko mimi Fu** ‚ÌƒŠƒeƒ‰ƒ‹’è‹`
-			//	COMMENT: Šî–{ƒRƒ}ƒ“ƒh‚É‘Î‰‚·‚é•¶š—ñ‚ğ’è‹`‚·‚é
+			//	COMMENT: neko mimi Fu** ã®ãƒªãƒ†ãƒ©ãƒ«å®šç¾©
+			//	COMMENT: åŸºæœ¬ã‚³ãƒãƒ³ãƒ‰ã«å¯¾å¿œã™ã‚‹æ–‡å­—åˆ—ã‚’å®šç¾©ã™ã‚‹
 			//
 			struct neko_mimi_literals {
 				typedef literal_array<char const, false> type;
 				template<int N>
 				static type const& get() {
 					static type const literals[] = {
-						"ƒlƒRƒ~ƒ~I",
-						"ƒlƒRƒ~ƒ~ƒ‚[ƒh",
-						"‚¨‚É‚¢‚³‚Ü",
-						"„‚Ì‚µ‚à‚×[",
-						"‚âE‚­E‚»E‚­E‚æ",
-						"ƒtƒ‹ƒtƒ‹ƒtƒ‹ƒ€[ƒ“",
-						"ƒLƒXƒLƒXc",
-						"ƒLƒXc‚µ‚½‚­‚È‚Á‚¿‚á‚Á‚½c"
+						"ãƒã‚³ãƒŸãƒŸï¼",
+						"ãƒã‚³ãƒŸãƒŸãƒ¢ãƒ¼ãƒ‰",
+						"ãŠã«ã„ã•ã¾",
+						"ç§ã®ã—ã‚‚ã¹ãƒ¼",
+						"ã‚„ãƒ»ããƒ»ããƒ»ããƒ»ã‚ˆ",
+						"ãƒ•ãƒ«ãƒ•ãƒ«ãƒ•ãƒ«ãƒ ãƒ¼ãƒ³",
+						"ã‚­ã‚¹ã‚­ã‚¹â€¦",
+						"ã‚­ã‚¹â€¦ã—ãŸããªã£ã¡ã‚ƒã£ãŸâ€¦"
 					};
 					BOOST_STATIC_ASSERT(N < sizeof(literals) / sizeof(literals[0]));
 					return literals[N];
@@ -50,22 +50,22 @@ namespace sprig {
 			//
 			// nagato_literals
 			//
-			//	COMMENT: ’·–å—LŠó ‚ÌƒŠƒeƒ‰ƒ‹’è‹`
-			//	COMMENT: Šî–{ƒRƒ}ƒ“ƒh‚É‘Î‰‚·‚é•¶š—ñ‚ğ’è‹`‚·‚é
+			//	COMMENT: é•·é–€æœ‰å¸Œ ã®ãƒªãƒ†ãƒ©ãƒ«å®šç¾©
+			//	COMMENT: åŸºæœ¬ã‚³ãƒãƒ³ãƒ‰ã«å¯¾å¿œã™ã‚‹æ–‡å­—åˆ—ã‚’å®šç¾©ã™ã‚‹
 			//
 			struct nagato_literals {
 				typedef literal_array<char const, false> type;
 				template<int N>
 				static type const& get() {
 					static type const literals[] = {
-						"ccc",
-						"cccc",
-						"c",
-						"cc",
-						"cccccc",
-						"ccccc",
-						"u",
-						"v"
+						"â€¦â€¦â€¦",
+						"â€¦â€¦â€¦â€¦",
+						"â€¦",
+						"â€¦â€¦",
+						"â€¦â€¦â€¦â€¦â€¦â€¦",
+						"â€¦â€¦â€¦â€¦â€¦",
+						"ã€Œ",
+						"ã€"
 					};
 					BOOST_STATIC_ASSERT(N < sizeof(literals) / sizeof(literals[0]));
 					return literals[N];
@@ -75,22 +75,22 @@ namespace sprig {
 			//
 			// aegi_literals
 			//
-			//	COMMENT: ‚ ‚¦‚¬º‹LqŒ¾Œê ‚ÌƒŠƒeƒ‰ƒ‹’è‹`
-			//	COMMENT: Šî–{ƒRƒ}ƒ“ƒh‚É‘Î‰‚·‚é•¶š—ñ‚ğ’è‹`‚·‚é
+			//	COMMENT: ã‚ãˆãå£°è¨˜è¿°è¨€èª ã®ãƒªãƒ†ãƒ©ãƒ«å®šç¾©
+			//	COMMENT: åŸºæœ¬ã‚³ãƒãƒ³ãƒ‰ã«å¯¾å¿œã™ã‚‹æ–‡å­—åˆ—ã‚’å®šç¾©ã™ã‚‹
 			//
 			struct aegi_literals {
 				typedef literal_array<char const, false> type;
 				template<int N>
 				static type const& get() {
 					static type const literals[] = {
-						"‚ ‚ ƒb",
-						"‚ñ‚ñƒbI",
-						"‚ ƒb",
-						"‚ñƒb",
-						"ƒCƒNIƒC‚Á‚¿‚á‚¤I",
-						"“ü‚Á‚Ä‚é‚ÌŠ´‚¶‚¿‚á‚¤‚£I",
-						"‚µ‚Ä‚¥I‚¨Šè‚¢I",
-						"‚â‚ß‚È‚¢‚Å‚¥I"
+						"ã‚ã‚ãƒƒ",
+						"ã‚“ã‚“ãƒƒï¼",
+						"ã‚ãƒƒ",
+						"ã‚“ãƒƒ",
+						"ã‚¤ã‚¯ï¼ã‚¤ã£ã¡ã‚ƒã†ï¼",
+						"å…¥ã£ã¦ã‚‹ã®æ„Ÿã˜ã¡ã‚ƒã†ã…ï¼",
+						"ã—ã¦ã‡ï¼ãŠé¡˜ã„ï¼",
+						"ã‚„ã‚ãªã„ã§ã‡ï¼"
 					};
 					BOOST_STATIC_ASSERT(N < sizeof(literals) / sizeof(literals[0]));
 					return literals[N];
@@ -100,22 +100,22 @@ namespace sprig {
 			//
 			// hokuto_literals
 			//
-			//	COMMENT: –k“l”]—ôa ‚ÌƒŠƒeƒ‰ƒ‹’è‹`
-			//	COMMENT: Šî–{ƒRƒ}ƒ“ƒh‚É‘Î‰‚·‚é•¶š—ñ‚ğ’è‹`‚·‚é
+			//	COMMENT: åŒ—æ–—è„³è£‚æ–¬ ã®ãƒªãƒ†ãƒ©ãƒ«å®šç¾©
+			//	COMMENT: åŸºæœ¬ã‚³ãƒãƒ³ãƒ‰ã«å¯¾å¿œã™ã‚‹æ–‡å­—åˆ—ã‚’å®šç¾©ã™ã‚‹
 			//
 			struct hokuto_literals {
 				typedef literal_array<char const, false> type;
 				template<int N>
 				static type const& get() {
 					static type const literals[] = {
-						"‚ ",
-						"‚Ù",
-						"‚½",
-						"[",
-						"‚¨‚Ü‚¦‚Í‚à‚¤€‚ñ‚Å‚¢‚é",
-						"‚Ó",
-						"‚Á",
-						"I"
+						"ã‚",
+						"ã»",
+						"ãŸ",
+						"ãƒ¼",
+						"ãŠã¾ãˆã¯ã‚‚ã†æ­»ã‚“ã§ã„ã‚‹",
+						"ãµ",
+						"ã£",
+						"ï¼"
 					};
 					BOOST_STATIC_ASSERT(N < sizeof(literals) / sizeof(literals[0]));
 					return literals[N];
@@ -125,8 +125,8 @@ namespace sprig {
 			//
 			// misa_literals
 			//
-			//	COMMENT: Misa ‚ÌƒŠƒeƒ‰ƒ‹’è‹`
-			//	COMMENT: Šî–{ƒRƒ}ƒ“ƒh‚É‘Î‰‚·‚é•¶š—ñƒZƒbƒg‚ğ’è‹`‚·‚é
+			//	COMMENT: Misa ã®ãƒªãƒ†ãƒ©ãƒ«å®šç¾©
+			//	COMMENT: åŸºæœ¬ã‚³ãƒãƒ³ãƒ‰ã«å¯¾å¿œã™ã‚‹æ–‡å­—åˆ—ã‚»ãƒƒãƒˆã‚’å®šç¾©ã™ã‚‹
 			//
 			struct misa_literals {
 				typedef std::vector<literal_array<char const, false> > type;
@@ -134,14 +134,14 @@ namespace sprig {
 				static type const& get() {
 					typedef literal_array<char const, false> literal_type;
 					static type const literals[] = {
-						boost::assign::list_of<literal_type>(">")("¨")("`")("["),
-						boost::assign::list_of<literal_type>("<")("©")("š")("™"),
-						boost::assign::list_of<literal_type>("+")("‚ ")("‚Ÿ")("‚¨")("‚§"),
-						boost::assign::list_of<literal_type>("-")("‚Á")("ƒb"),
-						boost::assign::list_of<literal_type>(".")("I"),
-						boost::assign::list_of<literal_type>(",")("H"),
-						boost::assign::list_of<literal_type>("[")("u")("w"),
-						boost::assign::list_of<literal_type>("]")("v")("x")
+						boost::assign::list_of<literal_type>(">")("â†’")("ã€œ")("ãƒ¼"),
+						boost::assign::list_of<literal_type>("<")("â†")("â˜…")("â˜†"),
+						boost::assign::list_of<literal_type>("+")("ã‚")("ã")("ãŠ")("ã‰"),
+						boost::assign::list_of<literal_type>("-")("ã£")("ãƒƒ"),
+						boost::assign::list_of<literal_type>(".")("ï¼"),
+						boost::assign::list_of<literal_type>(",")("ï¼Ÿ"),
+						boost::assign::list_of<literal_type>("[")("ã€Œ")("ã€"),
+						boost::assign::list_of<literal_type>("]")("ã€")("ã€")
 					};
 					BOOST_STATIC_ASSERT(N < sizeof(literals) / sizeof(literals[0]));
 					return literals[N];

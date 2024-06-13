@@ -441,7 +441,7 @@ namespace sprig {
 			logger.section_line(TEXT("hIcon"), value.hIcon);
 			logger.section_line(TEXT("hCursor"), value.hCursor);
 			logger.section_line(TEXT("hbrBackground"), value.hbrBackground);
-			//	COMMENT: 未初期化である可能性があるので、汎用ポインタにキャストして出力。
+			//	COMMENT: 譛ｪ蛻晄悄蛹悶〒縺ゅｋ蜿ｯ閭ｽ諤ｧ縺後≠繧九�ｮ縺ｧ縲∵ｱ守畑繝昴う繝ｳ繧ｿ縺ｫ繧ｭ繝｣繧ｹ繝医＠縺ｦ蜃ｺ蜉帙�
 			//logger.section_line(TEXT("lpszMenuName"), value.lpszMenuName);
 			//logger.section_line(TEXT("lpszClassName"), value.lpszClassName);
 			logger.section_line(TEXT("lpszMenuName"), static_cast<void const*>(value.lpszMenuName));

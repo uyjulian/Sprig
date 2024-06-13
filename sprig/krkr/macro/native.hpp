@@ -25,7 +25,7 @@
 #include <sprig/krkr/macro/arg.hpp>
 
 //
-// COMMENT: ��O���g���g���ɒʒm����ׂ̃u���b�N�}�N��
+// COMMENT: 例外を吉里吉里に通知する為のブロックマクロ
 //
 //
 // SPRIG_KRKR_TRY
@@ -51,7 +51,7 @@
 	}
 
 //
-// COMMENT: �l�C�e�B�u���\�b�h��`�p�̃u���b�N�}�N��
+// COMMENT: ネイティブメソッド定義用のブロックマクロ
 //
 //
 // SPRIG_KRKR_BEGIN_NATIVE
@@ -63,7 +63,7 @@
 	} SPRIG_KRKR_CATCH_RETURN(TJS_S_OK)
 
 //
-// COMMENT: �l�C�e�B�u�N���X��`�p�̃u���b�N�}�N��
+// COMMENT: ネイティブクラス定義用のブロックマクロ
 //
 //
 // SPRIG_KRKR_BEGIN_CREATE_NATIVE_CLASS
@@ -89,7 +89,7 @@
 	}
 
 //
-// COMMENT: �l�C�e�B�u���\�b�h��l�C�e�B�u�v���p�e�B��`�p�̃u���b�N�}�N��
+// COMMENT: ネイティブメソッドやネイティブプロパティ定義用のブロックマクロ
 //
 //
 // SPRIG_KRKR_BEGIN_NATIVE_METHOD_DECL
@@ -131,7 +131,7 @@
 	TJS_END_NATIVE_PROP_SETTER
 
 //
-// COMMENT: �P���ȃl�C�e�B�u���\�b�h��`�̃��[�e�B���e�B
+// COMMENT: 単純なネイティブメソッド定義のユーティリティ
 //
 //
 // SPRIG_KRKR_NATIVE_METHOD_DECL_PARAM_VOID_RES_VOID
@@ -240,8 +240,8 @@
 	TJS_END_NATIVE_PROP_DECL(PROP_NAME)
 
 //
-// COMMENT: �l�C�e�B�u�v���p�e�B��`�p�̊�{�}�N���iACCESS�w��\�j
-// NOTE: ACCESS�͗Ⴆ�� this_-> �̂悤��getter/setter�̌ďo���@���w�肷��B
+// COMMENT: ネイティブプロパティ定義用の基本マクロ（ACCESS指定可能）
+// NOTE: ACCESSは例えば this_-> のようにgetter/setterの呼出方法を指定する。
 //
 //
 // SPRIG_KRKR_NATIVE_PROP_BASIC_[GETTER|SETTER]_DECL_VARIANT
@@ -421,7 +421,7 @@
 	SPRIG_KRKR_END_NATIVE_PROP_DECL(PROP_NAME)
 
 //
-// COMMENT: �l�C�e�B�u�v���p�e�B��`�p�}�N���i�l�C�e�B�u�C���X�^���X�̃����o�ɒ��ڃA�N�Z�X����j
+// COMMENT: ネイティブプロパティ定義用マクロ（ネイティブインスタンスのメンバに直接アクセスする）
 //
 //
 // SPRIG_KRKR_NATIVE_PROP_DECL_VARIANT
@@ -477,7 +477,7 @@
 	SPRIG_KRKR_NATIVE_PROP_BASIC_DECL_TJSCLASS_SETONLY(CLASS_NAME, PROP_NAME, SETTER_NAME, this_->)
 
 //
-// COMMENT: �l�C�e�B�u�v���p�e�B��`�p�}�N���i�ÓI���\�b�h�p�j
+// COMMENT: ネイティブプロパティ定義用マクロ（静的メソッド用）
 //
 //
 // SPRIG_KRKR_NATIVE_STATIC_PROP_BASIC_[GETTER|SETTER]_DECL_VARIANT
@@ -515,7 +515,7 @@
 	SPRIG_KRKR_END_NATIVE_PROP_DECL(PROP_NAME)
 
 //
-// COMMENT: �l�C�e�B�u�v���p�e�B��`�p�}�N���i�萔�p�j
+// COMMENT: ネイティブプロパティ定義用マクロ（定数用）
 //
 //
 // SPRIG_KRKR_NATIVE_CONSTANT_PROP_DECL

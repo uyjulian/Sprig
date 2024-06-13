@@ -262,7 +262,7 @@ namespace sprig {
 				boost::swap(input_, other.input_);
 			}
 			//
-			//	COMMENT: ƒAƒNƒZƒXÀ‘•
+			//	COMMENT: ã‚¢ã‚¯ã‚»ã‚¹å®Ÿè£…
 			//
 			char_type const& at(ppointer_type pp) const {
 				return pbuffer_.at(pp);
@@ -372,7 +372,7 @@ namespace sprig {
 				expand_dbuffer(dpointer_);
 			}
 			//
-			//	COMMENT: ˆ—À‘•
+			//	COMMENT: å‡¦ç†å®Ÿè£…
 			//
 			void dinc(dpointer_type& dp) const {
 				switch (front_.first) {
@@ -757,7 +757,7 @@ namespace sprig {
 				}
 			}
 			//
-			//	COMMENT: Šg’£ˆ—À‘•iƒrƒbƒg‰‰Zj
+			//	COMMENT: æ‹¡å¼µå‡¦ç†å®Ÿè£…ï¼ˆãƒ“ãƒƒãƒˆæ¼”ç®—ï¼‰
 			//
 			void bit_or(dpointer_type& dp) {
 				dpointer_type prev_dp = dp;
@@ -797,7 +797,7 @@ namespace sprig {
 				bit_not(dpointer_);
 			}
 			//
-			//	COMMENT: Šg’£ˆ—À‘•iZp‰‰Zj
+			//	COMMENT: æ‹¡å¼µå‡¦ç†å®Ÿè£…ï¼ˆç®—è¡“æ¼”ç®—ï¼‰
 			//
 			void add(dpointer_type& dp) {
 				dpointer_type prev_dp = dp;
@@ -850,7 +850,7 @@ namespace sprig {
 				mod(dpointer_);
 			}
 			//
-			//	COMMENT: Šg’£ˆ—À‘•iƒRƒs[EŒğŠ·j
+			//	COMMENT: æ‹¡å¼µå‡¦ç†å®Ÿè£…ï¼ˆã‚³ãƒ”ãƒ¼ãƒ»äº¤æ›ï¼‰
 			//
 			void dcopy(dpointer_type& dp) {
 				dpointer_type prev_dp = dp;
@@ -874,7 +874,7 @@ namespace sprig {
 				dswap(dpointer_);
 			}
 			//
-			//	COMMENT: Šg’£ˆ—À‘•i²ˆÚ“®j
+			//	COMMENT: æ‹¡å¼µå‡¦ç†å®Ÿè£…ï¼ˆè»¸ç§»å‹•ï¼‰
 			//
 			void x_dinc(dpointer_type& dp) const {
 				++dp.get<x_axis>();
@@ -913,7 +913,7 @@ namespace sprig {
 				z_ddec(dpointer_);
 			}
 			//
-			//	COMMENT: Às
+			//	COMMENT: å®Ÿè¡Œ
 			//
 			bool is_code_end() const {
 				return is_out_of_bounds_pbuffer();
@@ -1149,7 +1149,7 @@ namespace sprig {
 				return result;
 			}
 			//
-			//	COMMENT: ƒR[ƒh
+			//	COMMENT: ã‚³ãƒ¼ãƒ‰
 			//
 			void push_raw_code(char const* code) {
 				pbuffer_.insert(
@@ -1261,7 +1261,7 @@ namespace sprig {
 				}
 			}
 			//
-			//	COMMENT: ƒƒ“ƒoƒAƒNƒZƒX
+			//	COMMENT: ãƒ¡ãƒ³ãƒã‚¢ã‚¯ã‚»ã‚¹
 			//
 			pbuffer_type const& pbuffer() const {
 				return pbuffer_;

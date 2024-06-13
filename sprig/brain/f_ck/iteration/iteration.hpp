@@ -24,7 +24,7 @@ namespace sprig {
 			//
 			// bf_iteration
 			//
-			//	COMMENT: 基本コマンドに対応する単一文字を扱う走査クラス
+			//	COMMENT: 蝓ｺ譛ｬ繧ｳ繝槭Φ繝峨↓蟇ｾ蠢懊☆繧句腰荳譁�蟄励ｒ謇ｱ縺�襍ｰ譟ｻ繧ｯ繝ｩ繧ｹ
 			//
 			template<
 				typename Types = use_default,

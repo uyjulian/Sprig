@@ -91,7 +91,7 @@ namespace sprig {
 	private:
 		static void conform_check(value_type const& value) {
 			if (!value.empty() && !is_conform(value))
-				throw(restricted_string_nonconformance("§ŒÀ‚É“K‡‚µ‚Ü‚¹‚ñ"));
+				throw(restricted_string_nonconformance("åˆ¶é™ã«é©åˆã—ã¾ã›ã‚“"));
 		}
 		template<typename Clearable>
 		static typename boost::enable_if<Clearable>::type
@@ -100,7 +100,7 @@ namespace sprig {
 		static typename boost::disable_if<Clearable>::type
 		fork_clear_check(value_type const& value) {
 			if (value.empty())
-				throw(restricted_string_nonconformance("‹ó‚É•ÏX‚Å‚«‚Ü‚¹‚ñ"));
+				throw(restricted_string_nonconformance("ç©ºã«å¤‰æ›´ã§ãã¾ã›ã‚“"));
 		}
 		static void clear_check(value_type const& value) {
 			fork_clear_check<typename policy_type::clearable_type>(value);

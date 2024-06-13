@@ -85,7 +85,7 @@ namespace sprig {
 		internal_type value_;
 	public:
 		//
-		//	COMMENT: •„†
+		//	COMMENT: ç¬¦å·
 		//
 		enum sign {
 			sign_zero = 0,
@@ -94,7 +94,7 @@ namespace sprig {
 		};
 	public:
 		//
-		//	COMMENT: ƒ[ƒ
+		//	COMMENT: ã‚¼ãƒ­
 		//
 		static big_int const& zero() {
 			static this_type value;
@@ -102,18 +102,18 @@ namespace sprig {
 		}
 	public:
 		//
-		//	COMMENT: ƒfƒtƒHƒ‹ƒgƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		//	COMMENT: ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		//
 		big_int() {}
 		//
-		//	COMMENT: ƒRƒs[ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		//	COMMENT: ã‚³ãƒ”ãƒ¼ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		//
 		big_int(this_type const& other)
 			: value_(other.value_)
 		{}
 		//
-		//	COMMENT: ƒRƒ“ƒXƒgƒ‰ƒNƒ^iƒoƒCƒg—ñ‚©‚çj
-		//	NOTE: Java‚ÌBigInteger‚Æˆá‚¢AƒŠƒgƒ‹ƒGƒ“ƒfƒBƒAƒ“‚Å‰ğß‚³‚ê‚é
+		//	COMMENT: ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ï¼ˆãƒã‚¤ãƒˆåˆ—ã‹ã‚‰ï¼‰
+		//	NOTE: Javaã®BigIntegerã¨é•ã„ã€ãƒªãƒˆãƒ«ã‚¨ãƒ³ãƒ‡ã‚£ã‚¢ãƒ³ã§è§£é‡ˆã•ã‚Œã‚‹
 		//
 		big_int(byte_type const* source, std::size_t n)
 			: value_(NTL::ZZFromBytes(source, static_cast<long>(n)))
@@ -142,8 +142,8 @@ namespace sprig {
 			value_ = NTL::ZZFromBytes(&bytes[0], bytes.size());
 		}
 		//
-		//	COMMENT: ƒRƒ“ƒXƒgƒ‰ƒNƒ^iƒoƒCƒg—ñ‚©‚ç^•„†•tj
-		//	NOTE: Java‚ÌBigInteger‚Æˆá‚¢AƒŠƒgƒ‹ƒGƒ“ƒfƒBƒAƒ“‚Å‰ğß‚³‚ê‚é
+		//	COMMENT: ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ï¼ˆãƒã‚¤ãƒˆåˆ—ã‹ã‚‰ï¼ç¬¦å·ä»˜ï¼‰
+		//	NOTE: Javaã®BigIntegerã¨é•ã„ã€ãƒªãƒˆãƒ«ã‚¨ãƒ³ãƒ‡ã‚£ã‚¢ãƒ³ã§è§£é‡ˆã•ã‚Œã‚‹
 		//
 		big_int(byte_type const* source, std::size_t n, sign s)
 			: value_(s >= sign_zero
@@ -193,7 +193,7 @@ namespace sprig {
 				;
 		}
 		//
-		//	COMMENT: •ÏŠ·ƒRƒ“ƒXƒgƒ‰ƒNƒ^i“à•”Œ^CZpŒ^C•¶š—ñŒ^j
+		//	COMMENT: å¤‰æ›ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ï¼ˆå†…éƒ¨å‹ï¼Œç®—è¡“å‹ï¼Œæ–‡å­—åˆ—å‹ï¼‰
 		//
 		big_int(internal_type const& source)
 			: value_(source)
@@ -203,11 +203,11 @@ namespace sprig {
 			: value_(to_ZZ(source))
 		{}
 		//
-		//	COMMENT: ƒfƒXƒgƒ‰ƒNƒ^
+		//	COMMENT: ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		//
 		~big_int() {}
 		//
-		//	COMMENT: ‘ã“ü
+		//	COMMENT: ä»£å…¥
 		//
 		this_type& operator=(this_type const& rhs) {
 			this_type(rhs).swap(*this);
@@ -280,7 +280,7 @@ namespace sprig {
 			return *this; \
 		}
 		//
-		//	COMMENT: Zp‰‰Zq
+		//	COMMENT: ç®—è¡“æ¼”ç®—å­
 		//
 		SPRIG_NTL_BIGINT_COMPARE_OPERATION(<)
 		SPRIG_NTL_BIGINT_COMPARE_OPERATION(==)
@@ -295,7 +295,7 @@ namespace sprig {
 		SPRIG_NTL_BIGINT_SUBSTITUTE_DIRECT_OPERATION(<<=)
 		SPRIG_NTL_BIGINT_SUBSTITUTE_DIRECT_OPERATION(>>=)
 		//
-		//	COMMENT: ’P€‰‰Zq
+		//	COMMENT: å˜é …æ¼”ç®—å­
 		//
 		this_type operator+() const {
 			return this_type(value_);
@@ -322,13 +322,13 @@ namespace sprig {
 			return temp;
 		}
 		//
-		//	COMMENT: •ÏŠ·‰‰Zq
+		//	COMMENT: å¤‰æ›æ¼”ç®—å­
 		//
 		operator internal_type const&() const {
 			return value_;
 		}
 		//
-		//	COMMENT: æ“¾
+		//	COMMENT: å–å¾—
 		//
 		internal_type const& get() const {
 			return value_;
@@ -357,8 +357,8 @@ namespace sprig {
 
 	//
 	// get_bytes
-	//	COMMENT: ƒoƒCƒg—ñæ“¾
-	//	NOTE: Java‚ÌBigInteger‚Æˆá‚¢AƒŠƒgƒ‹ƒGƒ“ƒfƒBƒAƒ“‚Å‰ğß‚³‚ê‚é
+	//	COMMENT: ãƒã‚¤ãƒˆåˆ—å–å¾—
+	//	NOTE: Javaã®BigIntegerã¨é•ã„ã€ãƒªãƒˆãƒ«ã‚¨ãƒ³ãƒ‡ã‚£ã‚¢ãƒ³ã§è§£é‡ˆã•ã‚Œã‚‹
 	//
 	SPRIG_INLINE void get_bytes(big_int const& v, big_int_detail::byte_type* dest, std::size_t n) {
 		std::vector<big_int_detail::byte_type> bytes(n);

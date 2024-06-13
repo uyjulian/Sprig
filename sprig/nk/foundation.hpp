@@ -42,20 +42,20 @@ namespace sprig {
 		// unit_state
 		//
 		enum unit_state {
-			normal,					// ³í
-			abnormal,				// ˆÙí
-			requires_input,			// “ü—Í‚ª•K—v
-			stopped					// –¢QÆƒƒ‚ƒŠ‚ğw‚µ‚Ä’â~
+			normal,					// æ­£å¸¸
+			abnormal,				// ç•°å¸¸
+			requires_input,			// å…¥åŠ›ãŒå¿…è¦
+			stopped					// æœªå‚ç…§ãƒ¡ãƒ¢ãƒªã‚’æŒ‡ã—ã¦åœæ­¢
 		};
 
 		//
 		// unit_error
 		//
 		enum unit_error {
-			no_error,				// ƒGƒ‰[‚Å‚È‚¢
-			un_executable,			// Às‰Â”\‚Èó‘Ô‚Å‚È‚¢
-			out_of_bounds_forward,	// ‘O•û‘{¸‚Å–¢QÆƒƒ‚ƒŠ‚Ü‚Å‘{¸‚µ‚Ä‚à”­Œ©‚Å‚«‚È‚©‚Á‚½
-			out_of_bounds_backward	// Œã•û‘{¸‚Å–¢QÆƒƒ‚ƒŠ‚Ü‚Å‘{¸‚µ‚Ä‚à”­Œ©‚Å‚«‚È‚©‚Á‚½
+			no_error,				// ã‚¨ãƒ©ãƒ¼ã§ãªã„
+			un_executable,			// å®Ÿè¡Œå¯èƒ½ãªçŠ¶æ…‹ã§ãªã„
+			out_of_bounds_forward,	// å‰æ–¹æœæŸ»ã§æœªå‚ç…§ãƒ¡ãƒ¢ãƒªã¾ã§æœæŸ»ã—ã¦ã‚‚ç™ºè¦‹ã§ããªã‹ã£ãŸ
+			out_of_bounds_backward	// å¾Œæ–¹æœæŸ»ã§æœªå‚ç…§ãƒ¡ãƒ¢ãƒªã¾ã§æœæŸ»ã—ã¦ã‚‚ç™ºè¦‹ã§ããªã‹ã£ãŸ
 		};
 
 		//
@@ -82,14 +82,14 @@ namespace sprig {
 		public:
 			virtual ~unit() {}
 			virtual unit_id_type const get_id() = 0;
-			// ƒ†ƒjƒbƒgî•ñ
+			// ãƒ¦ãƒ‹ãƒƒãƒˆæƒ…å ±
 			virtual unit_info const get_info() const = 0;
 			virtual void set_info(unit_info const& info) = 0;
-			// “ü—Íƒoƒbƒtƒ@
+			// å…¥åŠ›ãƒãƒƒãƒ•ã‚¡
 			virtual void push_input(byte_type const in) = 0;
 			virtual popped_byte_type const pop_input() = 0;
 			virtual bool const empty_input() = 0;
-			// o—Íƒoƒbƒtƒ@
+			// å‡ºåŠ›ãƒãƒƒãƒ•ã‚¡
 			virtual void push_output(byte_type const out) = 0;
 			virtual popped_byte_type const pop_output() = 0;
 			virtual bool const empty_output() = 0;
@@ -103,15 +103,15 @@ namespace sprig {
 			virtual ~engine() {}
 			virtual created_unit_type create_unit() = 0;
 			virtual interval_type const referenced_interval(unit& u) const = 0;
-			// ƒAƒƒP[ƒVƒ‡ƒ“
+			// ã‚¢ãƒ­ã‚±ãƒ¼ã‚·ãƒ§ãƒ³
 			virtual bool const allocate(unit& u, size_type const s) = 0;
 			virtual bool const is_allocated(unit& u) const = 0;
 			virtual size_type const allocated_size(unit& u) const = 0;
-			// ƒ[ƒfƒBƒ“ƒO
+			// ãƒ­ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°
 			virtual bool const load(unit& u, byte_type const c) = 0;
 			virtual bool const is_full_loaded(unit& u) const = 0;
 			virtual size_type const loaded_size(unit& u) const = 0;
-			// Às
+			// å®Ÿè¡Œ
 			virtual bool const is_executable(unit& u) const = 0;
 			virtual bool const begin_execution(unit& u) = 0;
 			virtual bool const end_execution(unit& u) = 0;

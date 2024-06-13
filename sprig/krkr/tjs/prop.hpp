@@ -22,7 +22,7 @@ namespace sprig {
 	namespace krkr {
 		namespace tjs {
 			//
-			// COMMENT: �I�u�W�F�N�g����v���p�e�B�̒l���擾����B
+			// COMMENT: オブジェクトからプロパティの値を取得する。
 			//
 			template<typename T>
 			SPRIG_INLINE T GetPropValue(iTJSDispatch2* obj, tjs_char const* membername) {
@@ -47,7 +47,7 @@ namespace sprig {
 				return GetPropValue<T>(closure.Object, closure.ObjThis, membername);
 			}
 			//
-			// COMMENT: �v���p�e�B�I�u�W�F�N�g��ΏۂƂ��āA�I�u�W�F�N�g����v���p�e�B�̒l���擾����B
+			// COMMENT: プロパティオブジェクトを対象として、オブジェクトからプロパティの値を取得する。
 			//
 			template<typename T>
 			SPRIG_INLINE T GetPropValue(iTJSDispatch2* obj, iTJSDispatch2* objthis) {
@@ -59,7 +59,7 @@ namespace sprig {
 				return GetPropValue<T>(sprig::get_pointer(obj), sprig::get_pointer(objthis));
 			}
 			//
-			// COMMENT: �����ɂ���āA�I�u�W�F�N�g����v���p�e�B�̒l���擾����B
+			// COMMENT: 序数によって、オブジェクトからプロパティの値を取得する。
 			//
 			template<typename T>
 			SPRIG_INLINE T GetPropValue(iTJSDispatch2* obj, tjs_int num) {
@@ -85,7 +85,7 @@ namespace sprig {
 			}
 
 			//
-			// COMMENT: �I�u�W�F�N�g�փv���p�e�B�̒l��ݒ肷��B
+			// COMMENT: オブジェクトへプロパティの値を設定する。
 			//
 			SPRIG_INLINE void SetPropValue(sprig::krkr::tjs::object_type const& obj, tjs_char const* membername, tTJSVariant const& var) {
 				PropSet(sprig::get_pointer(obj), 0, membername, 0, &var, sprig::get_pointer(obj));
@@ -97,13 +97,13 @@ namespace sprig {
 				SetPropValue(closure.Object, closure.ObjThis, membername, var);
 			}
 			//
-			// COMMENT: �v���p�e�B�I�u�W�F�N�g��ΏۂƂ��āA�I�u�W�F�N�g�փv���p�e�B�̒l��ݒ肷��B
+			// COMMENT: プロパティオブジェクトを対象として、オブジェクトへプロパティの値を設定する。
 			//
 			SPRIG_INLINE void SetPropValue(sprig::krkr::tjs::object_type const& obj, sprig::krkr::tjs::object_type const& objthis, tTJSVariant const& var) {
 				PropSet(sprig::get_pointer(obj), 0, 0, 0, &var, sprig::get_pointer(objthis));
 			}
 			//
-			// COMMENT: �����ɂ���āA�I�u�W�F�N�g�փv���p�e�B�̒l��ݒ肷��B
+			// COMMENT: 序数によって、オブジェクトへプロパティの値を設定する。
 			//
 			SPRIG_INLINE void SetPropValue(sprig::krkr::tjs::object_type const& obj, tjs_int num, tTJSVariant const& var) {
 				PropSetByNum(sprig::get_pointer(obj), 0, num, &var, sprig::get_pointer(obj));

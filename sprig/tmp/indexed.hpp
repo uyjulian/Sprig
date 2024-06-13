@@ -65,7 +65,7 @@ namespace sprig {
 		//
 		// indexed
 		//
-		//	COMMENT: ƒV[ƒPƒ“ƒX‚ÌŠeƒCƒ“ƒfƒbƒNƒX‚ðƒL[AŠe—v‘f‚ð’l‚Æ‚µ‚½ƒ}ƒbƒv‚ð•Ô‚·
+		//	COMMENT: ã‚·ãƒ¼ã‚±ãƒ³ã‚¹ã®å„ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’ã‚­ãƒ¼ã€å„è¦ç´ ã‚’å€¤ã¨ã—ãŸãƒžãƒƒãƒ—ã‚’è¿”ã™
 		//
 		template<
 			typename Sequence,

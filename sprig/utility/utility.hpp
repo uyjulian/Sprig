@@ -37,7 +37,7 @@ namespace sprig {
 	SPRIG_INLINE T raise_up(T const value) {
 		T result(N);
 		if (value <= 0)
-			throw bad_raise_up("’l‚ª0ˆÈ‰º‚Å‚·");
+			throw bad_raise_up("å€¤ãŒ0ä»¥ä¸‹ã§ã™");
 		for (; result < value; result *= N)
 			;
 		return result;

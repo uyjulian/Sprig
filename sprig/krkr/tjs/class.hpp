@@ -31,7 +31,7 @@ namespace sprig {
 			// GetTJSClass
 			// GetTJSClassNoAddRef
 			//
-			// COMMENT: ‹g—¢‹g—¢‚ÌiƒOƒ[ƒoƒ‹‹óŠÔ‚ÌjƒNƒ‰ƒXƒIƒuƒWƒFƒNƒg‚ğæ“¾‚·‚éB
+			// COMMENT: å‰é‡Œå‰é‡Œã®ï¼ˆã‚°ãƒ­ãƒ¼ãƒãƒ«ç©ºé–“ã®ï¼‰ã‚¯ãƒ©ã‚¹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—ã™ã‚‹ã€‚
 			//
 			SPRIG_INLINE iTJSDispatch2* GetTJSClass(tjs_char const* name) {
 				iTJSDispatch2* result;

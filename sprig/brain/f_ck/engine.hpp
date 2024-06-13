@@ -34,20 +34,20 @@ namespace sprig {
 			//
 			// engine_initialization_error
 			//
-			//	COMMENT: ƒGƒ“ƒWƒ“‰Šú‰»Žž‚ÉƒGƒ‰[‚ª”­¶‚µ‚½‚Æ‚«‚É“Š‚°‚ç‚ê‚é—áŠO
+			//	COMMENT: ã‚¨ãƒ³ã‚¸ãƒ³åˆæœŸåŒ–æ™‚ã«ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸã¨ãã«æŠ•ã’ã‚‰ã‚Œã‚‹ä¾‹å¤–
 			//
 			SPRIG_EXCEPTION_INHERIT_DECL(engine_initialization_error, brain_exception);
 			//
 			// engine_uninitialized
 			//
-			//	COMMENT: ƒGƒ“ƒWƒ“‚ª–¢‰Šú‰»ó‘Ô‚ÅŽÀs‚µ‚½‚Æ‚«‚É“Š‚°‚ç‚ê‚é—áŠO
+			//	COMMENT: ã‚¨ãƒ³ã‚¸ãƒ³ãŒæœªåˆæœŸåŒ–çŠ¶æ…‹ã§å®Ÿè¡Œã—ãŸã¨ãã«æŠ•ã’ã‚‰ã‚Œã‚‹ä¾‹å¤–
 			//
 			SPRIG_EXCEPTION_INHERIT_DECL(engine_uninitialized, brain_exception);
 
 			//
 			// bf_engine
 			//
-			//	COMMENT: ‘O•ûŽÀs‚µAI’[‚ÅŽÀs‚ðI—¹‚·‚éƒGƒ“ƒWƒ“ƒNƒ‰ƒX
+			//	COMMENT: å‰æ–¹å®Ÿè¡Œã—ã€çµ‚ç«¯ã§å®Ÿè¡Œã‚’çµ‚äº†ã™ã‚‹ã‚¨ãƒ³ã‚¸ãƒ³ã‚¯ãƒ©ã‚¹
 			//
 			template<
 				typename Types = use_default,

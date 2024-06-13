@@ -76,7 +76,7 @@ namespace sprig {
 				BOOST_FOREACH(value_type const& e, priority_map_) {
 					if (FAILED(result = e.ref_mapped()->reinitialize(device))) {
 						SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-						SPRIG_DG_ERROR("フィルタの初期化に失敗しました", bad_initialize);
+						SPRIG_DG_ERROR("繝輔ぅ繝ｫ繧ｿ縺ｮ蛻晄悄蛹悶↓螟ｱ謨励＠縺ｾ縺励◆", bad_initialize);
 						return result;
 					}
 				}
@@ -89,7 +89,7 @@ namespace sprig {
 				BOOST_FOREACH(value_type const& e, priority_map_.get<priority_tag_type>()) {
 					if (FAILED((result = e.get_mapped()->apply(*result.second)).first)) {
 						SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-						SPRIG_DG_ERROR("フィルタの適用に失敗しました", bad_process);
+						SPRIG_DG_ERROR("繝輔ぅ繝ｫ繧ｿ縺ｮ驕ｩ逕ｨ縺ｫ螟ｱ謨励＠縺ｾ縺励◆", bad_process);
 						return result;
 					}
 					if (!result.second) {

@@ -24,7 +24,7 @@
 #include <sprig/wave/compiler/unknown.hpp>
 
 //
-//	: 行数チェック
+//	: 陦梧焚繝√ぉ繝�繧ｯ
 //
 #if SPRIG_WAVE_MACROS_NUM > BOOST_PP_LIMIT_REPEAT
 #	error SPRIG_WAVE_MACROS_NUM > BOOST_PP_LIMIT_REPEAT

@@ -25,8 +25,8 @@ namespace sprig {
 			//
 			// bf_multi_literals
 			//
-			//	COMMENT: Brainf*ck ‚ÌƒŠƒeƒ‰ƒ‹’è‹`
-			//	COMMENT: Šî–{ƒRƒ}ƒ“ƒh‚É‘Î‰ž‚·‚é•¶Žš—ñƒZƒbƒg‚ð’è‹`‚·‚é
+			//	COMMENT: Brainf*ck ã®ãƒªãƒ†ãƒ©ãƒ«å®šç¾©
+			//	COMMENT: åŸºæœ¬ã‚³ãƒžãƒ³ãƒ‰ã«å¯¾å¿œã™ã‚‹æ–‡å­—åˆ—ã‚»ãƒƒãƒˆã‚’å®šç¾©ã™ã‚‹
 			//
 			struct bf_multi_literals {
 				typedef std::vector<literal_array<char const, false> > type;

@@ -23,7 +23,7 @@ namespace sprig {
 			//
 			// optional_result_set
 			//
-			// COMMENT: boost::optionalŒ^‚Ìó‘Ô‚É‰‚¶‚Ä‚»‚Ì’l‚Ü‚½‚Ívoid‚ğİ’è‚·‚éB
+			// COMMENT: boost::optionalå‹ã®çŠ¶æ…‹ã«å¿œã˜ã¦ãã®å€¤ã¾ãŸã¯voidã‚’è¨­å®šã™ã‚‹ã€‚
 			//
 			template<typename T>
 			SPRIG_INLINE void optional_result_set(tTJSVariant* result, boost::optional<T> const& value) {

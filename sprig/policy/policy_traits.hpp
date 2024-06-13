@@ -15,7 +15,7 @@
 #endif	// #ifdef SPRIG_USING_PRAGMA_ONCE
 
 //
-//	COMMENT: ƒ|ƒŠƒV[”»’è
+//	COMMENT: ãƒãƒªã‚·ãƒ¼åˆ¤å®š
 //
 #include <sprig/policy/policy_traits/is_policy.hpp>
 #include <sprig/policy/policy_traits/is_policy_of.hpp>
@@ -24,7 +24,7 @@
 #include <sprig/policy/policy_traits/is_policy_exist.hpp>
 
 //
-//	COMMENT: ƒ|ƒŠƒV[Žæ“¾
+//	COMMENT: ãƒãƒªã‚·ãƒ¼å–å¾—
 //
 #include <sprig/policy/policy_traits/get_policy.hpp>
 #include <sprig/policy/policy_traits/get_policy_tag.hpp>

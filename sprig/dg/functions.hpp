@@ -94,69 +94,69 @@ namespace sprig {
 			boost::optional<sprig::call_traits<D3DCOLOR>::param_type> color = boost::none
 			);
 		static HRESULT fill_surface(
-			sprig::call_traits<surface_type>::param_type surface,	// ƒT[ƒtƒFƒCƒX
-			sprig::call_traits<std::size_t>::param_type pixel_size,	// ƒsƒNƒZƒ‹ƒf[ƒ^‚ÌƒsƒNƒZƒ‹ƒoƒCƒg”
-			boost::optional<sprig::call_traits<RECT>::param_type> rect = boost::none,	// ƒtƒBƒ‹ˆ—‚·‚é‹éŒ`
-			boost::optional<sprig::call_traits<D3DSURFACE_DESC>::param_type> hint_desc = boost::none	// ƒqƒ“ƒg‚Æ‚È‚éƒT[ƒtƒFƒCƒXî•ñ
+			sprig::call_traits<surface_type>::param_type surface,	// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹
+			sprig::call_traits<std::size_t>::param_type pixel_size,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®ãƒ”ã‚¯ã‚»ãƒ«ãƒã‚¤ãƒˆæ•°
+			boost::optional<sprig::call_traits<RECT>::param_type> rect = boost::none,	// ãƒ•ã‚£ãƒ«å‡¦ç†ã™ã‚‹çŸ©å½¢
+			boost::optional<sprig::call_traits<D3DSURFACE_DESC>::param_type> hint_desc = boost::none	// ãƒ’ãƒ³ãƒˆã¨ãªã‚‹ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹æƒ…å ±
 			);
 		static void transfer_bits_from_render_target(
-			sprig::call_traits<D3DLOCKED_RECT>::param_type locked_rect,	// ƒƒbƒN‚³‚ê‚½—Ìˆæ
-			sprig::call_traits<RECT>::param_type surface_rect,	// ƒT[ƒtƒFƒCƒX‚Ì—LŒø—Ìˆæ‚Éû‚Ü‚é‚æ‚¤•â³‚µ‚½‹éŒ`
-			sprig::call_traits<void*>::param_type bits,	// ƒsƒNƒZƒ‹ƒf[ƒ^
-			sprig::call_traits<SIZE>::param_type size,	// ƒsƒNƒZƒ‹ƒf[ƒ^‚ÌƒTƒCƒY
-			sprig::call_traits<std::size_t>::param_type pitch,	// ƒsƒNƒZƒ‹ƒf[ƒ^‚Ìƒsƒbƒ`
-			sprig::call_traits<std::size_t>::param_type pixel_size,	// ƒsƒNƒZƒ‹ƒf[ƒ^‚ÌƒsƒNƒZƒ‹ƒoƒCƒg”
-			sprig::call_traits<POINT>::param_type offset	// ƒRƒs[æ‚ÌƒIƒtƒZƒbƒg
+			sprig::call_traits<D3DLOCKED_RECT>::param_type locked_rect,	// ãƒ­ãƒƒã‚¯ã•ã‚ŒãŸé ˜åŸŸ
+			sprig::call_traits<RECT>::param_type surface_rect,	// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®æœ‰åŠ¹é ˜åŸŸã«åã¾ã‚‹ã‚ˆã†è£œæ­£ã—ãŸçŸ©å½¢
+			sprig::call_traits<void*>::param_type bits,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿
+			sprig::call_traits<SIZE>::param_type size,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®ã‚µã‚¤ã‚º
+			sprig::call_traits<std::size_t>::param_type pitch,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®ãƒ”ãƒƒãƒ
+			sprig::call_traits<std::size_t>::param_type pixel_size,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®ãƒ”ã‚¯ã‚»ãƒ«ãƒã‚¤ãƒˆæ•°
+			sprig::call_traits<POINT>::param_type offset	// ã‚³ãƒ”ãƒ¼å…ˆã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ
 			);
 		static HRESULT normalize_texture_rect(
-			RECT& texture_rect,	// ƒeƒNƒXƒ`ƒƒ‚Ì—LŒø—Ìˆæ‚Éû‚Ü‚é‚æ‚¤•â³‚µ‚½‹éŒ`
-			sprig::call_traits<texture_type>::param_type texture,	// ƒeƒNƒXƒ`ƒƒ
-			sprig::call_traits<RECT>::param_type rect,	// ‹éŒ`
-			boost::optional<sprig::call_traits<D3DSURFACE_DESC>::param_type> hint_desc = boost::none	// ƒqƒ“ƒg‚Æ‚È‚éƒT[ƒtƒFƒCƒXî•ñ
+			RECT& texture_rect,	// ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®æœ‰åŠ¹é ˜åŸŸã«åã¾ã‚‹ã‚ˆã†è£œæ­£ã—ãŸçŸ©å½¢
+			sprig::call_traits<texture_type>::param_type texture,	// ãƒ†ã‚¯ã‚¹ãƒãƒ£
+			sprig::call_traits<RECT>::param_type rect,	// çŸ©å½¢
+			boost::optional<sprig::call_traits<D3DSURFACE_DESC>::param_type> hint_desc = boost::none	// ãƒ’ãƒ³ãƒˆã¨ãªã‚‹ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹æƒ…å ±
 			);
 		static HRESULT normalize_surface_rect(
-			RECT& surface_rect,	// ƒT[ƒtƒFƒCƒX‚Ì—LŒø—Ìˆæ‚Éû‚Ü‚é‚æ‚¤•â³‚µ‚½‹éŒ`
-			sprig::call_traits<surface_type>::param_type surface,	// ƒT[ƒtƒFƒCƒX
-			sprig::call_traits<RECT>::param_type rect,	// ‹éŒ`
-			boost::optional<sprig::call_traits<D3DSURFACE_DESC>::param_type> hint_desc = boost::none	// ƒqƒ“ƒg‚Æ‚È‚éƒT[ƒtƒFƒCƒXî•ñ
+			RECT& surface_rect,	// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®æœ‰åŠ¹é ˜åŸŸã«åã¾ã‚‹ã‚ˆã†è£œæ­£ã—ãŸçŸ©å½¢
+			sprig::call_traits<surface_type>::param_type surface,	// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹
+			sprig::call_traits<RECT>::param_type rect,	// çŸ©å½¢
+			boost::optional<sprig::call_traits<D3DSURFACE_DESC>::param_type> hint_desc = boost::none	// ãƒ’ãƒ³ãƒˆã¨ãªã‚‹ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹æƒ…å ±
 			);
 		static HRESULT normalize_surface_rect_from_memory(
-			RECT& surface_rect,	// ƒT[ƒtƒFƒCƒX‚Ì—LŒø—Ìˆæ‚Éû‚Ü‚é‚æ‚¤•â³‚µ‚½‹éŒ`
-			sprig::call_traits<surface_type>::param_type surface,	// ƒT[ƒtƒFƒCƒX
-			sprig::call_traits<POINT>::param_type offset,	// ƒRƒs[æ‚ÌƒIƒtƒZƒbƒg
-			sprig::call_traits<RECT>::param_type rect,	// ƒRƒs[Œ³‚Ì‹éŒ`
-			boost::optional<sprig::call_traits<D3DSURFACE_DESC>::param_type> hint_desc = boost::none	// ƒqƒ“ƒg‚Æ‚È‚éƒT[ƒtƒFƒCƒXî•ñ
+			RECT& surface_rect,	// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®æœ‰åŠ¹é ˜åŸŸã«åã¾ã‚‹ã‚ˆã†è£œæ­£ã—ãŸçŸ©å½¢
+			sprig::call_traits<surface_type>::param_type surface,	// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹
+			sprig::call_traits<POINT>::param_type offset,	// ã‚³ãƒ”ãƒ¼å…ˆã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+			sprig::call_traits<RECT>::param_type rect,	// ã‚³ãƒ”ãƒ¼å…ƒã®çŸ©å½¢
+			boost::optional<sprig::call_traits<D3DSURFACE_DESC>::param_type> hint_desc = boost::none	// ãƒ’ãƒ³ãƒˆã¨ãªã‚‹ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹æƒ…å ±
 			);
 		static void transfer_bits_from_memory(
-			sprig::call_traits<D3DLOCKED_RECT>::param_type locked_rect,	// ƒƒbƒN‚³‚ê‚½—Ìˆæ
-			sprig::call_traits<RECT>::param_type surface_rect,	// ƒT[ƒtƒFƒCƒX‚Ì—LŒø—Ìˆæ‚Éû‚Ü‚é‚æ‚¤•â³‚µ‚½‹éŒ`
-			sprig::call_traits<void*>::param_type bits,	// ƒsƒNƒZƒ‹ƒf[ƒ^
-			sprig::call_traits<SIZE>::param_type size,	// ƒsƒNƒZƒ‹ƒf[ƒ^‚ÌƒTƒCƒY
-			sprig::call_traits<std::size_t>::param_type pitch,	// ƒsƒNƒZƒ‹ƒf[ƒ^‚Ìƒsƒbƒ`
-			sprig::call_traits<std::size_t>::param_type pixel_size,	// ƒsƒNƒZƒ‹ƒf[ƒ^‚ÌƒsƒNƒZƒ‹ƒoƒCƒg”
-			sprig::call_traits<RECT>::param_type rect	// ƒRƒs[Œ³‚Ì‹éŒ`
+			sprig::call_traits<D3DLOCKED_RECT>::param_type locked_rect,	// ãƒ­ãƒƒã‚¯ã•ã‚ŒãŸé ˜åŸŸ
+			sprig::call_traits<RECT>::param_type surface_rect,	// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®æœ‰åŠ¹é ˜åŸŸã«åã¾ã‚‹ã‚ˆã†è£œæ­£ã—ãŸçŸ©å½¢
+			sprig::call_traits<void*>::param_type bits,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿
+			sprig::call_traits<SIZE>::param_type size,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®ã‚µã‚¤ã‚º
+			sprig::call_traits<std::size_t>::param_type pitch,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®ãƒ”ãƒƒãƒ
+			sprig::call_traits<std::size_t>::param_type pixel_size,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®ãƒ”ã‚¯ã‚»ãƒ«ãƒã‚¤ãƒˆæ•°
+			sprig::call_traits<RECT>::param_type rect	// ã‚³ãƒ”ãƒ¼å…ƒã®çŸ©å½¢
 			);
 		static HRESULT transfer_from_memory(
-			sprig::call_traits<surface_type>::param_type surface,	// ƒT[ƒtƒFƒCƒX
-			sprig::call_traits<void*>::param_type bits,	// ƒsƒNƒZƒ‹ƒf[ƒ^
-			sprig::call_traits<SIZE>::param_type size,	// ƒsƒNƒZƒ‹ƒf[ƒ^‚ÌƒTƒCƒY
-			sprig::call_traits<std::size_t>::param_type pitch,	// ƒsƒNƒZƒ‹ƒf[ƒ^‚Ìƒsƒbƒ`
-			sprig::call_traits<std::size_t>::param_type pixel_size,	// ƒsƒNƒZƒ‹ƒf[ƒ^‚ÌƒsƒNƒZƒ‹ƒoƒCƒg”
-			sprig::call_traits<POINT>::param_type offset,	// ƒRƒs[æ‚ÌƒIƒtƒZƒbƒg
-			sprig::call_traits<RECT>::param_type rect,	// ƒRƒs[Œ³‚Ì‹éŒ`
-			boost::optional<sprig::call_traits<D3DSURFACE_DESC>::param_type> hint_desc = boost::none	// ƒqƒ“ƒg‚Æ‚È‚éƒT[ƒtƒFƒCƒXî•ñ
+			sprig::call_traits<surface_type>::param_type surface,	// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹
+			sprig::call_traits<void*>::param_type bits,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿
+			sprig::call_traits<SIZE>::param_type size,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®ã‚µã‚¤ã‚º
+			sprig::call_traits<std::size_t>::param_type pitch,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®ãƒ”ãƒƒãƒ
+			sprig::call_traits<std::size_t>::param_type pixel_size,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®ãƒ”ã‚¯ã‚»ãƒ«ãƒã‚¤ãƒˆæ•°
+			sprig::call_traits<POINT>::param_type offset,	// ã‚³ãƒ”ãƒ¼å…ˆã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+			sprig::call_traits<RECT>::param_type rect,	// ã‚³ãƒ”ãƒ¼å…ƒã®çŸ©å½¢
+			boost::optional<sprig::call_traits<D3DSURFACE_DESC>::param_type> hint_desc = boost::none	// ãƒ’ãƒ³ãƒˆã¨ãªã‚‹ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹æƒ…å ±
 			);
 		static HRESULT transfer_from_render_target(
-			sprig::call_traits<device_type>::param_type device,	// ƒfƒoƒCƒX
-			sprig::call_traits<surface_type>::param_type render_target_surface,	// ƒŒƒ“ƒ_[ƒ^[ƒQƒbƒg
-			sprig::call_traits<surface_type>::param_type surface,	// ƒT[ƒtƒFƒCƒX
-			sprig::call_traits<void*>::param_type bits,	// ƒsƒNƒZƒ‹ƒf[ƒ^
-			sprig::call_traits<SIZE>::param_type size,	// ƒsƒNƒZƒ‹ƒf[ƒ^‚ÌƒTƒCƒY
-			sprig::call_traits<std::size_t>::param_type pitch,	// ƒsƒNƒZƒ‹ƒf[ƒ^‚Ìƒsƒbƒ`
-			sprig::call_traits<std::size_t>::param_type pixel_size,	// ƒsƒNƒZƒ‹ƒf[ƒ^‚ÌƒsƒNƒZƒ‹ƒoƒCƒg”
-			sprig::call_traits<POINT>::param_type offset,	// ƒRƒs[æ‚ÌƒIƒtƒZƒbƒg
-			sprig::call_traits<RECT>::param_type rect,	// ƒRƒs[Œ³‚Ì‹éŒ`
-			boost::optional<sprig::call_traits<D3DSURFACE_DESC>::param_type> hint_desc = boost::none	// ƒqƒ“ƒg‚Æ‚È‚éƒT[ƒtƒFƒCƒXî•ñ
+			sprig::call_traits<device_type>::param_type device,	// ãƒ‡ãƒã‚¤ã‚¹
+			sprig::call_traits<surface_type>::param_type render_target_surface,	// ãƒ¬ãƒ³ãƒ€ãƒ¼ã‚¿ãƒ¼ã‚²ãƒƒãƒˆ
+			sprig::call_traits<surface_type>::param_type surface,	// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹
+			sprig::call_traits<void*>::param_type bits,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿
+			sprig::call_traits<SIZE>::param_type size,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®ã‚µã‚¤ã‚º
+			sprig::call_traits<std::size_t>::param_type pitch,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®ãƒ”ãƒƒãƒ
+			sprig::call_traits<std::size_t>::param_type pixel_size,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®ãƒ”ã‚¯ã‚»ãƒ«ãƒã‚¤ãƒˆæ•°
+			sprig::call_traits<POINT>::param_type offset,	// ã‚³ãƒ”ãƒ¼å…ˆã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+			sprig::call_traits<RECT>::param_type rect,	// ã‚³ãƒ”ãƒ¼å…ƒã®çŸ©å½¢
+			boost::optional<sprig::call_traits<D3DSURFACE_DESC>::param_type> hint_desc = boost::none	// ãƒ’ãƒ³ãƒˆã¨ãªã‚‹ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹æƒ…å ±
 			);
 		static HRESULT lock_rect(
 			D3DLOCKED_RECT& locked_rect,
@@ -373,7 +373,7 @@ namespace sprig {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("rotation"), rotation);
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("translation"), translation);
 				}
-				SPRIG_DG_ERROR("ƒXƒvƒ‰ƒCƒg‚ÖÀ•W•ÏŠ·s—ñİ’è‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+				SPRIG_DG_ERROR("ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆã¸åº§æ¨™å¤‰æ›è¡Œåˆ—è¨­å®šã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 				return result;
 			}
 			return result;
@@ -396,10 +396,10 @@ namespace sprig {
 			HRESULT result = D3D_OK;
 			if (FAILED(result = sprite->Draw(
 				get_pointer(texture),
-				get_pointer(rect),	// •`‰æ”ÍˆÍ
-				get_pointer(center),	// ’†SÀ•W
-				get_pointer(position),	// •`‰æˆÊ’u
-				color.get_value_or(0xffffffff)	// ƒAƒ‹ƒtƒ@
+				get_pointer(rect),	// æç”»ç¯„å›²
+				get_pointer(center),	// ä¸­å¿ƒåº§æ¨™
+				get_pointer(position),	// æç”»ä½ç½®
+				color.get_value_or(0xffffffff)	// ã‚¢ãƒ«ãƒ•ã‚¡
 				)))
 			{
 				{
@@ -411,7 +411,7 @@ namespace sprig {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("position"), position);
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("color"), color);
 				}
-				SPRIG_DG_ERROR("ƒXƒvƒ‰ƒCƒg‚Ì•`‰æ‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+				SPRIG_DG_ERROR("ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆã®æç”»ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 				return result;
 			}
 			return result;
@@ -420,21 +420,21 @@ namespace sprig {
 		//
 		// fill_surface
 		//
-		//	COMMENT: ƒT[ƒtƒFƒCƒX‚ÌƒsƒNƒZƒ‹ƒf[ƒ^‚ğƒ[ƒƒtƒBƒ‹‚·‚éB
-		//	COMMENT: •‚“®“_¬”ƒtƒH[ƒ}ƒbƒg‚ÌƒeƒNƒXƒ`ƒƒ‚É‘Î‚µ‚Ä‚Í‚¨‚»‚ç‚­ˆ—ŒnˆË‘¶B
+		//	COMMENT: ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã‚’ã‚¼ãƒ­ãƒ•ã‚£ãƒ«ã™ã‚‹ã€‚
+		//	COMMENT: æµ®å‹•ç‚¹å°æ•°ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã®ãƒ†ã‚¯ã‚¹ãƒãƒ£ã«å¯¾ã—ã¦ã¯ãŠãã‚‰ãå‡¦ç†ç³»ä¾å­˜ã€‚
 		//
 		SPRIG_INLINE HRESULT fill_surface(
-			sprig::call_traits<surface_type>::param_type surface,	// ƒT[ƒtƒFƒCƒX
-			sprig::call_traits<std::size_t>::param_type pixel_size,	// ƒsƒNƒZƒ‹ƒf[ƒ^‚ÌƒsƒNƒZƒ‹ƒoƒCƒg”
-			boost::optional<sprig::call_traits<RECT>::param_type> rect,	// ƒtƒBƒ‹ˆ—‚·‚é‹éŒ`
-			boost::optional<sprig::call_traits<D3DSURFACE_DESC>::param_type> hint_desc	// ƒqƒ“ƒg‚Æ‚È‚éƒT[ƒtƒFƒCƒXî•ñ
+			sprig::call_traits<surface_type>::param_type surface,	// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹
+			sprig::call_traits<std::size_t>::param_type pixel_size,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®ãƒ”ã‚¯ã‚»ãƒ«ãƒã‚¤ãƒˆæ•°
+			boost::optional<sprig::call_traits<RECT>::param_type> rect,	// ãƒ•ã‚£ãƒ«å‡¦ç†ã™ã‚‹çŸ©å½¢
+			boost::optional<sprig::call_traits<D3DSURFACE_DESC>::param_type> hint_desc	// ãƒ’ãƒ³ãƒˆã¨ãªã‚‹ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹æƒ…å ±
 			)
 		{
 			using sprig::get_pointer;
 
 			HRESULT result = D3D_OK;
 
-			// ƒT[ƒtƒFƒCƒX‚Ì—LŒø—Ìˆæ‚Éû‚Ü‚é‚æ‚¤•â³‚µ‚½‹éŒ`
+			// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®æœ‰åŠ¹é ˜åŸŸã«åã¾ã‚‹ã‚ˆã†è£œæ­£ã—ãŸçŸ©å½¢
 			RECT surface_rect;
 			if (rect) {
 				if (hint_desc) {
@@ -443,7 +443,7 @@ namespace sprig {
 					surface_rect.right = std::min<LONG>(std::max<LONG>(rect->right, 0L), hint_desc->Width);
 					surface_rect.bottom = std::min<LONG>(std::max<LONG>(rect->bottom, 0L), hint_desc->Height);
 				} else {
-					// ƒT[ƒtƒFƒCƒXî•ñ‚Ìæ“¾
+					// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹æƒ…å ±ã®å–å¾—
 					D3DSURFACE_DESC desc;
 					if (FAILED(result = surface->GetDesc(&desc))) {
 						{
@@ -453,7 +453,7 @@ namespace sprig {
 							SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("rect"), rect);
 							SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("hint_desc"), hint_desc);
 						}
-						SPRIG_DG_ERROR("ƒT[ƒtƒFƒCƒXî•ñ‚Ìæ“¾‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+						SPRIG_DG_ERROR("ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹æƒ…å ±ã®å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 						return result;
 					}
 					surface_rect.left = std::min<LONG>(std::max<LONG>(rect->left, 0L), desc.Width);
@@ -468,7 +468,7 @@ namespace sprig {
 					surface_rect.right = hint_desc->Width;
 					surface_rect.bottom = hint_desc->Height;
 				} else {
-					// ƒT[ƒtƒFƒCƒXî•ñ‚Ìæ“¾
+					// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹æƒ…å ±ã®å–å¾—
 					D3DSURFACE_DESC desc;
 					if (FAILED(result = surface->GetDesc(&desc))) {
 						{
@@ -478,7 +478,7 @@ namespace sprig {
 							SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("rect"), rect);
 							SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("hint_desc"), hint_desc);
 						}
-						SPRIG_DG_ERROR("ƒT[ƒtƒFƒCƒXî•ñ‚Ìæ“¾‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+						SPRIG_DG_ERROR("ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹æƒ…å ±ã®å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 						return result;
 					}
 					surface_rect.left = 0L;
@@ -488,15 +488,15 @@ namespace sprig {
 				}
 			}
 
-			// ƒƒbƒN‚³‚ê‚½—Ìˆæ
+			// ãƒ­ãƒƒã‚¯ã•ã‚ŒãŸé ˜åŸŸ
 			D3DLOCKED_RECT locked_rect;
 
-			//	CHECK: ƒƒbƒN‚·‚é‹éŒ`‚ÉNULLˆÈŠO‚ğw’è‚·‚é‚ÆƒGƒ‰[‚ğ•Ô‚·BŒ´ˆö•s–¾B
-			// ƒT[ƒtƒFƒCƒX‚ÌƒƒbƒN
+			//	CHECK: ãƒ­ãƒƒã‚¯ã™ã‚‹çŸ©å½¢ã«NULLä»¥å¤–ã‚’æŒ‡å®šã™ã‚‹ã¨ã‚¨ãƒ©ãƒ¼ã‚’è¿”ã™ã€‚åŸå› ä¸æ˜ã€‚
+			// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®ãƒ­ãƒƒã‚¯
 			if (FAILED(result = surface->LockRect(
-				&locked_rect,	// ƒƒbƒN‚³‚ê‚½—Ìˆæ
-				NULL,//&surface_rect,	// ƒƒbƒN‚·‚é‹éŒ`
-				D3DLOCK_READONLY	// ƒƒbƒLƒ“ƒOƒtƒ‰ƒO
+				&locked_rect,	// ãƒ­ãƒƒã‚¯ã•ã‚ŒãŸé ˜åŸŸ
+				NULL,//&surface_rect,	// ãƒ­ãƒƒã‚¯ã™ã‚‹çŸ©å½¢
+				D3DLOCK_READONLY	// ãƒ­ãƒƒã‚­ãƒ³ã‚°ãƒ•ãƒ©ã‚°
 				)))
 			{
 				{
@@ -506,36 +506,36 @@ namespace sprig {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("rect"), rect);
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("hint_desc"), hint_desc);
 				}
-				SPRIG_DG_ERROR("ƒT[ƒtƒFƒCƒX‚ÌƒƒbƒN‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+				SPRIG_DG_ERROR("ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®ãƒ­ãƒƒã‚¯ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 				return result;
 			}
 
-			// ƒsƒNƒZƒ‹ƒf[ƒ^‚Ì—LŒø—Ìˆæ‚Éû‚Ü‚é‚æ‚¤•â³‚µ‚½ƒTƒCƒY
+			// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®æœ‰åŠ¹é ˜åŸŸã«åã¾ã‚‹ã‚ˆã†è£œæ­£ã—ãŸã‚µã‚¤ã‚º
 			SIZE const bits_size = {
 				surface_rect.right - surface_rect.left,
 				surface_rect.bottom - surface_rect.top
 			};
 
-			// ƒsƒNƒZƒ‹ƒf[ƒ^ƒRƒs[‚ÌƒTƒCƒY
+			// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã‚³ãƒ”ãƒ¼æ™‚ã®ã‚µã‚¤ã‚º
 			std::size_t const block_size = bits_size.cx * pixel_size;
 
-			// ƒsƒNƒZƒ‹ƒf[ƒ^ƒRƒs[‚Ìƒsƒbƒ`
+			// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã‚³ãƒ”ãƒ¼æ™‚ã®ãƒ”ãƒƒãƒ
 			std::size_t const dst_pitch = locked_rect.Pitch;
 
-			//	CHECK: ‘SƒƒbƒN‚µ‚Ä‚¢‚é‚½‚ß•â³‚ª•K—vB
+			//	CHECK: å…¨ãƒ­ãƒƒã‚¯ã—ã¦ã„ã‚‹ãŸã‚è£œæ­£ãŒå¿…è¦ã€‚
 			D3DLOCKED_RECT locked_rect_ = locked_rect;
 			locked_rect_.pBits = reinterpret_cast<unsigned char*>(locked_rect.pBits)
 				+ surface_rect.top * locked_rect.Pitch * pixel_size
 				+ surface_rect.left * pixel_size
 				;
-			// ƒT[ƒtƒFƒCƒX‚©‚ç“]‘—æ‚Öƒƒ‚ƒŠƒuƒƒbƒN‚ÌƒRƒs[
+			// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã‹ã‚‰è»¢é€å…ˆã¸ãƒ¡ãƒ¢ãƒªãƒ–ãƒ­ãƒƒã‚¯ã®ã‚³ãƒ”ãƒ¼
 			unsigned char* dst = static_cast<unsigned char*>(locked_rect_/*locked_rect*/.pBits);
 			for(std::size_t i = 0, last = bits_size.cy; i != last; ++i){
 				std::memset(dst, 0, block_size);
 				dst += dst_pitch;
 			}
 
-			// ƒT[ƒtƒFƒCƒX‚ÌƒAƒ“ƒƒbƒN
+			// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®ã‚¢ãƒ³ãƒ­ãƒƒã‚¯
 			if (FAILED(result = surface->UnlockRect())) {
 				{
 					SPRIG_DG_SECTION(TEXT("arguments"));
@@ -544,7 +544,7 @@ namespace sprig {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("rect"), rect);
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("hint_desc"), hint_desc);
 				}
-				SPRIG_DG_ERROR("ƒT[ƒtƒFƒCƒX‚ÌƒAƒ“ƒƒbƒN‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+				SPRIG_DG_ERROR("ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®ã‚¢ãƒ³ãƒ­ãƒƒã‚¯ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 				return result;
 			}
 
@@ -555,10 +555,10 @@ namespace sprig {
 		// normalize_texture_rect
 		//
 		SPRIG_INLINE HRESULT normalize_texture_rect(
-			RECT& texture_rect,	// ƒeƒNƒXƒ`ƒƒ‚Ì—LŒø—Ìˆæ‚Éû‚Ü‚é‚æ‚¤•â³‚µ‚½‹éŒ`
-			sprig::call_traits<texture_type>::param_type texture,	// ƒeƒNƒXƒ`ƒƒ
-			sprig::call_traits<RECT>::param_type rect,	// ƒRƒs[Œ³‚Ì‹éŒ`
-			boost::optional<sprig::call_traits<D3DSURFACE_DESC>::param_type> hint_desc	// ƒqƒ“ƒg‚Æ‚È‚éƒT[ƒtƒFƒCƒXî•ñ
+			RECT& texture_rect,	// ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®æœ‰åŠ¹é ˜åŸŸã«åã¾ã‚‹ã‚ˆã†è£œæ­£ã—ãŸçŸ©å½¢
+			sprig::call_traits<texture_type>::param_type texture,	// ãƒ†ã‚¯ã‚¹ãƒãƒ£
+			sprig::call_traits<RECT>::param_type rect,	// ã‚³ãƒ”ãƒ¼å…ƒã®çŸ©å½¢
+			boost::optional<sprig::call_traits<D3DSURFACE_DESC>::param_type> hint_desc	// ãƒ’ãƒ³ãƒˆã¨ãªã‚‹ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹æƒ…å ±
 			)
 		{
 			HRESULT result = D3D_OK;
@@ -569,7 +569,7 @@ namespace sprig {
 				texture_rect.right = std::min<LONG>(std::max<LONG>(rect.right, 0L), hint_desc->Width);
 				texture_rect.bottom = std::min<LONG>(std::max<LONG>(rect.bottom, 0L), hint_desc->Height);
 			} else {
-				// ƒT[ƒtƒFƒCƒXî•ñ‚Ìæ“¾
+				// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹æƒ…å ±ã®å–å¾—
 				D3DSURFACE_DESC desc;
 				if (FAILED(result = texture->GetLevelDesc(0, &desc))) {
 					{
@@ -578,7 +578,7 @@ namespace sprig {
 						SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("rect"), rect);
 						SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("hint_desc"), hint_desc);
 					}
-					SPRIG_DG_ERROR("ƒT[ƒtƒFƒCƒXî•ñ‚Ìæ“¾‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+					SPRIG_DG_ERROR("ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹æƒ…å ±ã®å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 					return result;
 				}
 				texture_rect.left = std::min<LONG>(std::max<LONG>(rect.left, 0L), desc.Width);
@@ -594,10 +594,10 @@ namespace sprig {
 		// normalize_surface_rect
 		//
 		SPRIG_INLINE HRESULT normalize_surface_rect(
-			RECT& surface_rect,	// ƒT[ƒtƒFƒCƒX‚Ì—LŒø—Ìˆæ‚Éû‚Ü‚é‚æ‚¤•â³‚µ‚½‹éŒ`
-			sprig::call_traits<surface_type>::param_type surface,	// ƒT[ƒtƒFƒCƒX
-			sprig::call_traits<RECT>::param_type rect,	// ƒRƒs[Œ³‚Ì‹éŒ`
-			boost::optional<sprig::call_traits<D3DSURFACE_DESC>::param_type> hint_desc	// ƒqƒ“ƒg‚Æ‚È‚éƒT[ƒtƒFƒCƒXî•ñ
+			RECT& surface_rect,	// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®æœ‰åŠ¹é ˜åŸŸã«åã¾ã‚‹ã‚ˆã†è£œæ­£ã—ãŸçŸ©å½¢
+			sprig::call_traits<surface_type>::param_type surface,	// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹
+			sprig::call_traits<RECT>::param_type rect,	// ã‚³ãƒ”ãƒ¼å…ƒã®çŸ©å½¢
+			boost::optional<sprig::call_traits<D3DSURFACE_DESC>::param_type> hint_desc	// ãƒ’ãƒ³ãƒˆã¨ãªã‚‹ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹æƒ…å ±
 			)
 		{
 			HRESULT result = D3D_OK;
@@ -608,7 +608,7 @@ namespace sprig {
 				surface_rect.right = std::min<LONG>(std::max<LONG>(rect.right, 0L), hint_desc->Width);
 				surface_rect.bottom = std::min<LONG>(std::max<LONG>(rect.bottom, 0L), hint_desc->Height);
 			} else {
-				// ƒT[ƒtƒFƒCƒXî•ñ‚Ìæ“¾
+				// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹æƒ…å ±ã®å–å¾—
 				D3DSURFACE_DESC desc;
 				if (FAILED(result = surface->GetDesc(&desc))) {
 					{
@@ -617,7 +617,7 @@ namespace sprig {
 						SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("rect"), rect);
 						SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("hint_desc"), hint_desc);
 					}
-					SPRIG_DG_ERROR("ƒT[ƒtƒFƒCƒXî•ñ‚Ìæ“¾‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+					SPRIG_DG_ERROR("ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹æƒ…å ±ã®å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 					return result;
 				}
 				surface_rect.left = std::min<LONG>(std::max<LONG>(rect.left, 0L), desc.Width);
@@ -633,11 +633,11 @@ namespace sprig {
 		// normalize_surface_rect_from_memory
 		//
 		SPRIG_INLINE HRESULT normalize_surface_rect_from_memory(
-			RECT& surface_rect,	// ƒT[ƒtƒFƒCƒX‚Ì—LŒø—Ìˆæ‚Éû‚Ü‚é‚æ‚¤•â³‚µ‚½‹éŒ`
-			sprig::call_traits<surface_type>::param_type surface,	// ƒT[ƒtƒFƒCƒX
-			sprig::call_traits<POINT>::param_type offset,	// ƒRƒs[æ‚ÌƒIƒtƒZƒbƒg
-			sprig::call_traits<RECT>::param_type rect,	// ƒRƒs[Œ³‚Ì‹éŒ`
-			boost::optional<sprig::call_traits<D3DSURFACE_DESC>::param_type> hint_desc	// ƒqƒ“ƒg‚Æ‚È‚éƒT[ƒtƒFƒCƒXî•ñ
+			RECT& surface_rect,	// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®æœ‰åŠ¹é ˜åŸŸã«åã¾ã‚‹ã‚ˆã†è£œæ­£ã—ãŸçŸ©å½¢
+			sprig::call_traits<surface_type>::param_type surface,	// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹
+			sprig::call_traits<POINT>::param_type offset,	// ã‚³ãƒ”ãƒ¼å…ˆã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+			sprig::call_traits<RECT>::param_type rect,	// ã‚³ãƒ”ãƒ¼å…ƒã®çŸ©å½¢
+			boost::optional<sprig::call_traits<D3DSURFACE_DESC>::param_type> hint_desc	// ãƒ’ãƒ³ãƒˆã¨ãªã‚‹ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹æƒ…å ±
 			)
 		{
 			HRESULT result = D3D_OK;
@@ -648,7 +648,7 @@ namespace sprig {
 				surface_rect.right = std::min<LONG>(std::max<LONG>(offset.x + rect.right - rect.left, 0L), hint_desc->Width);
 				surface_rect.bottom = std::min<LONG>(std::max<LONG>(offset.y + rect.bottom - rect.top, 0L), hint_desc->Height);
 			} else {
-				// ƒT[ƒtƒFƒCƒXî•ñ‚Ìæ“¾
+				// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹æƒ…å ±ã®å–å¾—
 				D3DSURFACE_DESC desc;
 				if (FAILED(result = surface->GetDesc(&desc))) {
 					{
@@ -658,7 +658,7 @@ namespace sprig {
 						SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("rect"), rect);
 						SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("hint_desc"), hint_desc);
 					}
-					SPRIG_DG_ERROR("ƒT[ƒtƒFƒCƒXî•ñ‚Ìæ“¾‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+					SPRIG_DG_ERROR("ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹æƒ…å ±ã®å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 					return result;
 				}
 				surface_rect.left = std::min<LONG>(std::max<LONG>(offset.x, 0L), desc.Width);
@@ -674,36 +674,36 @@ namespace sprig {
 		// transfer_bits_from_memory
 		//
 		SPRIG_INLINE void transfer_bits_from_memory(
-			sprig::call_traits<D3DLOCKED_RECT>::param_type locked_rect,	// ƒƒbƒN‚³‚ê‚½—Ìˆæ
-			sprig::call_traits<RECT>::param_type surface_rect,	// ƒT[ƒtƒFƒCƒX‚Ì—LŒø—Ìˆæ‚Éû‚Ü‚é‚æ‚¤•â³‚µ‚½‹éŒ`
-			sprig::call_traits<void*>::param_type bits,	// ƒsƒNƒZƒ‹ƒf[ƒ^
-			sprig::call_traits<SIZE>::param_type size,	// ƒsƒNƒZƒ‹ƒf[ƒ^‚ÌƒTƒCƒY
-			sprig::call_traits<std::size_t>::param_type pitch,	// ƒsƒNƒZƒ‹ƒf[ƒ^‚Ìƒsƒbƒ`
-			sprig::call_traits<std::size_t>::param_type pixel_size,	// ƒsƒNƒZƒ‹ƒf[ƒ^‚ÌƒsƒNƒZƒ‹ƒoƒCƒg”
-			sprig::call_traits<RECT>::param_type rect	// ƒRƒs[Œ³‚Ì‹éŒ`
+			sprig::call_traits<D3DLOCKED_RECT>::param_type locked_rect,	// ãƒ­ãƒƒã‚¯ã•ã‚ŒãŸé ˜åŸŸ
+			sprig::call_traits<RECT>::param_type surface_rect,	// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®æœ‰åŠ¹é ˜åŸŸã«åã¾ã‚‹ã‚ˆã†è£œæ­£ã—ãŸçŸ©å½¢
+			sprig::call_traits<void*>::param_type bits,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿
+			sprig::call_traits<SIZE>::param_type size,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®ã‚µã‚¤ã‚º
+			sprig::call_traits<std::size_t>::param_type pitch,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®ãƒ”ãƒƒãƒ
+			sprig::call_traits<std::size_t>::param_type pixel_size,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®ãƒ”ã‚¯ã‚»ãƒ«ãƒã‚¤ãƒˆæ•°
+			sprig::call_traits<RECT>::param_type rect	// ã‚³ãƒ”ãƒ¼å…ƒã®çŸ©å½¢
 			)
 		{
-			// ƒsƒNƒZƒ‹ƒf[ƒ^‚Ì—LŒø—Ìˆæ‚Éû‚Ü‚é‚æ‚¤•â³‚µ‚½ƒIƒtƒZƒbƒg
+			// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®æœ‰åŠ¹é ˜åŸŸã«åã¾ã‚‹ã‚ˆã†è£œæ­£ã—ãŸã‚ªãƒ•ã‚»ãƒƒãƒˆ
 			POINT const bits_offset = {
 				std::min<LONG>(std::max<LONG>(rect.left, 0L), size.cx),
 				std::min<LONG>(std::max<LONG>(rect.top, 0L), size.cy)
 			};
 
-			// ƒsƒNƒZƒ‹ƒf[ƒ^‚Ì—LŒø—Ìˆæ‚Éû‚Ü‚é‚æ‚¤•â³‚µ‚½ƒTƒCƒY
+			// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®æœ‰åŠ¹é ˜åŸŸã«åã¾ã‚‹ã‚ˆã†è£œæ­£ã—ãŸã‚µã‚¤ã‚º
 			SIZE const bits_size = {
 				std::min<LONG>(surface_rect.right - surface_rect.left, size.cx - bits_offset.x),
 				std::min<LONG>(surface_rect.bottom - surface_rect.top, size.cy - bits_offset.y)
 			};
 
-			// ƒsƒNƒZƒ‹ƒf[ƒ^ƒRƒs[‚ÌƒIƒtƒZƒbƒg‚ÆƒTƒCƒY
+			// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã‚³ãƒ”ãƒ¼æ™‚ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆã¨ã‚µã‚¤ã‚º
 			std::size_t const offset_size = bits_offset.x * pixel_size;
 			std::size_t const block_size = bits_size.cx * pixel_size;
 
-			// ƒsƒNƒZƒ‹ƒf[ƒ^ƒRƒs[‚Ìƒsƒbƒ`
+			// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã‚³ãƒ”ãƒ¼æ™‚ã®ãƒ”ãƒƒãƒ
 			std::size_t const dst_pitch = locked_rect.Pitch;
 			std::size_t const src_pitch = pitch;
 
-			// ƒT[ƒtƒFƒCƒX‚Öƒƒ‚ƒŠƒuƒƒbƒN‚ÌƒRƒs[
+			// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã¸ãƒ¡ãƒ¢ãƒªãƒ–ãƒ­ãƒƒã‚¯ã®ã‚³ãƒ”ãƒ¼
 			unsigned char* dst = static_cast<unsigned char*>(locked_rect.pBits);
 			unsigned char* src = static_cast<unsigned char*>(bits) + bits_offset.y * pitch + offset_size;
 			for(std::size_t i = 0, last = bits_size.cy; i != last; ++i){
@@ -717,36 +717,36 @@ namespace sprig {
 		// transfer_bits_from_render_target
 		//
 		SPRIG_INLINE void transfer_bits_from_render_target(
-			sprig::call_traits<D3DLOCKED_RECT>::param_type locked_rect,	// ƒƒbƒN‚³‚ê‚½—Ìˆæ
-			sprig::call_traits<RECT>::param_type surface_rect,	// ƒT[ƒtƒFƒCƒX‚Ì—LŒø—Ìˆæ‚Éû‚Ü‚é‚æ‚¤•â³‚µ‚½‹éŒ`
-			sprig::call_traits<void*>::param_type bits,	// ƒsƒNƒZƒ‹ƒf[ƒ^
-			sprig::call_traits<SIZE>::param_type size,	// ƒsƒNƒZƒ‹ƒf[ƒ^‚ÌƒTƒCƒY
-			sprig::call_traits<std::size_t>::param_type pitch,	// ƒsƒNƒZƒ‹ƒf[ƒ^‚Ìƒsƒbƒ`
-			sprig::call_traits<std::size_t>::param_type pixel_size,	// ƒsƒNƒZƒ‹ƒf[ƒ^‚ÌƒsƒNƒZƒ‹ƒoƒCƒg”
-			sprig::call_traits<POINT>::param_type offset	// ƒRƒs[æ‚ÌƒIƒtƒZƒbƒg
+			sprig::call_traits<D3DLOCKED_RECT>::param_type locked_rect,	// ãƒ­ãƒƒã‚¯ã•ã‚ŒãŸé ˜åŸŸ
+			sprig::call_traits<RECT>::param_type surface_rect,	// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®æœ‰åŠ¹é ˜åŸŸã«åã¾ã‚‹ã‚ˆã†è£œæ­£ã—ãŸçŸ©å½¢
+			sprig::call_traits<void*>::param_type bits,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿
+			sprig::call_traits<SIZE>::param_type size,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®ã‚µã‚¤ã‚º
+			sprig::call_traits<std::size_t>::param_type pitch,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®ãƒ”ãƒƒãƒ
+			sprig::call_traits<std::size_t>::param_type pixel_size,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®ãƒ”ã‚¯ã‚»ãƒ«ãƒã‚¤ãƒˆæ•°
+			sprig::call_traits<POINT>::param_type offset	// ã‚³ãƒ”ãƒ¼å…ˆã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ
 			)
 		{
-			// ƒsƒNƒZƒ‹ƒf[ƒ^‚Ì—LŒø—Ìˆæ‚Éû‚Ü‚é‚æ‚¤•â³‚µ‚½ƒIƒtƒZƒbƒg
+			// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®æœ‰åŠ¹é ˜åŸŸã«åã¾ã‚‹ã‚ˆã†è£œæ­£ã—ãŸã‚ªãƒ•ã‚»ãƒƒãƒˆ
 			POINT const bits_offset = {
 				std::min<LONG>(std::max<LONG>(offset.x, 0L), size.cx),
 				std::min<LONG>(std::max<LONG>(offset.y, 0L), size.cy)
 			};
 
-			// ƒsƒNƒZƒ‹ƒf[ƒ^‚Ì—LŒø—Ìˆæ‚Éû‚Ü‚é‚æ‚¤•â³‚µ‚½ƒTƒCƒY
+			// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®æœ‰åŠ¹é ˜åŸŸã«åã¾ã‚‹ã‚ˆã†è£œæ­£ã—ãŸã‚µã‚¤ã‚º
 			SIZE const bits_size = {
 				std::min<LONG>(surface_rect.right - surface_rect.left, size.cx - bits_offset.x),
 				std::min<LONG>(surface_rect.bottom - surface_rect.top, size.cy - bits_offset.y)
 			};
 
-			// ƒsƒNƒZƒ‹ƒf[ƒ^ƒRƒs[‚ÌƒIƒtƒZƒbƒg‚ÆƒTƒCƒY
+			// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã‚³ãƒ”ãƒ¼æ™‚ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆã¨ã‚µã‚¤ã‚º
 			std::size_t const offset_size = bits_offset.x * pixel_size;
 			std::size_t const block_size = bits_size.cx * pixel_size;
 
-			// ƒsƒNƒZƒ‹ƒf[ƒ^ƒRƒs[‚Ìƒsƒbƒ`
+			// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã‚³ãƒ”ãƒ¼æ™‚ã®ãƒ”ãƒƒãƒ
 			std::size_t const dst_pitch = pitch;
 			std::size_t const src_pitch = locked_rect.Pitch;
 
-			// ƒT[ƒtƒFƒCƒX‚©‚çƒƒ‚ƒŠƒuƒƒbƒN‚ÌƒRƒs[
+			// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã‹ã‚‰ãƒ¡ãƒ¢ãƒªãƒ–ãƒ­ãƒƒã‚¯ã®ã‚³ãƒ”ãƒ¼
 			unsigned char* dst = static_cast<unsigned char*>(bits) + bits_offset.y * pitch + offset_size;
 			unsigned char* src = static_cast<unsigned char*>(locked_rect.pBits);
 			for(std::size_t i = 0, last = bits_size.cy; i != last; ++i){
@@ -775,24 +775,24 @@ namespace sprig {
 		// transfer_from_memory
 		//
 		SPRIG_INLINE HRESULT transfer_from_memory(
-			sprig::call_traits<surface_type>::param_type surface,	// ƒT[ƒtƒFƒCƒX
-			sprig::call_traits<void*>::param_type bits,	// ƒsƒNƒZƒ‹ƒf[ƒ^
-			sprig::call_traits<SIZE>::param_type size,	// ƒsƒNƒZƒ‹ƒf[ƒ^‚ÌƒTƒCƒY
-			sprig::call_traits<std::size_t>::param_type pitch,	// ƒsƒNƒZƒ‹ƒf[ƒ^‚Ìƒsƒbƒ`
-			sprig::call_traits<std::size_t>::param_type pixel_size,	// ƒsƒNƒZƒ‹ƒf[ƒ^‚ÌƒsƒNƒZƒ‹ƒoƒCƒg”
-			sprig::call_traits<POINT>::param_type offset,	// ƒRƒs[æ‚ÌƒIƒtƒZƒbƒg
-			sprig::call_traits<RECT>::param_type rect,	// ƒRƒs[Œ³‚Ì‹éŒ`
-			boost::optional<sprig::call_traits<D3DSURFACE_DESC>::param_type> hint_desc	// ƒqƒ“ƒg‚Æ‚È‚éƒT[ƒtƒFƒCƒXî•ñ
+			sprig::call_traits<surface_type>::param_type surface,	// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹
+			sprig::call_traits<void*>::param_type bits,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿
+			sprig::call_traits<SIZE>::param_type size,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®ã‚µã‚¤ã‚º
+			sprig::call_traits<std::size_t>::param_type pitch,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®ãƒ”ãƒƒãƒ
+			sprig::call_traits<std::size_t>::param_type pixel_size,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®ãƒ”ã‚¯ã‚»ãƒ«ãƒã‚¤ãƒˆæ•°
+			sprig::call_traits<POINT>::param_type offset,	// ã‚³ãƒ”ãƒ¼å…ˆã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+			sprig::call_traits<RECT>::param_type rect,	// ã‚³ãƒ”ãƒ¼å…ƒã®çŸ©å½¢
+			boost::optional<sprig::call_traits<D3DSURFACE_DESC>::param_type> hint_desc	// ãƒ’ãƒ³ãƒˆã¨ãªã‚‹ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹æƒ…å ±
 			)
 		{
 			using sprig::get_pointer;
 
 			HRESULT result = D3D_OK;
 
-			// ƒT[ƒtƒFƒCƒX‚Ì—LŒø—Ìˆæ‚Éû‚Ü‚é‚æ‚¤•â³‚µ‚½‹éŒ`
+			// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®æœ‰åŠ¹é ˜åŸŸã«åã¾ã‚‹ã‚ˆã†è£œæ­£ã—ãŸçŸ©å½¢
 			RECT surface_rect;
 
-			// ƒT[ƒtƒFƒCƒX‚Ì—LŒø—Ìˆæ‹éŒ`‚ÌŒvZ
+			// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®æœ‰åŠ¹é ˜åŸŸçŸ©å½¢ã®è¨ˆç®—
 			if (FAILED(result = normalize_surface_rect_from_memory(
 				surface_rect,
 				surface,
@@ -805,29 +805,29 @@ namespace sprig {
 				return result;
 			}
 
-			// ƒƒbƒN‚³‚ê‚½—Ìˆæ
+			// ãƒ­ãƒƒã‚¯ã•ã‚ŒãŸé ˜åŸŸ
 			D3DLOCKED_RECT locked_rect;
 
-			//	CHECK: ƒƒbƒN‚·‚é‹éŒ`‚ÉNULLˆÈŠO‚ğw’è‚·‚é‚ÆƒGƒ‰[‚ğ•Ô‚·BŒ´ˆö•s–¾B
-			// ƒT[ƒtƒFƒCƒX‚ÌƒƒbƒN
+			//	CHECK: ãƒ­ãƒƒã‚¯ã™ã‚‹çŸ©å½¢ã«NULLä»¥å¤–ã‚’æŒ‡å®šã™ã‚‹ã¨ã‚¨ãƒ©ãƒ¼ã‚’è¿”ã™ã€‚åŸå› ä¸æ˜ã€‚
+			// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®ãƒ­ãƒƒã‚¯
 			if (FAILED(result = surface->LockRect(
-				&locked_rect,	// ƒƒbƒN‚³‚ê‚½—Ìˆæ
-				NULL,//&surface_rect,	// ƒƒbƒN‚·‚é‹éŒ`
-				D3DLOCK_DISCARD	// ƒƒbƒLƒ“ƒOƒtƒ‰ƒO
+				&locked_rect,	// ãƒ­ãƒƒã‚¯ã•ã‚ŒãŸé ˜åŸŸ
+				NULL,//&surface_rect,	// ãƒ­ãƒƒã‚¯ã™ã‚‹çŸ©å½¢
+				D3DLOCK_DISCARD	// ãƒ­ãƒƒã‚­ãƒ³ã‚°ãƒ•ãƒ©ã‚°
 				)))
 			{
 				SPRIG_DG_TRANSFER_FROM_MEMORY_OUTPUT_ARGUMENTS();
-				SPRIG_DG_ERROR("ƒT[ƒtƒFƒCƒX‚ÌƒƒbƒN‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+				SPRIG_DG_ERROR("ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®ãƒ­ãƒƒã‚¯ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 				return result;
 			}
 
-			//	CHECK: ‘SƒƒbƒN‚µ‚Ä‚¢‚é‚½‚ß•â³‚ª•K—vB
+			//	CHECK: å…¨ãƒ­ãƒƒã‚¯ã—ã¦ã„ã‚‹ãŸã‚è£œæ­£ãŒå¿…è¦ã€‚
 			D3DLOCKED_RECT locked_rect_ = locked_rect;
 			locked_rect_.pBits = reinterpret_cast<unsigned char*>(locked_rect.pBits)
 				+ surface_rect.top * locked_rect.Pitch * pixel_size
 				+ surface_rect.left * pixel_size
 				;
-			// ƒT[ƒtƒFƒCƒX‚Öƒƒ‚ƒŠƒuƒƒbƒN‚ÌƒRƒs[
+			// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã¸ãƒ¡ãƒ¢ãƒªãƒ–ãƒ­ãƒƒã‚¯ã®ã‚³ãƒ”ãƒ¼
 			transfer_bits_from_memory(
 				locked_rect_,//locked_rect,
 				surface_rect,
@@ -838,10 +838,10 @@ namespace sprig {
 				rect
 				);
 
-			// ƒT[ƒtƒFƒCƒX‚ÌƒAƒ“ƒƒbƒN
+			// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®ã‚¢ãƒ³ãƒ­ãƒƒã‚¯
 			if (FAILED(result = surface->UnlockRect())) {
 				SPRIG_DG_TRANSFER_FROM_MEMORY_OUTPUT_ARGUMENTS();
-				SPRIG_DG_ERROR("ƒT[ƒtƒFƒCƒX‚ÌƒAƒ“ƒƒbƒN‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+				SPRIG_DG_ERROR("ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®ã‚¢ãƒ³ãƒ­ãƒƒã‚¯ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 				return result;
 			}
 
@@ -869,30 +869,30 @@ namespace sprig {
 		// transfer_from_render_target
 		//
 		SPRIG_INLINE HRESULT transfer_from_render_target(
-			sprig::call_traits<device_type>::param_type device,	// ƒfƒoƒCƒX
-			sprig::call_traits<surface_type>::param_type render_target_surface,	// ƒŒƒ“ƒ_[ƒ^[ƒQƒbƒg
-			sprig::call_traits<surface_type>::param_type surface,	// ƒT[ƒtƒFƒCƒX
-			sprig::call_traits<void*>::param_type bits,	// ƒsƒNƒZƒ‹ƒf[ƒ^
-			sprig::call_traits<SIZE>::param_type size,	// ƒsƒNƒZƒ‹ƒf[ƒ^‚ÌƒTƒCƒY
-			sprig::call_traits<std::size_t>::param_type pitch,	// ƒsƒNƒZƒ‹ƒf[ƒ^‚Ìƒsƒbƒ`
-			sprig::call_traits<std::size_t>::param_type pixel_size,	// ƒsƒNƒZƒ‹ƒf[ƒ^‚ÌƒsƒNƒZƒ‹ƒoƒCƒg”
-			sprig::call_traits<POINT>::param_type offset,	// ƒRƒs[æ‚ÌƒIƒtƒZƒbƒg
-			sprig::call_traits<RECT>::param_type rect,	// ƒRƒs[Œ³‚Ì‹éŒ`
-			boost::optional<sprig::call_traits<D3DSURFACE_DESC>::param_type> hint_desc	// ƒqƒ“ƒg‚Æ‚È‚éƒT[ƒtƒFƒCƒXî•ñ
+			sprig::call_traits<device_type>::param_type device,	// ãƒ‡ãƒã‚¤ã‚¹
+			sprig::call_traits<surface_type>::param_type render_target_surface,	// ãƒ¬ãƒ³ãƒ€ãƒ¼ã‚¿ãƒ¼ã‚²ãƒƒãƒˆ
+			sprig::call_traits<surface_type>::param_type surface,	// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹
+			sprig::call_traits<void*>::param_type bits,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿
+			sprig::call_traits<SIZE>::param_type size,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®ã‚µã‚¤ã‚º
+			sprig::call_traits<std::size_t>::param_type pitch,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®ãƒ”ãƒƒãƒ
+			sprig::call_traits<std::size_t>::param_type pixel_size,	// ãƒ”ã‚¯ã‚»ãƒ«ãƒ‡ãƒ¼ã‚¿ã®ãƒ”ã‚¯ã‚»ãƒ«ãƒã‚¤ãƒˆæ•°
+			sprig::call_traits<POINT>::param_type offset,	// ã‚³ãƒ”ãƒ¼å…ˆã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+			sprig::call_traits<RECT>::param_type rect,	// ã‚³ãƒ”ãƒ¼å…ƒã®çŸ©å½¢
+			boost::optional<sprig::call_traits<D3DSURFACE_DESC>::param_type> hint_desc	// ãƒ’ãƒ³ãƒˆã¨ãªã‚‹ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹æƒ…å ±
 			)
 		{
 			using sprig::get_pointer;
 
 			HRESULT result = D3D_OK;
 
-			// ƒŒƒ“ƒ_[ƒ^[ƒQƒbƒg‚©‚çƒ[ƒNƒT[ƒtƒFƒCƒX‚ÖƒRƒs[
+			// ãƒ¬ãƒ³ãƒ€ãƒ¼ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‹ã‚‰ãƒ¯ãƒ¼ã‚¯ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã¸ã‚³ãƒ”ãƒ¼
 			if (FAILED(result = device->GetRenderTargetData(get_pointer(render_target_surface), get_pointer(surface)))) {
 				SPRIG_DG_TRANSFER_FROM_RENDER_TARGET_OUTPUT_ARGUMENTS();
-				SPRIG_DG_ERROR("ƒŒƒ“ƒ_[ƒ^[ƒQƒbƒg‚©‚çƒ[ƒNƒT[ƒtƒFƒCƒX‚ÖƒRƒs[‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+				SPRIG_DG_ERROR("ãƒ¬ãƒ³ãƒ€ãƒ¼ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‹ã‚‰ãƒ¯ãƒ¼ã‚¯ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã¸ã‚³ãƒ”ãƒ¼ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 				return result;
 			}
 
-			// ƒT[ƒtƒFƒCƒX‚Ì—LŒø—Ìˆæ‚Éû‚Ü‚é‚æ‚¤•â³‚µ‚½‹éŒ`
+			// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®æœ‰åŠ¹é ˜åŸŸã«åã¾ã‚‹ã‚ˆã†è£œæ­£ã—ãŸçŸ©å½¢
 			RECT surface_rect;
 			if (FAILED(result = normalize_surface_rect(
 				surface_rect,
@@ -902,26 +902,26 @@ namespace sprig {
 				)))
 			{
 				SPRIG_DG_TRANSFER_FROM_RENDER_TARGET_OUTPUT_ARGUMENTS();
-				SPRIG_DG_ERROR("ƒT[ƒtƒFƒCƒX‚Ì—LŒø—Ìˆæ‹éŒ`‚ÌŒvZ‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+				SPRIG_DG_ERROR("ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®æœ‰åŠ¹é ˜åŸŸçŸ©å½¢ã®è¨ˆç®—ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 				return result;
 			}
 
-			// ƒƒbƒN‚³‚ê‚½—Ìˆæ
+			// ãƒ­ãƒƒã‚¯ã•ã‚ŒãŸé ˜åŸŸ
 			D3DLOCKED_RECT locked_rect;
 
-			// ƒT[ƒtƒFƒCƒX‚ÌƒƒbƒN
+			// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®ãƒ­ãƒƒã‚¯
 			if (FAILED(result = surface->LockRect(
-				&locked_rect,	// ƒƒbƒN‚³‚ê‚½—Ìˆæ
-				&surface_rect,	// ƒƒbƒN‚·‚é‹éŒ`
-				D3DLOCK_READONLY	// ƒƒbƒLƒ“ƒOƒtƒ‰ƒO
+				&locked_rect,	// ãƒ­ãƒƒã‚¯ã•ã‚ŒãŸé ˜åŸŸ
+				&surface_rect,	// ãƒ­ãƒƒã‚¯ã™ã‚‹çŸ©å½¢
+				D3DLOCK_READONLY	// ãƒ­ãƒƒã‚­ãƒ³ã‚°ãƒ•ãƒ©ã‚°
 				)))
 			{
 				SPRIG_DG_TRANSFER_FROM_RENDER_TARGET_OUTPUT_ARGUMENTS();
-				SPRIG_DG_ERROR("ƒT[ƒtƒFƒCƒX‚ÌƒƒbƒN‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+				SPRIG_DG_ERROR("ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®ãƒ­ãƒƒã‚¯ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 				return result;
 			}
 
-			// ƒT[ƒtƒFƒCƒX‚©‚çƒƒ‚ƒŠƒuƒƒbƒN‚ÌƒRƒs[
+			// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã‹ã‚‰ãƒ¡ãƒ¢ãƒªãƒ–ãƒ­ãƒƒã‚¯ã®ã‚³ãƒ”ãƒ¼
 			transfer_bits_from_render_target(
 				locked_rect,
 				surface_rect,
@@ -932,10 +932,10 @@ namespace sprig {
 				offset
 				);
 
-			// ƒT[ƒtƒFƒCƒX‚ÌƒAƒ“ƒƒbƒN
+			// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®ã‚¢ãƒ³ãƒ­ãƒƒã‚¯
 			if (FAILED(result = surface->UnlockRect())) {
 				SPRIG_DG_TRANSFER_FROM_RENDER_TARGET_OUTPUT_ARGUMENTS();
-				SPRIG_DG_ERROR("ƒT[ƒtƒFƒCƒX‚ÌƒAƒ“ƒƒbƒN‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+				SPRIG_DG_ERROR("ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®ã‚¢ãƒ³ãƒ­ãƒƒã‚¯ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 				return result;
 			}
 
@@ -969,7 +969,7 @@ namespace sprig {
 			HRESULT result = D3D_OK;
 
 			if (rect) {
-				// ƒeƒNƒXƒ`ƒƒ‚Ì—LŒø—Ìˆæ‚Éû‚Ü‚é‚æ‚¤•â³‚µ‚½‹éŒ`
+				// ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®æœ‰åŠ¹é ˜åŸŸã«åã¾ã‚‹ã‚ˆã†è£œæ­£ã—ãŸçŸ©å½¢
 				RECT texture_rect;
 				if (FAILED(result = normalize_texture_rect(
 					texture_rect,
@@ -979,33 +979,33 @@ namespace sprig {
 					)))
 				{
 					SPRIG_DG_LOCK_RECT_TEXTURE_ARGUMENTS();
-					SPRIG_DG_ERROR("ƒeƒNƒXƒ`ƒƒ‚Ì—LŒø—Ìˆæ‹éŒ`‚ÌŒvZ‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+					SPRIG_DG_ERROR("ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®æœ‰åŠ¹é ˜åŸŸçŸ©å½¢ã®è¨ˆç®—ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 					return result;
 				}
 
-				// ƒeƒNƒXƒ`ƒƒ‚ÌƒƒbƒN
+				// ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ãƒ­ãƒƒã‚¯
 				if (FAILED(result = texture->LockRect(
-					level,	// ƒŒƒxƒ‹
-					&locked_rect,	// ƒƒbƒN‚³‚ê‚½—Ìˆæ
-					&texture_rect,	// ƒƒbƒN‚·‚é‹éŒ`
-					flags	// ƒƒbƒLƒ“ƒOƒtƒ‰ƒO
+					level,	// ãƒ¬ãƒ™ãƒ«
+					&locked_rect,	// ãƒ­ãƒƒã‚¯ã•ã‚ŒãŸé ˜åŸŸ
+					&texture_rect,	// ãƒ­ãƒƒã‚¯ã™ã‚‹çŸ©å½¢
+					flags	// ãƒ­ãƒƒã‚­ãƒ³ã‚°ãƒ•ãƒ©ã‚°
 					)))
 				{
 					SPRIG_DG_LOCK_RECT_TEXTURE_ARGUMENTS();
-					SPRIG_DG_ERROR("ƒeƒNƒXƒ`ƒƒ‚ÌƒƒbƒN‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+					SPRIG_DG_ERROR("ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ãƒ­ãƒƒã‚¯ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 					return result;
 				}
 			} else {
-				// ƒeƒNƒXƒ`ƒƒ‚ÌƒƒbƒN
+				// ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ãƒ­ãƒƒã‚¯
 				if (FAILED(result = texture->LockRect(
-					level,	// ƒŒƒxƒ‹
-					&locked_rect,	// ƒƒbƒN‚³‚ê‚½—Ìˆæ
-					0,	// ƒƒbƒN‚·‚é‹éŒ`
-					flags	// ƒƒbƒLƒ“ƒOƒtƒ‰ƒO
+					level,	// ãƒ¬ãƒ™ãƒ«
+					&locked_rect,	// ãƒ­ãƒƒã‚¯ã•ã‚ŒãŸé ˜åŸŸ
+					0,	// ãƒ­ãƒƒã‚¯ã™ã‚‹çŸ©å½¢
+					flags	// ãƒ­ãƒƒã‚­ãƒ³ã‚°ãƒ•ãƒ©ã‚°
 					)))
 				{
 					SPRIG_DG_LOCK_RECT_TEXTURE_ARGUMENTS();
-					SPRIG_DG_ERROR("ƒeƒNƒXƒ`ƒƒ‚ÌƒƒbƒN‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+					SPRIG_DG_ERROR("ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ãƒ­ãƒƒã‚¯ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 					return result;
 				}
 			}
@@ -1037,7 +1037,7 @@ namespace sprig {
 			HRESULT result = D3D_OK;
 
 			if (rect) {
-				// ƒT[ƒtƒFƒCƒX‚Ì—LŒø—Ìˆæ‚Éû‚Ü‚é‚æ‚¤•â³‚µ‚½‹éŒ`
+				// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®æœ‰åŠ¹é ˜åŸŸã«åã¾ã‚‹ã‚ˆã†è£œæ­£ã—ãŸçŸ©å½¢
 				RECT surface_rect;
 				if (FAILED(result = normalize_surface_rect(
 					surface_rect,
@@ -1047,31 +1047,31 @@ namespace sprig {
 					)))
 				{
 					SPRIG_DG_LOCK_RECT_SURFACE_ARGUMENTS();
-					SPRIG_DG_ERROR("ƒT[ƒtƒFƒCƒX‚Ì—LŒø—Ìˆæ‹éŒ`‚ÌŒvZ‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+					SPRIG_DG_ERROR("ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®æœ‰åŠ¹é ˜åŸŸçŸ©å½¢ã®è¨ˆç®—ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 					return result;
 				}
 
-				// ƒT[ƒtƒFƒCƒX‚ÌƒƒbƒN
+				// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®ãƒ­ãƒƒã‚¯
 				if (FAILED(result = surface->LockRect(
-					&locked_rect,	// ƒƒbƒN‚³‚ê‚½—Ìˆæ
-					&surface_rect,	// ƒƒbƒN‚·‚é‹éŒ`
-					flags	// ƒƒbƒLƒ“ƒOƒtƒ‰ƒO
+					&locked_rect,	// ãƒ­ãƒƒã‚¯ã•ã‚ŒãŸé ˜åŸŸ
+					&surface_rect,	// ãƒ­ãƒƒã‚¯ã™ã‚‹çŸ©å½¢
+					flags	// ãƒ­ãƒƒã‚­ãƒ³ã‚°ãƒ•ãƒ©ã‚°
 					)))
 				{
 					SPRIG_DG_LOCK_RECT_SURFACE_ARGUMENTS();
-					SPRIG_DG_ERROR("ƒeƒNƒXƒ`ƒƒ‚ÌƒƒbƒN‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+					SPRIG_DG_ERROR("ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ãƒ­ãƒƒã‚¯ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 					return result;
 				}
 			} else {
-				// ƒT[ƒtƒFƒCƒX‚ÌƒƒbƒN
+				// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®ãƒ­ãƒƒã‚¯
 				if (FAILED(result = surface->LockRect(
-					&locked_rect,	// ƒƒbƒN‚³‚ê‚½—Ìˆæ
-					0,	// ƒƒbƒN‚·‚é‹éŒ`
-					flags	// ƒƒbƒLƒ“ƒOƒtƒ‰ƒO
+					&locked_rect,	// ãƒ­ãƒƒã‚¯ã•ã‚ŒãŸé ˜åŸŸ
+					0,	// ãƒ­ãƒƒã‚¯ã™ã‚‹çŸ©å½¢
+					flags	// ãƒ­ãƒƒã‚­ãƒ³ã‚°ãƒ•ãƒ©ã‚°
 					)))
 				{
 					SPRIG_DG_LOCK_RECT_SURFACE_ARGUMENTS();
-					SPRIG_DG_ERROR("ƒT[ƒtƒFƒCƒX‚ÌƒƒbƒN‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+					SPRIG_DG_ERROR("ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®ãƒ­ãƒƒã‚¯ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 					return result;
 				}
 			}
@@ -1089,14 +1089,14 @@ namespace sprig {
 		{
 			HRESULT result = D3D_OK;
 
-			// ƒeƒNƒXƒ`ƒƒ‚ÌƒAƒ“ƒƒbƒN
+			// ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ã‚¢ãƒ³ãƒ­ãƒƒã‚¯
 			if (FAILED(result = texture->UnlockRect(level))) {
 				{
 					SPRIG_DG_SECTION(TEXT("arguments"));
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("texture"), texture);
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("level"), level);
 				}
-				SPRIG_DG_ERROR("ƒeƒNƒXƒ`ƒƒ‚ÌƒAƒ“ƒƒbƒN‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+				SPRIG_DG_ERROR("ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ã‚¢ãƒ³ãƒ­ãƒƒã‚¯ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 				return result;
 			}
 
@@ -1108,13 +1108,13 @@ namespace sprig {
 		{
 			HRESULT result = D3D_OK;
 
-			// ƒT[ƒtƒFƒCƒX‚ÌƒAƒ“ƒƒbƒN
+			// ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®ã‚¢ãƒ³ãƒ­ãƒƒã‚¯
 			if (FAILED(result = surface->UnlockRect())) {
 				{
 					SPRIG_DG_SECTION(TEXT("arguments"));
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("surface"), surface);
 				}
-				SPRIG_DG_ERROR("ƒT[ƒtƒFƒCƒX‚ÌƒAƒ“ƒƒbƒN‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+				SPRIG_DG_ERROR("ã‚µãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®ã‚¢ãƒ³ãƒ­ãƒƒã‚¯ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 				return result;
 			}
 

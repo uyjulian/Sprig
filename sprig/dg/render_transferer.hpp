@@ -73,12 +73,12 @@ namespace sprig {
 				device_ = device;
 				if (FAILED(result = render_target_.initialize(device_, params))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒŒƒ“ƒ_[ƒ^[ƒQƒbƒg‚Ì‰Šú‰»‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("ãƒ¬ãƒ³ãƒ€ãƒ¼ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã®åˆæœŸåŒ–ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return result;
 				}
 				if (FAILED(result = transfer_work_.initialize(device_, params))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("“]‘—ƒ[ƒN‚Ì‰Šú‰»‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("è»¢é€ãƒ¯ãƒ¼ã‚¯ã®åˆæœŸåŒ–ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return result;
 				}
 				return result;
@@ -90,17 +90,17 @@ namespace sprig {
 				device_ = device;
 				if (FAILED(result = render_target_.reinitialize(device_))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒŒƒ“ƒ_[ƒ^[ƒQƒbƒg‚Ì‰Šú‰»‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("ãƒ¬ãƒ³ãƒ€ãƒ¼ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã®åˆæœŸåŒ–ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return result;
 				}
 				if (FAILED(result = transfer_work_.reinitialize(device_))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("“]‘—ƒ[ƒN‚Ì‰Šú‰»‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("è»¢é€ãƒ¯ãƒ¼ã‚¯ã®åˆæœŸåŒ–ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return result;
 				}
 				if (FAILED(result = render_filter_.reinitialize(device))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒtƒBƒ‹ƒ^‚Ì‰Šú‰»‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("ãƒ•ã‚£ãƒ«ã‚¿ã®åˆæœŸåŒ–ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return result;
 				}
 				return result;
@@ -118,7 +118,7 @@ namespace sprig {
 				) const
 			{
 				HRESULT result = D3D_OK;
-				//	TODO: ƒtƒBƒ‹ƒ^‚ğ“K—p‚µ‚Ä‚¢‚È‚¢‚Ì‚ÅA“K—p‚·‚é‚æ‚¤‚É‘‚«Š·‚¦‚éB
+				//	TODO: ãƒ•ã‚£ãƒ«ã‚¿ã‚’é©ç”¨ã—ã¦ã„ãªã„ã®ã§ã€é©ç”¨ã™ã‚‹ã‚ˆã†ã«æ›¸ãæ›ãˆã‚‹ã€‚
 				if (FAILED(result = transfer_from_render_target(
 					device_,
 					render_target_.get_surface(),
@@ -143,7 +143,7 @@ namespace sprig {
 				HRESULT result = D3D_OK;
 				if (FAILED(device_->SetRenderTarget(render_target_index, get_pointer(render_target_.get_surface())))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒŒƒ“ƒ_[ƒ^[ƒQƒbƒg‚Ìİ’è‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+					SPRIG_DG_ERROR("ãƒ¬ãƒ³ãƒ€ãƒ¼ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã®è¨­å®šã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 					return result;
 				}
 				return result;

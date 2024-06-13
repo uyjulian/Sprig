@@ -51,11 +51,11 @@
 		typedef Traits traits_type; \
 	public: \
 		/* 	CHECK: fatal error C1001 */ \
-		/* 1>__FILE__(__LINE__) : fatal error C1001: ƒRƒ“ƒpƒCƒ‰‚Å“à•”ƒGƒ‰[‚ª”­¶‚µ‚Ü‚µ‚½B*/ \
-		/* 1>(ƒRƒ“ƒpƒCƒ‰ ƒtƒ@ƒCƒ‹ 'msc1.cpp'As 1411)*/ \
-		/* 1> ‚±‚Ì–â‘è‚ð‰ñ”ð‚·‚é‚É‚ÍAã‹L‚ÌêŠ•t‹ß‚ÌƒvƒƒOƒ‰ƒ€‚ð’Pƒ‰»‚·‚é‚©•ÏX‚µ‚Ä‚­‚¾‚³‚¢B*/ \
-		/* 1>Ú×‚É‚Â‚¢‚Ä‚ÍAVisual C++ ƒwƒ‹ƒv ƒƒjƒ…[‚ÌƒTƒ|[ƒgî•ñƒRƒ}ƒ“ƒh‚ð*/ \
-		/* 1>‘I‘ð‚µ‚Ä‚­‚¾‚³‚¢B‚Ü‚½‚ÍƒTƒ|[ƒgî•ñ ƒwƒ‹ƒv ƒtƒ@ƒCƒ‹‚ðŽQÆ‚µ‚Ä‚­‚¾‚³‚¢B*/ \
+		/* 1>__FILE__(__LINE__) : fatal error C1001: ã‚³ãƒ³ãƒ‘ã‚¤ãƒ©ã§å†…éƒ¨ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ã¾ã—ãŸã€‚*/ \
+		/* 1>(ã‚³ãƒ³ãƒ‘ã‚¤ãƒ© ãƒ•ã‚¡ã‚¤ãƒ« 'msc1.cpp'ã€è¡Œ 1411)*/ \
+		/* 1> ã“ã®å•é¡Œã‚’å›žé¿ã™ã‚‹ã«ã¯ã€ä¸Šè¨˜ã®å ´æ‰€ä»˜è¿‘ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’å˜ç´”åŒ–ã™ã‚‹ã‹å¤‰æ›´ã—ã¦ãã ã•ã„ã€‚*/ \
+		/* 1>è©³ç´°ã«ã¤ã„ã¦ã¯ã€Visual C++ ãƒ˜ãƒ«ãƒ— ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®ã‚µãƒãƒ¼ãƒˆæƒ…å ±ã‚³ãƒžãƒ³ãƒ‰ã‚’*/ \
+		/* 1>é¸æŠžã—ã¦ãã ã•ã„ã€‚ã¾ãŸã¯ã‚µãƒãƒ¼ãƒˆæƒ…å ± ãƒ˜ãƒ«ãƒ— ãƒ•ã‚¡ã‚¤ãƒ«ã‚’å‚ç…§ã—ã¦ãã ã•ã„ã€‚*/ \
 		/*template<typename Arg1, typename Arg2> \
 		typename boost::enable_if< \
 			boost::is_same<typename traits_type::result::template apply<Arg1, Arg2>::type, void>, \

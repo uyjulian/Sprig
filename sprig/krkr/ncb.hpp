@@ -33,7 +33,7 @@ namespace sprig {
 			typedef void (*regist_callback_type)();
 
 			//
-			//	COMMENT: ncbTypeConvertor‚ğg‚Á‚½tTJSVariant‚Æ‘¼‚ÌŒ^‚Æ‚Ì‘ŠŒİ•ÏŠ·
+			//	COMMENT: ncbTypeConvertorã‚’ä½¿ã£ãŸtTJSVariantã¨ä»–ã®å‹ã¨ã®ç›¸äº’å¤‰æ›
 			//
 			// ToTarget
 			//
@@ -66,7 +66,7 @@ namespace sprig {
 			}
 
 			//
-			//	COMMENT: string_argument_type—p‚ÌŒ^•ÏŠ·‹@
+			//	COMMENT: string_argument_typeç”¨ã®å‹å¤‰æ›æ©Ÿ
 			//
 			// StringArgumentConvertor
 			//
@@ -77,8 +77,8 @@ namespace sprig {
 			private:
 				type temp_;
 			private:
-				// NOTE: typename selectT::value_type::value_type‚ğ’¼Úboost::enable_if<>‚É“n‚·‚Æ‰½ŒÌ‚©ƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚É‚È‚éB
-				// NOTE: ‚»‚ê‚ğ‰ñ”ğ‚·‚é‚½‚ß‚Éget_charƒwƒ‹ƒpƒƒ^ŠÖ”‚ğg—p‚·‚éB
+				// NOTE: typename selectT::value_type::value_typeã‚’ç›´æ¥boost::enable_if<>ã«æ¸¡ã™ã¨ä½•æ•…ã‹ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã‚¨ãƒ©ãƒ¼ã«ãªã‚‹ã€‚
+				// NOTE: ãã‚Œã‚’å›é¿ã™ã‚‹ãŸã‚ã«get_charãƒ˜ãƒ«ãƒ‘ãƒ¡ã‚¿é–¢æ•°ã‚’ä½¿ç”¨ã™ã‚‹ã€‚
 				template<typename selectT>
 				struct get_char {
 					typedef typename selectT::value_type::value_type type;
@@ -125,8 +125,8 @@ namespace sprig {
 				}
 				template <typename Value>
 				void operator()(Value& lhs, tTJSVariant const& rhs) {
-					// NOTE: Value‚ªT‚Ö‚Ìƒ|ƒCƒ“ƒ^‚Ìê‡Atemp_‚Ìƒ|ƒCƒ“ƒ^‚ğ•Ô‚·B
-					// NOTE: ‚·‚È‚í‚¿Value‚ªT‚Ö‚Ìƒ|ƒCƒ“ƒ^‚Ìê‡A‚»‚Ìõ–½‚Í‚±‚ÌƒRƒ“ƒo[ƒ^‚Ìõ–½‚Æ“¯Šú‚·‚éB
+					// NOTE: ValueãŒTã¸ã®ãƒã‚¤ãƒ³ã‚¿ã®å ´åˆã€temp_ã®ãƒã‚¤ãƒ³ã‚¿ã‚’è¿”ã™ã€‚
+					// NOTE: ã™ãªã‚ã¡ValueãŒTã¸ã®ãƒã‚¤ãƒ³ã‚¿ã®å ´åˆã€ãã®å¯¿å‘½ã¯ã“ã®ã‚³ãƒ³ãƒãƒ¼ã‚¿ã®å¯¿å‘½ã¨åŒæœŸã™ã‚‹ã€‚
 					VariantToTarget<type>(lhs, rhs);
 				}
 			};

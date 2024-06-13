@@ -29,7 +29,7 @@ namespace sprig {
 			//
 			// bf_multi_iteration
 			//
-			//	COMMENT: Šî–{ƒRƒ}ƒ“ƒh‚É‘Î‰ž‚·‚é•¶Žš—ñƒZƒbƒg‚ðˆµ‚¤‘–¸ƒNƒ‰ƒX
+			//	COMMENT: åŸºæœ¬ã‚³ãƒžãƒ³ãƒ‰ã«å¯¾å¿œã™ã‚‹æ–‡å­—åˆ—ã‚»ãƒƒãƒˆã‚’æ‰±ã†èµ°æŸ»ã‚¯ãƒ©ã‚¹
 			//
 			template<
 				typename Types = use_default,

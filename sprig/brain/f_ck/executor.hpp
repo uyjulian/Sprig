@@ -23,7 +23,7 @@ namespace sprig {
 			//
 			// bf_executor
 			//
-			//	COMMENT: 基本コマンドに対応するコマンド実行クラス
+			//	COMMENT: 蝓ｺ譛ｬ繧ｳ繝槭Φ繝峨↓蟇ｾ蠢懊☆繧九さ繝槭Φ繝牙ｮ溯｡後け繝ｩ繧ｹ
 			//
 			template<
 				typename Types = use_default,

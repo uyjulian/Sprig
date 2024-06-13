@@ -23,8 +23,8 @@ namespace sprig {
 			//
 			// bf_string_literals
 			//
-			//	COMMENT: Brainf*ck のリテラル定義
-			//	COMMENT: 基本コマンドに対応する文字列を定義する
+			//	COMMENT: Brainf*ck 縺ｮ繝ｪ繝�繝ｩ繝ｫ螳夂ｾｩ
+			//	COMMENT: 蝓ｺ譛ｬ繧ｳ繝槭Φ繝峨↓蟇ｾ蠢懊☆繧区枚蟄怜�励ｒ螳夂ｾｩ縺吶ｋ
 			//
 			struct bf_string_literals {
 				typedef literal_array<char const, false> type;

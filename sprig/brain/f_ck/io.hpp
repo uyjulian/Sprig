@@ -23,8 +23,8 @@ namespace sprig {
 			//
 			// bf_io
 			//
-			//	COMMENT: �W�����o�͂��s�����o�̓N���X
-			//	COMMENT: �o�C�g�^�͏�ɒP�ꕶ���^�Ƃ��Ĉ�����
+			//	COMMENT: 標準入出力を行う入出力クラス
+			//	COMMENT: バイト型は常に単一文字型として扱われる
 			//
 			template<
 				typename Types = use_default

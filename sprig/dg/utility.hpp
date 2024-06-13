@@ -35,9 +35,9 @@ namespace sprig {
 			{}
 			~render_state_saver() {
 				BOOST_FOREACH(state_map_type::value_type const& e, state_map_) {
-					// ƒŒƒ“ƒ_ƒŠƒ“ƒOƒXƒe[ƒg‚Ìİ’è•œŒ³
+					// ãƒ¬ãƒ³ãƒ€ãƒªãƒ³ã‚°ã‚¹ãƒ†ãƒ¼ãƒˆã®è¨­å®šå¾©å…ƒ
 					if (FAILED(device_->SetRenderState(e.first, e.second))) {
-						SPRIG_DG_ERROR_MESSAGE("ƒŒƒ“ƒ_ƒŠƒ“ƒOƒXƒe[ƒg‚Ìİ’è•œŒ³‚É¸”s‚µ‚Ü‚µ‚½");
+						SPRIG_DG_ERROR_MESSAGE("ãƒ¬ãƒ³ãƒ€ãƒªãƒ³ã‚°ã‚¹ãƒ†ãƒ¼ãƒˆã®è¨­å®šå¾©å…ƒã«å¤±æ•—ã—ã¾ã—ãŸ");
 						return;
 					}
 				}
@@ -51,9 +51,9 @@ namespace sprig {
 				}
 
 				DWORD value = 0;
-				// ƒŒƒ“ƒ_ƒŠƒ“ƒOƒXƒe[ƒg‚Ìæ“¾
+				// ãƒ¬ãƒ³ãƒ€ãƒªãƒ³ã‚°ã‚¹ãƒ†ãƒ¼ãƒˆã®å–å¾—
 				if (FAILED(result = device_->GetRenderState(state, &value))) {
-					SPRIG_DG_ERROR("ƒŒƒ“ƒ_ƒŠƒ“ƒOƒXƒe[ƒg‚Ìæ“¾‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+					SPRIG_DG_ERROR("ãƒ¬ãƒ³ãƒ€ãƒªãƒ³ã‚°ã‚¹ãƒ†ãƒ¼ãƒˆã®å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 					return result;
 				}
 				state_map_.insert(state_map_type::value_type(state, value));
@@ -67,9 +67,9 @@ namespace sprig {
 					return result;
 				}
 
-				// ƒŒƒ“ƒ_ƒŠƒ“ƒOƒXƒe[ƒg‚Ìİ’è
+				// ãƒ¬ãƒ³ãƒ€ãƒªãƒ³ã‚°ã‚¹ãƒ†ãƒ¼ãƒˆã®è¨­å®š
 				if (FAILED(result = device_->SetRenderState(state, value))) {
-					SPRIG_DG_ERROR("ƒŒƒ“ƒ_ƒŠƒ“ƒOƒXƒe[ƒg‚Ìİ’è‚É¸”s‚µ‚Ü‚µ‚½", bad_process);
+					SPRIG_DG_ERROR("ãƒ¬ãƒ³ãƒ€ãƒªãƒ³ã‚°ã‚¹ãƒ†ãƒ¼ãƒˆã®è¨­å®šã«å¤±æ•—ã—ã¾ã—ãŸ", bad_process);
 					return result ;
 				}
 

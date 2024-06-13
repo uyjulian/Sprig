@@ -57,7 +57,7 @@ namespace sprig {
 	}	// namespace dg
 }	// namespace sprig
 
-//	COMMENT: ’ŠÛƒNƒ‰ƒX‚Æ‚µ‚Ä“o˜^
+//	COMMENT: æŠ½è±¡ã‚¯ãƒ©ã‚¹ã¨ã—ã¦ç™»éŒ²
 BOOST_SERIALIZATION_ASSUME_ABSTRACT(sprig::dg::render_filter);
 
 #endif	// #ifndef SPRIG_DG_RENDER_FILTER_HPP

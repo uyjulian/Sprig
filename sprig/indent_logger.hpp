@@ -83,7 +83,7 @@ namespace sprig {
 		//
 		class ostream_holder {
 		private:
-			//	COMMENT: ostringstream¨filtering_ostream ‚Ì‡‚É‰ğ•ú‚³‚ê‚È‚¯‚ê‚Î‚È‚ç‚È‚¢B
+			//	COMMENT: ostringstreamâ†’filtering_ostream ã®é †ã«è§£æ”¾ã•ã‚Œãªã‘ã‚Œã°ãªã‚‰ãªã„ã€‚
 			boost::shared_ptr<ostringstream_type> oss_;
 			filtering_ostream_type fos_;
 		public:

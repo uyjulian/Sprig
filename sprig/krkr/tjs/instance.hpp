@@ -22,7 +22,7 @@ namespace sprig {
 			//
 			// create_tjs_native_instance
 			//
-			// COMMENT: w’è‚³‚ê‚½Œ^‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ğ¶¬‚µ‚Ä•Ô‚·B
+			// COMMENT: æŒ‡å®šã•ã‚ŒãŸå‹ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ç”Ÿæˆã—ã¦è¿”ã™ã€‚
 			//
 			template<typename T>
 			SPRIG_INLINE iTJSNativeInstance* TJS_INTF_METHOD create_tjs_native_instance() {

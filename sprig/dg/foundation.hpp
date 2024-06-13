@@ -227,7 +227,7 @@ namespace sprig {
 
 			D3DCAPS9 caps;
 			if (FAILED(result = device->GetDeviceCaps(&caps))) {
-				SPRIG_DG_ERROR("�����_�����O�f�o�C�X�̔\�͎擾�Ɏ��s���܂���", bad_process);
+				SPRIG_DG_ERROR("レンダリングデバイスの能力取得に失敗しました", bad_process);
 				return result;
 			}
 
@@ -245,32 +245,32 @@ namespace sprig {
 				SPRIG_DG_OUTPUT_VALUE(TEXT("DeviceType"), TEXT("D3DDEVTYPE_SW"));
 				break;
 			}
-			SPRIG_DG_OUTPUT_COMMENT(TEXT("���̒l�́A�f�o�C�X�̎�ނ�\���܂��B"));
-			SPRIG_DG_OUTPUT_COMMENT(TEXT("D3DDEVTYPE_HAL �łȂ��ꍇ�A�n�[�h�E�F�A�ɂ�郉�X�^�����s��ꂸ�{�g���l�b�N�ɂȂ�\��������܂��B"));
+			SPRIG_DG_OUTPUT_COMMENT(TEXT("この値は、デバイスの種類を表します。"));
+			SPRIG_DG_OUTPUT_COMMENT(TEXT("D3DDEVTYPE_HAL でない場合、ハードウェアによるラスタ化が行われずボトルネックになる可能性があります。"));
 
 			SPRIG_DG_OUTPUT_VALUE(TEXT("D3DCAPS3_COPY_TO_SYSTEMMEM"), (caps.Caps3 & D3DCAPS3_COPY_TO_SYSTEMMEM) != 0);
-			SPRIG_DG_OUTPUT_COMMENT(TEXT("���̒l�́A�f�o�C�X�����[�J���r�f�I����������V�X�e���������ւ̃������R�s�[���������ł��邩��\���܂��B"));
-			SPRIG_DG_OUTPUT_COMMENT(TEXT("�U�̏ꍇ�A�������ł����{�g���l�b�N�ɂȂ�\��������܂��B"));
+			SPRIG_DG_OUTPUT_COMMENT(TEXT("この値は、デバイスがローカルビデオメモリからシステムメモリへのメモリコピーを高速化できるかを表します。"));
+			SPRIG_DG_OUTPUT_COMMENT(TEXT("偽の場合、高速化できずボトルネックになる可能性があります。"));
 
 			SPRIG_DG_OUTPUT_VALUE(TEXT("D3DPTEXTURECAPS_ALPHA"), (caps.TextureCaps & D3DPTEXTURECAPS_ALPHA) != 0);
-			SPRIG_DG_OUTPUT_COMMENT(TEXT("���̒l�́A�f�o�C�X���e�N�X�`���s�N�Z���ł̃A���t�@���T�|�[�g���邩��\���܂��B"));
-			SPRIG_DG_OUTPUT_COMMENT(TEXT("�U�̏ꍇ�A�A���t�@����������ɍs���Ȃ��\��������܂��B"));
+			SPRIG_DG_OUTPUT_COMMENT(TEXT("この値は、デバイスがテクスチャピクセルでのアルファをサポートするかを表します。"));
+			SPRIG_DG_OUTPUT_COMMENT(TEXT("偽の場合、アルファ処理が正常に行われない可能性があります。"));
 
 			SPRIG_DG_OUTPUT_VALUE(TEXT("D3DPMISCCAPS_SEPARATEALPHABLEND"), (caps.PrimitiveMiscCaps & D3DPMISCCAPS_SEPARATEALPHABLEND) != 0);
-			SPRIG_DG_OUTPUT_COMMENT(TEXT("���̒l�́A�f�o�C�X���A���t�@�`�����l���ɑ΂���ʂ̃u�����h�ݒ���T�|�[�g���邩��\���܂��B"));
-			SPRIG_DG_OUTPUT_COMMENT(TEXT("�U�̏ꍇ�A�`�挋�ʂ̃A���t�@�`�����l��������ɂȂ�Ȃ��\��������܂��B"));
+			SPRIG_DG_OUTPUT_COMMENT(TEXT("この値は、デバイスがアルファチャンネルに対する個別のブレンド設定をサポートするかを表します。"));
+			SPRIG_DG_OUTPUT_COMMENT(TEXT("偽の場合、描画結果のアルファチャンネルが正常にならない可能性があります。"));
 
 			SPRIG_DG_OUTPUT_VALUE(TEXT("D3DPMISCCAPS_BLENDOP"), (caps.PrimitiveMiscCaps & D3DPMISCCAPS_BLENDOP) != 0);
-			SPRIG_DG_OUTPUT_COMMENT(TEXT("���̒l�́A�f�o�C�X�� D3DBLENDOP_ADD �ȊO�̃A���t�@�u�����f�B���O�������T�|�[�g���邩��\���܂��B"));
-			SPRIG_DG_OUTPUT_COMMENT(TEXT("�U�̏ꍇ�A�ꕔ�̕`�揈��������ɍs���Ȃ��\��������܂��B"));
+			SPRIG_DG_OUTPUT_COMMENT(TEXT("この値は、デバイスが D3DBLENDOP_ADD 以外のアルファブレンディング処理をサポートするかを表します。"));
+			SPRIG_DG_OUTPUT_COMMENT(TEXT("偽の場合、一部の描画処理が正常に行われない可能性があります。"));
 
 			SPRIG_DG_OUTPUT_VALUE(TEXT("MaxTextureWidth"), caps.MaxTextureWidth);
-			SPRIG_DG_OUTPUT_COMMENT(TEXT("���̒l�́A�f�o�C�X���쐬�\�ȃe�N�X�`���̍ő啝�ł��B"));
+			SPRIG_DG_OUTPUT_COMMENT(TEXT("この値は、デバイスが作成可能なテクスチャの最大幅です。"));
 
 			SPRIG_DG_OUTPUT_VALUE(TEXT("MaxTextureHeight"), caps.MaxTextureHeight);
-			SPRIG_DG_OUTPUT_COMMENT(TEXT("���̒l�́A�f�o�C�X���쐬�\�ȃe�N�X�`���̍ő卂���ł��B"));
+			SPRIG_DG_OUTPUT_COMMENT(TEXT("この値は、デバイスが作成可能なテクスチャの最大高さです。"));
 
-			SPRIG_DG_OUTPUT_COMMENT(TEXT("�����_�����O�f�o�C�X�̔\�͂��o�͂��܂��B"));
+			SPRIG_DG_OUTPUT_COMMENT(TEXT("レンダリングデバイスの能力を出力します。"));
 			{
 				// DeviceType
 				SPRIG_DG_SECTION(TEXT("DeviceType"));

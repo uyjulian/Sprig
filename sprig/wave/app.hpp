@@ -68,7 +68,7 @@ namespace sprig {
 					: common_desc_(caption + "(common)", line_length)
 					, command_line_desc_(caption + "(command-line)", line_length)
 				{
-					//	COMMENT: ‹¤’ÊƒIƒvƒVƒ‡ƒ“‚Ìİ’è
+					//	COMMENT: å…±é€šã‚ªãƒ—ã‚·ãƒ§ãƒ³ã®è¨­å®š
 					common_desc_.add_options()
 						("support-long_long", "Enable long long support.")
 						("support-variadics", "Enable variadics and placemarkers.")
@@ -122,7 +122,7 @@ namespace sprig {
 						("log-stdout", "Output log to stdout.")
 						("log-trace_include", "Output log for include tracing.")
 						;
-					//	COMMENT: ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“ƒIƒvƒVƒ‡ƒ“‚Ìİ’è
+					//	COMMENT: ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã®è¨­å®š
 					command_line_desc_.add_options()
 						("help,h", "Print out program usage. (this message)")
 						(
@@ -131,7 +131,7 @@ namespace sprig {
 							"Configration file."
 							)
 						;
-					//	COMMENT: ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“‚É‹¤’ÊƒIƒvƒVƒ‡ƒ“‚ğ’Ç‰Á
+					//	COMMENT: ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã«å…±é€šã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’è¿½åŠ 
 					command_line_desc_.add(common_desc_);
 				}
 				options_description_type const& common_desc() const {
@@ -147,12 +147,12 @@ namespace sprig {
 					Char* argv[]
 					) const
 				{
-					//	COMMENT: ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“‚©‚çƒIƒvƒVƒ‡ƒ“‰ğÍ
+					//	COMMENT: ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã‹ã‚‰ã‚ªãƒ—ã‚·ãƒ§ãƒ³è§£æ
 					boost::program_options::store(
 						boost::program_options::parse_command_line(argc, argv, command_line_desc_),
 						vmap
 						);
-					//	COMMENT: i‘¶İ‚·‚ê‚Îjƒtƒ@ƒCƒ‹‚©‚ç‚©‚çƒIƒvƒVƒ‡ƒ“‰ğÍ
+					//	COMMENT: ï¼ˆå­˜åœ¨ã™ã‚Œã°ï¼‰ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ã‹ã‚‰ã‚ªãƒ—ã‚·ãƒ§ãƒ³è§£æ
 					boost::filesystem::path config_path(vmap["config"].as<std::string>());
 					bool exists_config
 						= boost::filesystem::exists(config_path)
@@ -166,7 +166,7 @@ namespace sprig {
 							);
 					}
 					boost::program_options::notify(vmap);
-					//	COMMENT: ƒtƒ@ƒCƒ‹‚ª‘¶İ‚µ‚½‚©•Ô‚·
+					//	COMMENT: ãƒ•ã‚¡ã‚¤ãƒ«ãŒå­˜åœ¨ã—ãŸã‹è¿”ã™
 					return exists_config;
 				}
 			};
@@ -696,23 +696,23 @@ namespace sprig {
 			println(icout())("Execute:");
 			cindent ci("  ");
 
-			//	COMMENT: ƒIƒvƒVƒ‡ƒ“‰ğÍ
+			//	COMMENT: ã‚ªãƒ—ã‚·ãƒ§ãƒ³è§£æ
 			boost::program_options::variables_map vmap;
 			analy_options(vmap, argc, argv);
 
-			//	COMMENT: “ü—Íƒtƒ@ƒCƒ‹æ“¾
+			//	COMMENT: å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«å–å¾—
 			boost::filesystem::path input_path = get_input_path(vmap);
 			std::string input = get_input<char>(input_path, vmap);
 
-			//	COMMENT: o—ÍƒZƒbƒgƒAƒbƒv
+			//	COMMENT: å‡ºåŠ›ã‚»ãƒƒãƒˆã‚¢ãƒƒãƒ—
 			boost::iostreams::filtering_stream<boost::iostreams::output, char> code;
 			boost::iostreams::filtering_stream<boost::iostreams::output, char> log;
 			setup_output<char>(code, log, vmap);
 
-			//	COMMENT: ƒtƒbƒNˆ—ƒZƒbƒgƒAƒbƒv
+			//	COMMENT: ãƒ•ãƒƒã‚¯å‡¦ç†ã‚»ãƒƒãƒˆã‚¢ãƒƒãƒ—
 			app::context_traits<char>::hooks_type hooks = setup_hooks(log, vmap);
 
-			//	COMMENT: ƒRƒ“ƒeƒLƒXƒgƒZƒbƒgƒAƒbƒv
+			//	COMMENT: ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆã‚»ãƒƒãƒˆã‚¢ãƒƒãƒ—
 			app::context_traits<char>::context_type context(
 				input.begin(),
 				input.end(),
@@ -721,7 +721,7 @@ namespace sprig {
 				);
 			setup_context(context, vmap);
 
-			//	COMMENT: ƒCƒeƒŒ\ƒVƒ‡ƒ“
+			//	COMMENT: ã‚¤ãƒ†ãƒ¬â€•ã‚·ãƒ§ãƒ³
 			bool succeeded = iterate_context(context, code, log, vmap);
 
 			if (succeeded) {

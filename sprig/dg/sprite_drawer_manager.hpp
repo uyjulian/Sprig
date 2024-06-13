@@ -90,7 +90,7 @@ namespace sprig {
 				device_ = device;
 				if (FAILED(result = D3DXCreateSprite(get_pointer(device_), sprig::accept(sprite_)))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("�X�v���C�g�̍쐬�Ɏ��s���܂���", bad_initialize);
+					SPRIG_DG_ERROR("スプライトの作成に失敗しました", bad_initialize);
 					return result;
 				}
 				priority_map_.clear();
@@ -104,13 +104,13 @@ namespace sprig {
 				device_ = device;
 				if (FAILED(result = D3DXCreateSprite(get_pointer(device_), sprig::accept(sprite_)))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("�X�v���C�g�̍쐬�Ɏ��s���܂���", bad_initialize);
+					SPRIG_DG_ERROR("スプライトの作成に失敗しました", bad_initialize);
 					return result;
 				}
 				BOOST_FOREACH(value_type const& e, priority_map_) {
 					if (FAILED(result = e.ref_mapped()->reinitialize(device_))) {
 						SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-						SPRIG_DG_ERROR("�X�v���C�g�h���[���̏������Ɏ��s���܂���", bad_initialize);
+						SPRIG_DG_ERROR("スプライトドローワの初期化に失敗しました", bad_initialize);
 						return result;
 					}
 				}
@@ -195,98 +195,98 @@ namespace sprig {
 				}
 				return priority_map_.modify(position, priority_modifier<priority_map_defs_type>(priority));
 			}
-			//	COMMENT: �X�v���C�g�̕`��J�n�B
-			//	COMMENT: ����ȑO�ɃV�[���`��J�n���Ă΂�Ă��Ȃ���΂Ȃ�Ȃ��B
+			//	COMMENT: スプライトの描画開始。
+			//	COMMENT: これ以前にシーン描画開始が呼ばれていなければならない。
 			HRESULT begin_draw() const {
 				HRESULT result = D3D_OK;
 
-				//	COMMENT: �X�v���C�g�̕`��J�n
+				//	COMMENT: スプライトの描画開始
 				if (FAILED(result = sprite_->Begin(flag_))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("�X�v���C�g�̕`��J�n�Ɏ��s���܂���", bad_process);
+					SPRIG_DG_ERROR("スプライトの描画開始に失敗しました", bad_process);
 					return result;
 				}
 
-				//	COMMENT: �A���t�@�`���l���ɑ΂���u�����f�B���O���[�h�̐ݒ�
+				//	COMMENT: アルファチャネルに対するブレンディングモードの設定
 				if (FAILED(result = device_->SetRenderState(D3DRS_SEPARATEALPHABLENDENABLE, TRUE))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("�A���t�@�`���l���ɑ΂���u�����f�B���O���[�h�̐ݒ�Ɏ��s���܂���", bad_process);
+					SPRIG_DG_ERROR("アルファチャネルに対するブレンディングモードの設定に失敗しました", bad_process);
 					return result;
 				}
 
-				//	COMMENT: �A���t�@�`���l���ɑ΂���Z�p���Z�̐ݒ�
+				//	COMMENT: アルファチャネルに対する算術演算の設定
 				if (FAILED(result = device_->SetRenderState(D3DRS_BLENDOPALPHA, D3DBLENDOP_MAX))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("�A���t�@�`���l���ɑ΂���Z�p���Z�̐ݒ�Ɏ��s���܂���", bad_process);
+					SPRIG_DG_ERROR("アルファチャネルに対する算術演算の設定に失敗しました", bad_process);
 					return result;
 				}
 
-				//	COMMENT: �`�挳�u�����f�B���O�W���̐ݒ�
+				//	COMMENT: 描画元ブレンディング係数の設定
 				if (FAILED(result = device_->SetRenderState(D3DRS_SRCBLENDALPHA, D3DBLEND_ONE))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("�`�挳�u�����f�B���O�W���̐ݒ�Ɏ��s���܂���", bad_process);
+					SPRIG_DG_ERROR("描画元ブレンディング係数の設定に失敗しました", bad_process);
 					return result;
 				}
 
-				//	COMMENT: �`���u�����f�B���O�W���̐ݒ�
+				//	COMMENT: 描画先ブレンディング係数の設定
 				if (FAILED(result = device_->SetRenderState(D3DRS_DESTBLENDALPHA, D3DBLEND_ONE))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("�`���u�����f�B���O�W���̐ݒ�Ɏ��s���܂���", bad_process);
+					SPRIG_DG_ERROR("描画先ブレンディング係数の設定に失敗しました", bad_process);
 					return result;
 				}
 
-				//	COMMENT: �h���[���̕`��J�n
+				//	COMMENT: ドローワの描画開始
 				BOOST_FOREACH(value_type const& e, priority_map_.get<priority_tag_type>()) {
 					if (FAILED(result = e.get_mapped()->begin_draw(sprite_))) {
 						SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-						SPRIG_DG_ERROR("�h���[���̕`��J�n�Ɏ��s���܂���", bad_process);
+						SPRIG_DG_ERROR("ドローワの描画開始に失敗しました", bad_process);
 						return result;
 					}
 				}
 
 				return result;
 			}
-			//	COMMENT: �X�v���C�g�̕`��I���B
-			//	COMMENT: ����Ȍ�ɃV�[���`��I�����Ă΂Ȃ���΂Ȃ�Ȃ��B
+			//	COMMENT: スプライトの描画終了。
+			//	COMMENT: これ以後にシーン描画終了を呼ばなければならない。
 			HRESULT end_draw() const {
 				HRESULT result = D3D_OK;
 
-				//	COMMENT: �h���[���̕`��I��
+				//	COMMENT: ドローワの描画終了
 				BOOST_FOREACH(value_type const& e, priority_map_.get<priority_tag_type>()) {
 					if (FAILED(result = e.get_mapped()->end_draw(sprite_))) {
 						SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-						SPRIG_DG_ERROR("�h���[���̕`��I���Ɏ��s���܂���", bad_process);
+						SPRIG_DG_ERROR("ドローワの描画終了に失敗しました", bad_process);
 						return result;
 					}
 				}
 
-				//	COMMENT: �X�v���C�g�̕`��I��
+				//	COMMENT: スプライトの描画終了
 				if (FAILED(result = sprite_->End())) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("�X�v���C�g�̕`��I���Ɏ��s���܂���", bad_process);
+					SPRIG_DG_ERROR("スプライトの描画終了に失敗しました", bad_process);
 					return result;
 				}
 
 				return result;
 			}
-			//	COMMENT: �X�v���C�g�̕`��B
-			//	COMMENT: �X�v���C�g�̕`��J�n�`�`��I���̊ԂɌĂ΂�Ȃ���΂Ȃ�Ȃ��B
+			//	COMMENT: スプライトの描画。
+			//	COMMENT: スプライトの描画開始〜描画終了の間に呼ばれなければならない。
 			HRESULT draw() const {
 				HRESULT result = D3D_OK;
 
 				BOOST_FOREACH(value_type const& e, priority_map_.get<priority_tag_type>()) {
-					//	COMMENT: �X�v���C�g�̕`��
+					//	COMMENT: スプライトの描画
 					if (FAILED(result = e.get_mapped()->draw(sprite_))) {
 						SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-						SPRIG_DG_ERROR("�X�v���C�g�̕`��Ɏ��s���܂���", bad_process);
+						SPRIG_DG_ERROR("スプライトの描画に失敗しました", bad_process);
 						return result;
 					}
 				}
 
 				return result;
 			}
-			//	COMMENT: �X�v���C�g�̕`��B
-			//	COMMENT: �X�v���C�g�̕`��J�n�`�`��I���͎����I�ɌĂ΂��B
+			//	COMMENT: スプライトの描画。
+			//	COMMENT: スプライトの描画開始〜描画終了は自動的に呼ばれる。
 			HRESULT draw_sprite() const {
 				HRESULT result = D3D_OK;
 				if (FAILED(result = begin_draw())) {
@@ -300,39 +300,39 @@ namespace sprig {
 				}
 				return result;
 			}
-			//	COMMENT: �V�[���`��J�n�B
+			//	COMMENT: シーン描画開始。
 			HRESULT begin_scene() const {
 				HRESULT result = D3D_OK;
 				if (FAILED(result = device_->BeginScene())) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("�V�[���`��J�n�Ɏ��s���܂���", bad_process);
+					SPRIG_DG_ERROR("シーン描画開始に失敗しました", bad_process);
 					return result;
 				}
 				return result;
 			}
-			//	COMMENT: �V�[���`��I���B
+			//	COMMENT: シーン描画終了。
 			HRESULT end_scene() const {
 				HRESULT result = D3D_OK;
 				if (FAILED(result = device_->EndScene())) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("�V�[���`��I���Ɏ��s���܂���", bad_process);
+					SPRIG_DG_ERROR("シーン描画終了に失敗しました", bad_process);
 					return result;
 				}
 				return result;
 			}
-			//	COMMENT: �f�o�C�X�̃N���A�B
-			//	COMMENT: �ʏ�A�V�[���`��̑O�ɌĂ΂��B
+			//	COMMENT: デバイスのクリア。
+			//	COMMENT: 通常、シーン描画の前に呼ばれる。
 			HRESULT clear_target(sprig::call_traits<D3DCOLOR>::param_type color = D3DCOLOR_ARGB(0x00, 0x00, 0x00, 0x00)) const {
 				HRESULT result = D3D_OK;
 				if (FAILED(device_->Clear(0, NULL, D3DCLEAR_TARGET, color, 1.0f, 0))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("�f�o�C�X�̃N���A�Ɏ��s���܂���", bad_process);
+					SPRIG_DG_ERROR("デバイスのクリアに失敗しました", bad_process);
 					return false;
 				}
 				return result;
 			}
-			//	COMMENT: �V�[������уX�v���C�g�̕`��B
-			//	COMMENT: �`��J�n�`�`��I���̃V�[�P���X�͎����I�ɌĂ΂��B
+			//	COMMENT: シーンおよびスプライトの描画。
+			//	COMMENT: 描画開始〜描画終了のシーケンスは自動的に呼ばれる。
 			HRESULT draw_scene(
 				bool clear = true,
 				sprig::call_traits<D3DCOLOR>::param_type color = D3DCOLOR_ARGB(0x00, 0x00, 0x00, 0x00)
@@ -355,36 +355,36 @@ namespace sprig {
 				}
 				return result;
 			}
-			//	COMMENT: �X�v���C�g�̃q�b�g�e�X�g�J�n�B
+			//	COMMENT: スプライトのヒットテスト開始。
 			HRESULT begin_hit_test() {
 				HRESULT result = D3D_OK;
 
 				BOOST_FOREACH(value_type const& e, priority_map_.get<priority_tag_type>()) {
 					if (FAILED(result = e.get_mapped()->begin_hit_test())) {
 						SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-						SPRIG_DG_ERROR("�X�v���C�g�̃q�b�g�e�X�g�J�n�Ɏ��s���܂���", bad_process);
+						SPRIG_DG_ERROR("スプライトのヒットテスト開始に失敗しました", bad_process);
 						return result;
 					}
 				}
 
 				return result;
 			}
-			//	COMMENT: �X�v���C�g�̃q�b�g�e�X�g�I���B
+			//	COMMENT: スプライトのヒットテスト終了。
 			HRESULT end_hit_test() {
 				HRESULT result = D3D_OK;
 
 				BOOST_FOREACH(value_type const& e, priority_map_.get<priority_tag_type>()) {
 					if (FAILED(result = e.get_mapped()->end_hit_test())) {
 						SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-						SPRIG_DG_ERROR("�X�v���C�g�̃q�b�g�e�X�g�I���Ɏ��s���܂���", bad_process);
+						SPRIG_DG_ERROR("スプライトのヒットテスト終了に失敗しました", bad_process);
 						return result;
 					}
 				}
 
 				return result;
 			}
-			//	COMMENT: �X�v���C�g�̃q�b�g�e�X�g���s���B
-			//	COMMENT: �X�v���C�g�̃q�b�g�e�X�g�J�n�`�q�b�g�e�X�g�I���̊ԂɌĂ΂�Ȃ���΂Ȃ�Ȃ��B
+			//	COMMENT: スプライトのヒットテストを行う。
+			//	COMMENT: スプライトのヒットテスト開始〜ヒットテスト終了の間に呼ばれなければならない。
 			template<typename Hit, typename Key>
 			HRESULT hit_test(Hit& hit, Key& key, typename sprig::call_traits<coord_type>::param_type point) const {
 				HRESULT result = D3D_OK;
@@ -393,7 +393,7 @@ namespace sprig {
 					bool h = false;
 					if (FAILED(result = e.get_mapped()->hit_test(h, point))) {
 						SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-						SPRIG_DG_ERROR("�X�v���C�g�̃q�b�g�e�X�g�Ɏ��s���܂���", bad_process);
+						SPRIG_DG_ERROR("スプライトのヒットテストに失敗しました", bad_process);
 						return result;
 					}
 					if (h) {
@@ -406,8 +406,8 @@ namespace sprig {
 				hit = false;
 				return result;
 			}
-			//	COMMENT: �X�v���C�g�̃}���`�q�b�g�e�X�g���s���B
-			//	COMMENT: �X�v���C�g�̃q�b�g�e�X�g�J�n�`�q�b�g�e�X�g�I���̊ԂɌĂ΂�Ȃ���΂Ȃ�Ȃ��B
+			//	COMMENT: スプライトのマルチヒットテストを行う。
+			//	COMMENT: スプライトのヒットテスト開始〜ヒットテスト終了の間に呼ばれなければならない。
 			template<typename Hit, typename KeyIterator>
 			HRESULT multi_hit_test(Hit& hit, KeyIterator key, typename sprig::call_traits<coord_type>::param_type point) const {
 				HRESULT result = D3D_OK;
@@ -417,7 +417,7 @@ namespace sprig {
 					bool h = false;
 					if (FAILED(result = e.get_mapped()->hit_test(h, point))) {
 						SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-						SPRIG_DG_ERROR("�X�v���C�g�̃q�b�g�e�X�g�Ɏ��s���܂���", bad_process);
+						SPRIG_DG_ERROR("スプライトのヒットテストに失敗しました", bad_process);
 						return result;
 					}
 					if (h) {
@@ -429,8 +429,8 @@ namespace sprig {
 				hit = count;
 				return result;
 			}
-			//	COMMENT: �X�v���C�g�̃q�b�g�e�X�g���s���B
-			//	COMMENT: �q�b�g�e�X�g�J�n�`�q�b�g�e�X�g�I���̃V�[�P���X�͎����I�ɌĂ΂��B
+			//	COMMENT: スプライトのヒットテストを行う。
+			//	COMMENT: ヒットテスト開始〜ヒットテスト終了のシーケンスは自動的に呼ばれる。
 			template<typename Hit, typename Key>
 			HRESULT hit_test_period(Hit& hit, Key& key, typename sprig::call_traits<coord_type>::param_type point) {
 				HRESULT result = D3D_OK;
@@ -445,8 +445,8 @@ namespace sprig {
 				}
 				return result;
 			}
-			//	COMMENT: �n���ꂽ���ׂĂ̓_�ɂ��ăX�v���C�g�̃q�b�g�e�X�g���s���B
-			//	COMMENT: �q�b�g�e�X�g�J�n�`�q�b�g�e�X�g�I���̃V�[�P���X�͎����I�ɌĂ΂��B
+			//	COMMENT: 渡されたすべての点についてスプライトのヒットテストを行う。
+			//	COMMENT: ヒットテスト開始〜ヒットテスト終了のシーケンスは自動的に呼ばれる。
 			template<typename PointIterator, typename HitIterator, typename KeyIterator>
 			HRESULT hit_test_period(
 				HitIterator hit,
@@ -471,8 +471,8 @@ namespace sprig {
 				}
 				return result;
 			}
-			//	COMMENT: �X�v���C�g�̃}���`�q�b�g�e�X�g���s���B
-			//	COMMENT: �q�b�g�e�X�g�J�n�`�q�b�g�e�X�g�I���̃V�[�P���X�͎����I�ɌĂ΂��B
+			//	COMMENT: スプライトのマルチヒットテストを行う。
+			//	COMMENT: ヒットテスト開始〜ヒットテスト終了のシーケンスは自動的に呼ばれる。
 			template<typename Hit, typename KeyIterator>
 			HRESULT multi_hit_test_period(Hit& hit, KeyIterator& key, typename sprig::call_traits<coord_type>::param_type point) {
 				HRESULT result = D3D_OK;
@@ -487,8 +487,8 @@ namespace sprig {
 				}
 				return result;
 			}
-			//	COMMENT: �n���ꂽ���ׂĂ̓_�ɂ��ăX�v���C�g�̃}���`�q�b�g�e�X�g���s���B
-			//	COMMENT: �q�b�g�e�X�g�J�n�`�q�b�g�e�X�g�I���̃V�[�P���X�͎����I�ɌĂ΂��B
+			//	COMMENT: 渡されたすべての点についてスプライトのマルチヒットテストを行う。
+			//	COMMENT: ヒットテスト開始〜ヒットテスト終了のシーケンスは自動的に呼ばれる。
 			template<typename PointIterator, typename HitIterator, typename KeyIterator>
 			HRESULT multi_hit_test_period(
 				HitIterator hit,

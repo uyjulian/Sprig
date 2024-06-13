@@ -27,7 +27,7 @@ namespace sprig {
 		//
 		// position_property
 		//
-		//	COMMENT: ˆÊ’uƒCƒ“ƒ^ƒtƒF[ƒX‚ðƒoƒCƒgŒ^‚Ì‚æ‚¤‚Éˆµ‚¤ƒ‰ƒbƒp[ƒNƒ‰ƒX
+		//	COMMENT: ä½ç½®ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹ã‚’ãƒã‚¤ãƒˆåž‹ã®ã‚ˆã†ã«æ‰±ã†ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹
 		//
 		template<
 			typename Types = use_default
@@ -117,8 +117,8 @@ namespace sprig {
 		//
 		// position_iterator
 		//
-		//	COMMENT: ˆÊ’uƒCƒ“ƒ^ƒtƒF[ƒX‚ð‘–¸‚·‚éƒCƒeƒŒ[ƒ^ƒNƒ‰ƒX
-		//	COMMENT: ‚±‚ÌƒNƒ‰ƒX‚Í“n‚³‚ê‚½ˆÊ’uƒCƒ“ƒ^ƒtƒF[ƒX‚ð‘‚«Š·‚¦‚é
+		//	COMMENT: ä½ç½®ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹ã‚’èµ°æŸ»ã™ã‚‹ã‚¤ãƒ†ãƒ¬ãƒ¼ã‚¿ã‚¯ãƒ©ã‚¹
+		//	COMMENT: ã“ã®ã‚¯ãƒ©ã‚¹ã¯æ¸¡ã•ã‚ŒãŸä½ç½®ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹ã‚’æ›¸ãæ›ãˆã‚‹
 		//
 		template<
 			typename Types = use_default

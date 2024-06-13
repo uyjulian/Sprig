@@ -31,8 +31,8 @@ namespace sprig {
 			//
 			// ook_literals
 			//
-			//	COMMENT: Ook! ‚ÌƒŠƒeƒ‰ƒ‹’è‹`
-			//	COMMENT: Šî–{ƒRƒ}ƒ“ƒh‚É‘Î‰ž‚·‚é Ook! ‚Ì\¬ƒg[ƒNƒ“‚ð’è‹`‚·‚é
+			//	COMMENT: Ook! ã®ãƒªãƒ†ãƒ©ãƒ«å®šç¾©
+			//	COMMENT: åŸºæœ¬ã‚³ãƒžãƒ³ãƒ‰ã«å¯¾å¿œã™ã‚‹ Ook! ã®æ§‹æˆãƒˆãƒ¼ã‚¯ãƒ³ã‚’å®šç¾©ã™ã‚‹
 			//
 			struct ook_literals {
 				template<int N>
@@ -50,9 +50,9 @@ namespace sprig {
 			//
 			// ook_iteration
 			//
-			//	COMMENT: Šî–{ƒRƒ}ƒ“ƒh‚É‘Î‰ž‚·‚é Ook! ‚Ìƒg[ƒNƒ“‚ðˆµ‚¤‘–¸ƒNƒ‰ƒX
-			//	COMMENT: \¬ƒg[ƒNƒ“‚Í‹ó”’•¶Žš‚Å‹æØ‚ç‚ê‚é
-			//	COMMENT: \¬ƒg[ƒNƒ“‚ª‹æØ‚ç‚ê‚Ä‚¢‚È‚­‚Ä‚à–â‘è‚È‚¢
+			//	COMMENT: åŸºæœ¬ã‚³ãƒžãƒ³ãƒ‰ã«å¯¾å¿œã™ã‚‹ Ook! ã®ãƒˆãƒ¼ã‚¯ãƒ³ã‚’æ‰±ã†èµ°æŸ»ã‚¯ãƒ©ã‚¹
+			//	COMMENT: æ§‹æˆãƒˆãƒ¼ã‚¯ãƒ³ã¯ç©ºç™½æ–‡å­—ã§åŒºåˆ‡ã‚‰ã‚Œã‚‹
+			//	COMMENT: æ§‹æˆãƒˆãƒ¼ã‚¯ãƒ³ãŒåŒºåˆ‡ã‚‰ã‚Œã¦ã„ãªãã¦ã‚‚å•é¡Œãªã„
 			//
 			template<
 				typename Types = use_default,

@@ -73,16 +73,16 @@ namespace sprig {
 				HRESULT result = D3D_OK;
 
 				device_ = device;
-				// ƒXƒvƒ‰ƒCƒgƒhƒ[ƒƒ}ƒl[ƒWƒƒ‚Ì‰Šú‰»
+				// ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆãƒ‰ãƒ­ãƒ¼ãƒ¯ãƒãƒãƒ¼ã‚¸ãƒ£ã®åˆæœŸåŒ–
 				if (FAILED(result = sprite_drawer_manager_.initialize(device_))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒXƒvƒ‰ƒCƒgƒhƒ[ƒƒ}ƒl[ƒWƒƒ‚Ì‰Šú‰»‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆãƒ‰ãƒ­ãƒ¼ãƒ¯ãƒãƒãƒ¼ã‚¸ãƒ£ã®åˆæœŸåŒ–ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return result;
 				}
-				// ƒŒƒ“ƒ_[ƒgƒ‰ƒ“ƒXƒtƒ@ƒ‰‚Ì‰Šú‰»
+				// ãƒ¬ãƒ³ãƒ€ãƒ¼ãƒˆãƒ©ãƒ³ã‚¹ãƒ•ã‚¡ãƒ©ã®åˆæœŸåŒ–
 				if (FAILED(result = render_transferer_.initialize(device_, params))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒŒƒ“ƒ_[ƒgƒ‰ƒ“ƒXƒtƒ@ƒ‰‚Ì‰Šú‰»‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("ãƒ¬ãƒ³ãƒ€ãƒ¼ãƒˆãƒ©ãƒ³ã‚¹ãƒ•ã‚¡ãƒ©ã®åˆæœŸåŒ–ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return result;
 				}
 				return result;
@@ -92,16 +92,16 @@ namespace sprig {
 				HRESULT result = D3D_OK;
 
 				device_ = device;
-				// ƒXƒvƒ‰ƒCƒgƒhƒ[ƒƒ}ƒl[ƒWƒƒ‚Ì‰Šú‰»
+				// ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆãƒ‰ãƒ­ãƒ¼ãƒ¯ãƒãƒãƒ¼ã‚¸ãƒ£ã®åˆæœŸåŒ–
 				if (FAILED(result = sprite_drawer_manager_.reinitialize(device_))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒXƒvƒ‰ƒCƒgƒhƒ[ƒƒ}ƒl[ƒWƒƒ‚Ì‰Šú‰»‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆãƒ‰ãƒ­ãƒ¼ãƒ¯ãƒãƒãƒ¼ã‚¸ãƒ£ã®åˆæœŸåŒ–ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return result;
 				}
-				// ƒŒƒ“ƒ_[ƒgƒ‰ƒ“ƒXƒtƒ@ƒ‰‚Ì‰Šú‰»
+				// ãƒ¬ãƒ³ãƒ€ãƒ¼ãƒˆãƒ©ãƒ³ã‚¹ãƒ•ã‚¡ãƒ©ã®åˆæœŸåŒ–
 				if (FAILED(result = render_transferer_.reinitialize(device_))) {
 					SPRIG_DG_OUTPUT_VALUE_INFO(TEXT("this"), *this);
-					SPRIG_DG_ERROR("ƒŒƒ“ƒ_[ƒgƒ‰ƒ“ƒXƒtƒ@ƒ‰‚Ì‰Šú‰»‚É¸”s‚µ‚Ü‚µ‚½", bad_initialize);
+					SPRIG_DG_ERROR("ãƒ¬ãƒ³ãƒ€ãƒ¼ãƒˆãƒ©ãƒ³ã‚¹ãƒ•ã‚¡ãƒ©ã®åˆæœŸåŒ–ã«å¤±æ•—ã—ã¾ã—ãŸ", bad_initialize);
 					return result;
 				}
 				return result;

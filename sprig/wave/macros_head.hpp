@@ -26,9 +26,9 @@
 #define SPRIG_WAVE_MACROS_HEAD_0(OPT) \
 	SPRIG_WAVE_MACROS_SEP(OPT, "*")
 #define SPRIG_WAVE_MACROS_HEAD_1(OPT)  \
-	SPRIG_WAVE_MACROS_REM(OPT, "‚±‚ê‚Í sprig/wave/macros.hpp ‚É‚æ‚Á‚ÄŽ©“®¶¬‚³‚ê‚½ƒ}ƒNƒ’è‹`ŒQ‚Å‚·")
+	SPRIG_WAVE_MACROS_REM(OPT, "ã“ã‚Œã¯ sprig/wave/macros.hpp ã«ã‚ˆã£ã¦è‡ªå‹•ç”Ÿæˆã•ã‚ŒãŸãƒžã‚¯ãƒ­å®šç¾©ç¾¤ã§ã™")
 #define SPRIG_WAVE_MACROS_HEAD_2(OPT)  \
-	SPRIG_WAVE_MACROS_REM(OPT, "sprig/wave/macros.hpp ‚ÌƒRƒ“ƒpƒCƒ‹‚³‚ê‚½ƒvƒƒWƒFƒNƒgŠÂ‹«‚ð”½‰f‚µ‚Ä‚¢‚Ü‚·")
+	SPRIG_WAVE_MACROS_REM(OPT, "sprig/wave/macros.hpp ã®ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã•ã‚ŒãŸãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆç’°å¢ƒã‚’åæ˜ ã—ã¦ã„ã¾ã™")
 #define SPRIG_WAVE_MACROS_HEAD_3(OPT)  \
 	SPRIG_WAVE_MACROS_REM(OPT, "")
 #define SPRIG_WAVE_MACROS_HEAD_4(OPT)  \
@@ -46,7 +46,7 @@
 #define SPRIG_WAVE_MACROS_HEAD_NUM 8
 
 //
-//	: s”ƒ`ƒFƒbƒN
+//	: è¡Œæ•°ãƒã‚§ãƒƒã‚¯
 //
 #if SPRIG_WAVE_MACROS_HEAD_NUM > BOOST_PP_LIMIT_REPEAT
 #	error SPRIG_WAVE_MACROS_HEAD_NUM > BOOST_PP_LIMIT_REPEAT
